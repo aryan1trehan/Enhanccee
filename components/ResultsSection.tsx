@@ -203,11 +203,6 @@ export default function ResultsSection() {
                 onMouseEnter={() => setHoveredTestimonial(index)}
                 onMouseLeave={() => setHoveredTestimonial(null)}
               >
-                {/* Background Number */}
-                <div className="absolute top-4 right-4 text-gold/10 text-8xl font-bold select-none pointer-events-none">
-                  99
-                </div>
-
                 {/* Quote */}
                 <p className="text-white text-base md:text-lg leading-relaxed mb-6 relative z-10 transition-colors duration-300 group-hover:text-white/95">
                   "{testimonial.quote}"
