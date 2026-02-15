@@ -85,7 +85,7 @@ export default function QuoteSection() {
 
       {/* Decorative Background Elements */}
       <div className="absolute top-0 left-0 w-full h-full pointer-events-none overflow-hidden">
-        <div className="absolute top-1/3 right-1/4 w-72 h-72 bg-gold/5 rounded-full blur-3xl animate-pulse-slow" />
+        <div className="absolute top-1/3 right-1/4 w-72 h-72 bg-gold-fade-light rounded-full blur-3xl animate-pulse-slow" />
         <div className="absolute bottom-1/3 left-1/4 w-96 h-96 bg-light-green/10 rounded-full blur-3xl animate-pulse-slow" style={{ animationDelay: '1.5s' }} />
       </div>
     </section>

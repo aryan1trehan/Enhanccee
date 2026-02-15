@@ -109,7 +109,7 @@ export default function ResultsSection() {
                   : 'opacity-0 -translate-y-4'
               }`}
             >
-              <div className="px-4 py-2 bg-gold rounded-lg">
+              <div className="px-4 py-2 bg-gold">
                 <span className="text-dark-green text-xs font-semibold tracking-wider uppercase">
                   PROVEN RESULTS
                 </span>
@@ -136,17 +136,17 @@ export default function ResultsSection() {
             {statistics.map((stat, index) => (
               <div
                 key={index}
-                className={`group relative bg-light-green/30 border border-gold/30 rounded-xl p-6 md:p-8 text-center transition-all duration-500 cursor-pointer ${
+                className={`group relative bg-light-green/30 border border-gold/30 p-6 md:p-8 text-center transition-all duration-500 cursor-pointer ${
                   isVisible
                     ? 'opacity-100 scale-100'
                     : 'opacity-0 scale-95'
                 } ${
                   hoveredStat === index
-                    ? 'border-gold/80 bg-light-green/50 shadow-2xl shadow-gold/20 scale-105'
-                    : 'hover:border-gold/60 hover:bg-light-green/40 hover:shadow-xl hover:shadow-gold/10'
+                    ? 'border-gold/80 bg-light-green/50 shadow-2xl shadow-gold/30 scale-110 -translate-y-2 animate-glow'
+                    : 'hover:border-gold/60 hover:bg-light-green/40 hover:shadow-xl hover:shadow-gold/10 hover:scale-105 hover:-translate-y-1'
                 }`}
                 style={{
-                  animationDelay: `${0.4 + index * 0.1}s`,
+                  transitionDelay: `${0.4 + index * 0.15}s`,
                 }}
                 onMouseEnter={() => setHoveredStat(index)}
                 onMouseLeave={() => setHoveredStat(null)}
@@ -160,7 +160,7 @@ export default function ResultsSection() {
 
                 {/* Hover Effect */}
                 <div
-                  className={`absolute inset-0 rounded-xl bg-gold/5 opacity-0 transition-opacity duration-500 ${
+                  className={`absolute inset-0 bg-gold-fade-light opacity-0 transition-opacity duration-500 ${
                     hoveredStat === index ? 'opacity-100' : ''
                   }`}
                 />
@@ -188,17 +188,17 @@ export default function ResultsSection() {
             {testimonials.map((testimonial, index) => (
               <div
                 key={index}
-                className={`group relative bg-light-green/30 border border-gold/30 rounded-xl p-6 md:p-8 transition-all duration-500 cursor-pointer ${
+                className={`group relative bg-light-green/30 border border-gold/30 p-6 md:p-8 transition-all duration-700 cursor-pointer ${
                   isVisible
                     ? 'opacity-100 translate-y-0'
                     : 'opacity-0 translate-y-8'
                 } ${
                   hoveredTestimonial === index
-                    ? 'border-gold/80 bg-light-green/50 shadow-2xl shadow-gold/20 scale-105'
-                    : 'hover:border-gold/60 hover:bg-light-green/40 hover:shadow-xl hover:shadow-gold/10'
+                    ? 'border-gold/80 bg-light-green/50 shadow-2xl shadow-gold/30 scale-105 -translate-y-2 animate-glow'
+                    : 'hover:border-gold/60 hover:bg-light-green/40 hover:shadow-xl hover:shadow-gold/10 hover:-translate-y-1'
                 }`}
                 style={{
-                  animationDelay: `${1 + index * 0.15}s`,
+                  transitionDelay: `${1 + index * 0.2}s`,
                 }}
                 onMouseEnter={() => setHoveredTestimonial(index)}
                 onMouseLeave={() => setHoveredTestimonial(null)}
@@ -228,7 +228,7 @@ export default function ResultsSection() {
 
                 {/* Hover Effect */}
                 <div
-                  className={`absolute inset-0 rounded-xl bg-gold/5 opacity-0 transition-opacity duration-500 ${
+                  className={`absolute inset-0 bg-gold-fade-light opacity-0 transition-opacity duration-500 ${
                     hoveredTestimonial === index ? 'opacity-100' : ''
                   }`}
                 />
@@ -240,7 +240,7 @@ export default function ResultsSection() {
 
       {/* Decorative Background Elements */}
       <div className="absolute top-0 left-0 w-full h-full pointer-events-none overflow-hidden">
-        <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-gold/5 rounded-full blur-3xl animate-pulse-slow" />
+        <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-gold-fade-light rounded-full blur-3xl animate-pulse-slow" />
         <div className="absolute bottom-1/4 left-1/4 w-72 h-72 bg-light-green/10 rounded-full blur-3xl animate-pulse-slow" style={{ animationDelay: '2s' }} />
       </div>
     </section>

@@ -56,7 +56,7 @@ export default function ClienteleSection() {
                 : 'opacity-0 -translate-y-4'
             }`}
           >
-            <div className="px-6 py-2 border border-gold rounded-lg bg-dark-green flex items-center gap-2">
+            <div className="px-6 py-2 border border-gold bg-dark-green flex items-center gap-2">
               <div className="w-2 h-2 bg-gold rounded-full" />
               <span className="text-white text-xs font-semibold tracking-wider uppercase">
                 TRUSTED BY
@@ -95,17 +95,17 @@ export default function ClienteleSection() {
           {clients.map((client, index) => (
             <div
               key={index}
-              className={`group relative bg-dark-green border border-gold rounded-xl p-8 md:p-12 flex items-center justify-center min-h-[120px] md:min-h-[150px] transition-all duration-500 cursor-pointer shadow-lg ${
+              className={`group relative bg-dark-green border border-gold p-8 md:p-12 flex items-center justify-center min-h-[120px] md:min-h-[150px] transition-all duration-700 cursor-pointer shadow-lg ${
                 isVisible
                   ? 'opacity-100 scale-100'
                   : 'opacity-0 scale-95'
                 } ${
                   hoveredClient === index
-                    ? 'border-gold/80 bg-light-green/30 shadow-2xl shadow-gold/20 scale-105'
-                    : 'hover:border-gold/60 hover:bg-light-green/20 hover:shadow-xl hover:shadow-gold/10'
+                    ? 'border-gold/80 bg-light-green/30 shadow-2xl shadow-gold/30 scale-110 -translate-y-2 animate-glow'
+                    : 'hover:border-gold/60 hover:bg-light-green/20 hover:shadow-xl hover:shadow-gold/10 hover:scale-105 hover:-translate-y-1'
                 }`}
               style={{
-                animationDelay: `${0.6 + index * 0.1}s`,
+                transitionDelay: `${0.6 + index * 0.1}s`,
               }}
               onMouseEnter={() => setHoveredClient(index)}
               onMouseLeave={() => setHoveredClient(null)}
@@ -116,7 +116,7 @@ export default function ClienteleSection() {
 
               {/* Hover Effect - Gold Glow */}
               <div
-                className={`absolute inset-0 rounded-xl bg-gold/5 opacity-0 transition-opacity duration-500 ${
+                className={`absolute inset-0 bg-gold-fade-light opacity-0 transition-opacity duration-500 ${
                   hoveredClient === index ? 'opacity-100' : ''
                 }`}
               />
@@ -133,10 +133,10 @@ export default function ClienteleSection() {
           }`}
           style={{ animationDelay: '1.4s' }}
         >
-          <button className="bg-dark-green border-2 border-gold text-white px-8 py-4 rounded-lg font-semibold text-base transition-all duration-300 hover:bg-gold hover:text-dark-green hover:scale-105 hover:shadow-xl hover:shadow-gold/50 flex items-center justify-center gap-2 mx-auto">
+          <button className="bg-dark-green border-2 border-gold text-white px-8 py-4 rounded-lg font-semibold text-base transition-all duration-300 hover:bg-gold hover:text-dark-green hover:scale-110 hover:shadow-2xl hover:shadow-gold/60 hover:-translate-y-1 flex items-center justify-center gap-2 mx-auto group active:scale-95">
             View All Clients
             <svg
-              className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1"
+              className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-2 group-hover:scale-110"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -154,7 +154,7 @@ export default function ClienteleSection() {
 
       {/* Decorative Background Elements */}
       <div className="absolute top-0 left-0 w-full h-full pointer-events-none overflow-hidden">
-        <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-gold/5 rounded-full blur-3xl animate-pulse-slow" />
+        <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-gold-fade-light rounded-full blur-3xl animate-pulse-slow" />
         <div className="absolute bottom-1/4 left-1/4 w-72 h-72 bg-light-green/10 rounded-full blur-3xl animate-pulse-slow" style={{ animationDelay: '2s' }} />
       </div>
     </section>

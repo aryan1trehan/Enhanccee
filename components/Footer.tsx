@@ -82,10 +82,10 @@ export default function Footer() {
                 <a
                   key={social.name}
                   href={social.href}
-                  className={`w-10 h-10 border border-gold rounded-lg flex items-center justify-center text-gold transition-all duration-300 ${
+                  className={`w-10 h-10 border border-gold flex items-center justify-center text-gold transition-all duration-300 ${
                     hoveredSocial === social.name
-                      ? 'bg-gold text-dark-green scale-110 shadow-lg shadow-gold/50'
-                      : 'hover:bg-gold/10 hover:scale-105'
+                      ? 'bg-gold text-dark-green scale-125 shadow-xl shadow-gold/60 -translate-y-1 rotate-6'
+                      : 'hover:bg-gold-fade-light hover:scale-110 hover:-translate-y-0.5 hover:rotate-3'
                   }`}
                   onMouseEnter={() => setHoveredSocial(social.name)}
                   onMouseLeave={() => setHoveredSocial(null)}

@@ -112,7 +112,7 @@ export default function PhilosophySection() {
                   : 'opacity-0 -translate-y-4'
               }`}
             >
-              <div className="inline-flex items-center gap-2 px-4 py-2 border border-gold rounded-lg bg-dark-green/50 backdrop-blur-sm">
+              <div className="inline-flex items-center gap-2 px-4 py-2 border border-gold bg-dark-green/50 backdrop-blur-sm">
                 <div className="w-2 h-2 bg-gold rounded-full" />
                 <span className="text-white text-xs font-semibold tracking-wider uppercase">
                   OUR PHILOSOPHY
@@ -170,10 +170,10 @@ export default function PhilosophySection() {
               }`}
               style={{ animationDelay: '0.8s' }}
             >
-              <button className="bg-gold text-dark-green px-8 py-4 rounded-lg font-semibold text-base transition-all duration-300 hover:bg-gold-light hover:scale-105 hover:shadow-xl hover:shadow-gold/50 flex items-center justify-center gap-2 group">
+              <button className="bg-gold text-dark-green px-8 py-4 rounded-lg font-semibold text-base transition-all duration-300 hover:bg-gold-light hover:scale-110 hover:shadow-2xl hover:shadow-gold/60 hover:-translate-y-1 flex items-center justify-center gap-2 group active:scale-95">
                 Explore Our Methodology
                 <svg
-                  className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1"
+                  className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-2 group-hover:scale-110"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -194,14 +194,14 @@ export default function PhilosophySection() {
             {features.map((feature, index) => (
               <div
                 key={index}
-                className={`group relative bg-dark-green/60 backdrop-blur-sm border border-light-green/20 rounded-xl p-6 transition-all duration-500 cursor-pointer ${
+                className={`group relative bg-dark-green/60 backdrop-blur-sm border border-light-green/20 p-6 transition-all duration-500 cursor-pointer ${
                   isVisible
                     ? 'opacity-100 translate-x-0'
                     : 'opacity-0 translate-x-8'
                 } ${
                   hoveredCard === index
-                    ? 'border-gold/50 bg-dark-green/80 shadow-2xl shadow-gold/20 scale-105'
-                    : 'hover:border-gold/30 hover:bg-dark-green/70 hover:shadow-xl hover:shadow-gold/10'
+                    ? 'border-gold/50 bg-dark-green/80 shadow-2xl shadow-gold/30 scale-105 -translate-y-2 animate-glow'
+                    : 'hover:border-gold/30 hover:bg-dark-green/70 hover:shadow-xl hover:shadow-gold/10 hover:-translate-y-1'
                 }`}
                 style={{
                   animationDelay: `${1 + index * 0.15}s`,
@@ -212,10 +212,10 @@ export default function PhilosophySection() {
                 {/* Icon and Title Row */}
                 <div className="flex items-center gap-4 mb-4">
                   <div
-                    className={`w-12 h-12 bg-gold rounded-lg flex items-center justify-center text-dark-green transition-all duration-300 ${
+                    className={`w-12 h-12 bg-gold flex items-center justify-center text-dark-green transition-all duration-500 ${
                       hoveredCard === index
-                        ? 'scale-110 rotate-3 shadow-lg shadow-gold/50'
-                        : 'group-hover:scale-105 group-hover:rotate-2'
+                        ? 'scale-125 rotate-6 shadow-xl shadow-gold/60 animate-pulse-slow'
+                        : 'group-hover:scale-110 group-hover:rotate-3 group-hover:shadow-lg group-hover:shadow-gold/40'
                     }`}
                   >
                     {feature.icon}
@@ -232,7 +232,7 @@ export default function PhilosophySection() {
 
                 {/* Hover Effect - Gold Glow */}
                 <div
-                  className={`absolute inset-0 rounded-xl bg-gold/5 opacity-0 transition-opacity duration-500 ${
+                  className={`absolute inset-0 bg-gold-fade-light opacity-0 transition-opacity duration-500 ${
                     hoveredCard === index ? 'opacity-100' : ''
                   }`}
                 />
@@ -244,7 +244,7 @@ export default function PhilosophySection() {
 
       {/* Decorative Background Elements */}
       <div className="absolute top-0 left-0 w-full h-full pointer-events-none overflow-hidden">
-        <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-gold/5 rounded-full blur-3xl animate-pulse-slow" />
+        <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-gold-fade-light rounded-full blur-3xl animate-pulse-slow" />
         <div className="absolute bottom-1/4 left-1/4 w-72 h-72 bg-light-green/10 rounded-full blur-3xl animate-pulse-slow" style={{ animationDelay: '2s' }} />
       </div>
     </section>
