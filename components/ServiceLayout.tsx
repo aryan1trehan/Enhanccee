@@ -2,6 +2,7 @@
 
 import { ReactNode } from 'react'
 import Header from '@/components/Header'
+import RippleEffect from '@/components/RippleEffect'
 
 interface ServiceLayoutProps {
   title: string
@@ -29,8 +30,8 @@ export default function ServiceLayout({
           {/* Badge */}
           {badge && (
             <div className="mb-8 animate-slide-down">
-              <div className="inline-flex items-center gap-2 px-4 py-2 border border-gold bg-dark-green/50 backdrop-blur-sm">
-                <div className="w-2 h-2 bg-gold rounded-full" />
+              <div className="inline-flex items-center gap-2 px-4 py-2 border border-white bg-black/50 backdrop-blur-sm">
+                <div className="w-2 h-2 bg-white rounded-full" />
                 <span className="text-white text-xs font-semibold tracking-wider uppercase">
                   {badge}
                 </span>
@@ -42,7 +43,7 @@ export default function ServiceLayout({
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
             <span className="text-white">{title}</span>
             <br />
-            <span className="text-gold">{subtitle}</span>
+            <span className="text-white">{subtitle}</span>
           </h1>
 
           {/* Description */}
@@ -60,17 +61,19 @@ export default function ServiceLayout({
       </section>
 
       {/* Footer */}
-      <footer className="border-t border-gold/20 px-6 md:px-12 lg:px-16 py-8">
+      <footer className="border-t border-white/20 px-6 md:px-12 lg:px-16 py-8">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-white/60 text-sm">
             © 2026 Enhanccee. All rights reserved.
           </p>
-          <a
-            href="/"
-            className="text-white/60 text-sm hover:text-gold transition-colors duration-300"
-          >
-            Back to Home
-          </a>
+          <RippleEffect className="inline-block">
+            <a
+              href="/"
+              className="text-white/60 text-sm hover:text-white transition-colors duration-300 relative z-10"
+            >
+              Back to Home
+            </a>
+          </RippleEffect>
         </div>
       </footer>
     </div>

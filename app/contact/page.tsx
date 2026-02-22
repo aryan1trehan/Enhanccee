@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import Header from '@/components/Header'
+import RippleEffect from '@/components/RippleEffect'
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -86,12 +87,14 @@ export default function ContactPage() {
                     d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
                   />
                 </svg>
-                <a
-                  href="tel:+917891368868"
-                  className="text-gold/90 text-base hover:text-gold transition-colors duration-300"
-                >
-                  +91 7891368868
-                </a>
+                <RippleEffect className="inline-block">
+                  <a
+                    href="tel:+917891368868"
+                    className="text-gold/90 text-base hover:text-gold transition-colors duration-300 relative z-10"
+                  >
+                    +91 7891368868
+                  </a>
+                </RippleEffect>
               </div>
               <div className="flex items-center gap-3">
                 <svg
@@ -107,12 +110,14 @@ export default function ContactPage() {
                     d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
                   />
                 </svg>
-                <a
-                  href="mailto:info@enhanccee.com"
-                  className="text-gold/90 text-base hover:text-gold transition-colors duration-300"
-                >
-                  info@enhanccee.com
-                </a>
+                <RippleEffect className="inline-block">
+                  <a
+                    href="mailto:info@enhanccee.com"
+                    className="text-gold/90 text-base hover:text-gold transition-colors duration-300 relative z-10"
+                  >
+                    info@enhanccee.com
+                  </a>
+                </RippleEffect>
               </div>
             </div>
           </div>
@@ -251,12 +256,14 @@ export default function ContactPage() {
 
               {/* Submit Button */}
               <div className="pt-4">
-                <button
-                  type="submit"
-                  className="w-full bg-dark-green text-gold px-8 py-4 rounded-lg font-semibold text-base transition-all duration-300 hover:bg-dark-teal hover:scale-105 hover:shadow-xl hover:shadow-gold/20 active:scale-95"
-                >
-                  Submit
-                </button>
+                <RippleEffect className="block">
+                  <button
+                    type="submit"
+                    className="w-full bg-dark-green text-gold px-8 py-4 rounded-lg font-semibold text-base transition-all duration-300 hover:bg-dark-teal hover:scale-105 hover:shadow-xl hover:shadow-gold/20 active:scale-95 relative z-10"
+                  >
+                    Submit
+                  </button>
+                </RippleEffect>
               </div>
             </form>
           </div>
@@ -290,17 +297,18 @@ export default function ContactPage() {
                   'We share a clear direction & action plan. If aligned, we begin your brand transformation.',
               },
             ].map((item, index) => (
-              <div
-                key={index}
-                className="bg-dark-green border border-gold p-8 transition-all duration-300 hover:border-gold/80 hover:shadow-lg hover:shadow-gold/20"
-              >
+              <RippleEffect key={index} className="block">
+                <div
+                  className="bg-dark-green border border-gold p-8 transition-all duration-300 hover:border-gold/80 hover:shadow-lg hover:shadow-gold/20 relative z-10"
+                >
                 <h3 className="text-gold text-lg font-semibold mb-4">
                   {item.step}
                 </h3>
                 <p className="text-white text-base leading-relaxed">
                   {item.description}
                 </p>
-              </div>
+                </div>
+              </RippleEffect>
             ))}
           </div>
         </div>
@@ -312,12 +320,14 @@ export default function ContactPage() {
           <p className="text-white/60 text-sm">
             © 2026 Enhanccee. All rights reserved.
           </p>
-          <a
-            href="/"
-            className="text-white/60 text-sm hover:text-gold transition-colors duration-300"
-          >
-            Back to Home
-          </a>
+          <RippleEffect className="inline-block">
+            <a
+              href="/"
+              className="text-white/60 text-sm hover:text-gold transition-colors duration-300 relative z-10"
+            >
+              Back to Home
+            </a>
+          </RippleEffect>
         </div>
       </footer>
     </div>

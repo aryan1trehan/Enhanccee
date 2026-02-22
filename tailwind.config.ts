@@ -9,19 +9,19 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        'dark-green': '#090D0F',
-        'light-green': '#2D4F49',
-        'gold': '#d4af37',
-        'gold-light': '#E8D47A',
-        'gold-dark': '#B8941F',
-        'gold-fade': 'rgba(212, 175, 55, 0.3)',
-        'gold-fade-light': 'rgba(212, 175, 55, 0.1)',
-        'gold-fade-medium': 'rgba(212, 175, 55, 0.5)',
-        'cream': '#E0E0C8',
-        'dark-teal': '#1A2B2B',
+        'dark-green': '#000000',
+        'light-green': '#1A1A1A',
+        'gold': '#FFFFFF',
+        'gold-light': '#E5E5E5',
+        'gold-dark': '#CCCCCC',
+        'gold-fade': 'rgba(255, 255, 255, 0.3)',
+        'gold-fade-light': 'rgba(255, 255, 255, 0.1)',
+        'gold-fade-medium': 'rgba(255, 255, 255, 0.5)',
+        'cream': '#F5F5F5',
+        'dark-teal': '#0A0A0A',
       },
       backgroundImage: {
-        'grid-pattern': 'linear-gradient(rgba(45, 79, 73, 0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(45, 79, 73, 0.1) 1px, transparent 1px)',
+        'grid-pattern': 'linear-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.1) 1px, transparent 1px)',
       },
       backgroundSize: {
         'grid': '40px 40px',
@@ -37,6 +37,7 @@ const config: Config = {
         'float': 'float 6s ease-in-out infinite',
         'glow': 'glow 2s ease-in-out infinite alternate',
         'shimmer': 'shimmer 2s linear infinite',
+        'water-ripple': 'water-ripple 2.5s ease-out forwards',
       },
       keyframes: {
         fadeIn: {
@@ -68,12 +69,19 @@ const config: Config = {
           '50%': { transform: 'translateY(-20px)' },
         },
         glow: {
-          '0%': { boxShadow: '0 0 5px rgba(212, 175, 55, 0.2)' },
-          '100%': { boxShadow: '0 0 20px rgba(212, 175, 55, 0.6)' },
+          '0%': { boxShadow: '0 0 5px rgba(255, 255, 255, 0.2)' },
+          '100%': { boxShadow: '0 0 20px rgba(255, 255, 255, 0.6)' },
         },
         shimmer: {
           '0%': { backgroundPosition: '-1000px 0' },
           '100%': { backgroundPosition: '1000px 0' },
+        },
+        'water-ripple': {
+          '0%': { transform: 'translate(-50%, -50%) scale(0)', opacity: '0.9' },
+          '25%': { opacity: '0.7' },
+          '50%': { opacity: '0.5' },
+          '75%': { opacity: '0.2' },
+          '100%': { transform: 'translate(-50%, -50%) scale(2.5)', opacity: '0' },
         },
       },
     },

@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useRef, useState } from 'react'
+import RippleEffect from '@/components/RippleEffect'
 
 interface Service {
   icon: React.ReactNode
@@ -187,7 +188,7 @@ export default function ServicesSection() {
                 : 'opacity-0 -translate-y-4'
             }`}
           >
-            <div className="px-4 py-2 bg-dark-green/80 border border-light-green/30 backdrop-blur-sm">
+            <div className="px-4 py-2 bg-black/80 border border-white/30 backdrop-blur-sm">
               <span className="text-white text-xs font-semibold tracking-wider uppercase">
                 OUR SERVICES
               </span>
@@ -205,7 +206,7 @@ export default function ServicesSection() {
           >
             <span className="text-white">Strategic Excellence</span>
             <br />
-            <span className="text-gold">Across Every Dimension</span>
+            <span className="text-white">Across Every Dimension</span>
           </h2>
 
           {/* Subtitle */}
@@ -229,17 +230,17 @@ export default function ServicesSection() {
               <>
                 {/* Icon */}
                 <div
-                  className={`w-14 h-14 bg-gold flex items-center justify-center text-dark-green mb-6 transition-all duration-500 ${
+                  className={`w-14 h-14 bg-white flex items-center justify-center text-black mb-6 transition-all duration-500 ${
                     hoveredCard === index
-                      ? 'scale-125 rotate-6 shadow-xl shadow-gold/60 animate-pulse-slow'
-                      : 'group-hover:scale-110 group-hover:rotate-3 group-hover:shadow-lg group-hover:shadow-gold/40'
+                      ? 'scale-125 rotate-6 shadow-xl shadow-white/60 animate-pulse-slow'
+                      : 'group-hover:scale-110 group-hover:rotate-3 group-hover:shadow-lg group-hover:shadow-white/40'
                   }`}
                 >
                   {service.icon}
                 </div>
 
                 {/* Title */}
-                <h3 className="text-2xl font-bold text-white mb-4 transition-colors duration-300 group-hover:text-gold">
+                <h3 className="text-2xl font-bold text-white mb-4 transition-colors duration-300 group-hover:text-white">
                   {service.title}
                 </h3>
 
@@ -248,63 +249,65 @@ export default function ServicesSection() {
                   {service.description}
                 </p>
 
-                {/* Hover Effect - Gold Glow */}
+                {/* Hover Effect - White Glow */}
                 <div
-                  className={`absolute inset-0 bg-gold-fade-light opacity-0 transition-opacity duration-500 ${
+                  className={`absolute inset-0 bg-white/10 opacity-0 transition-opacity duration-500 ${
                     hoveredCard === index ? 'opacity-100' : ''
                   }`}
                 />
 
                 {/* Decorative Corner Accent */}
                 <div
-                  className={`absolute top-0 right-0 w-20 h-20 border-t-2 border-r-2 border-gold/0 transition-all duration-500 ${
-                    hoveredCard === index ? 'border-gold/50' : ''
+                  className={`absolute top-0 right-0 w-20 h-20 border-t-2 border-r-2 border-white/0 transition-all duration-500 ${
+                    hoveredCard === index ? 'border-white/50' : ''
                   }`}
                 />
               </>
             )
 
             return service.href ? (
-              <a
-                key={index}
-                href={service.href}
-                className={`group relative bg-dark-green/60 backdrop-blur-sm border border-light-green/20 p-8 transition-all duration-700 cursor-pointer block ${
-                  isVisible
-                    ? 'opacity-100 translate-y-0'
-                    : 'opacity-0 translate-y-8'
-                } ${
-                  hoveredCard === index
-                    ? 'border-gold/50 bg-dark-green/80 shadow-2xl shadow-gold/30 scale-105 -translate-y-2'
-                    : 'hover:border-gold/30 hover:bg-dark-green/70 hover:shadow-xl hover:shadow-gold/10 hover:-translate-y-1'
-                }`}
-                style={{
-                  transitionDelay: `${0.6 + index * 0.15}s`,
-                }}
-                onMouseEnter={() => setHoveredCard(index)}
-                onMouseLeave={() => setHoveredCard(null)}
-              >
-                {CardContent}
-              </a>
+              <RippleEffect key={index} className="block">
+                <a
+                  href={service.href}
+                  className={`group relative bg-black/60 backdrop-blur-sm border border-white/20 p-8 transition-all duration-700 cursor-pointer block ${
+                    isVisible
+                      ? 'opacity-100 translate-y-0'
+                      : 'opacity-0 translate-y-8'
+                  } ${
+                    hoveredCard === index
+                      ? 'border-white/50 bg-black/80 shadow-2xl shadow-white/30 scale-105 -translate-y-2'
+                      : 'hover:border-white/30 hover:bg-black/70 hover:shadow-xl hover:shadow-white/10 hover:-translate-y-1'
+                  } relative z-10`}
+                  style={{
+                    transitionDelay: `${0.6 + index * 0.15}s`,
+                  }}
+                  onMouseEnter={() => setHoveredCard(index)}
+                  onMouseLeave={() => setHoveredCard(null)}
+                >
+                  {CardContent}
+                </a>
+              </RippleEffect>
             ) : (
-              <div
-                key={index}
-                className={`group relative bg-dark-green/60 backdrop-blur-sm border border-light-green/20 p-8 transition-all duration-700 cursor-pointer ${
-                  isVisible
-                    ? 'opacity-100 translate-y-0'
-                    : 'opacity-0 translate-y-8'
-                } ${
-                  hoveredCard === index
-                    ? 'border-gold/50 bg-dark-green/80 shadow-2xl shadow-gold/30 scale-105 -translate-y-2'
-                    : 'hover:border-gold/30 hover:bg-dark-green/70 hover:shadow-xl hover:shadow-gold/10 hover:-translate-y-1'
-                }`}
-                style={{
-                  transitionDelay: `${0.6 + index * 0.15}s`,
-                }}
-                onMouseEnter={() => setHoveredCard(index)}
-                onMouseLeave={() => setHoveredCard(null)}
-              >
-                {CardContent}
-              </div>
+              <RippleEffect key={index} className="block">
+                <div
+                  className={`group relative bg-black/60 backdrop-blur-sm border border-white/20 p-8 transition-all duration-700 cursor-pointer ${
+                    isVisible
+                      ? 'opacity-100 translate-y-0'
+                      : 'opacity-0 translate-y-8'
+                  } ${
+                    hoveredCard === index
+                      ? 'border-white/50 bg-black/80 shadow-2xl shadow-white/30 scale-105 -translate-y-2'
+                      : 'hover:border-white/30 hover:bg-black/70 hover:shadow-xl hover:shadow-white/10 hover:-translate-y-1'
+                  } relative z-10`}
+                  style={{
+                    transitionDelay: `${0.6 + index * 0.15}s`,
+                  }}
+                  onMouseEnter={() => setHoveredCard(index)}
+                  onMouseLeave={() => setHoveredCard(null)}
+                >
+                  {CardContent}
+                </div>
+              </RippleEffect>
             )
           })}
         </div>
@@ -312,8 +315,8 @@ export default function ServicesSection() {
 
       {/* Decorative Background Elements */}
       <div className="absolute top-0 left-0 w-full h-full pointer-events-none overflow-hidden">
-        <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-gold-fade-light rounded-full blur-3xl animate-pulse-slow" />
-        <div className="absolute bottom-1/4 left-1/4 w-72 h-72 bg-gold-fade-light rounded-full blur-3xl animate-pulse-slow" style={{ animationDelay: '2s' }} />
+        <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-white/5 rounded-full blur-3xl animate-pulse-slow" />
+        <div className="absolute bottom-1/4 left-1/4 w-72 h-72 bg-white/5 rounded-full blur-3xl animate-pulse-slow" style={{ animationDelay: '2s' }} />
       </div>
     </section>
   )

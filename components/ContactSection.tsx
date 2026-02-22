@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useRef, useState } from 'react'
+import RippleEffect from '@/components/RippleEffect'
 
 export default function ContactSection() {
   const [isVisible, setIsVisible] = useState(false)
@@ -48,9 +49,9 @@ export default function ContactSection() {
               : 'opacity-0 -translate-y-4'
           }`}
         >
-          <div className="px-6 py-2 border border-gold bg-dark-green flex items-center gap-2">
+          <div className="px-6 py-2 border border-white bg-black flex items-center gap-2">
             <svg
-              className="w-4 h-4 text-gold"
+              className="w-4 h-4 text-white"
               fill="currentColor"
               viewBox="0 0 20 20"
             >
@@ -73,7 +74,7 @@ export default function ContactSection() {
         >
           <span className="text-white">Ready to Stand Above</span>
           <br />
-          <span className="text-gold">the Noise?</span>
+          <span className="text-white">the Noise?</span>
         </h2>
 
         {/* Descriptive Text */}
@@ -97,25 +98,27 @@ export default function ContactSection() {
           }`}
           style={{ animationDelay: '0.6s' }}
         >
-          <a
-            href="/contact"
-            className="bg-gradient-to-r from-gold to-gold-dark text-dark-green px-10 py-5 rounded-lg font-semibold text-lg transition-all duration-300 hover:from-gold-light hover:to-gold hover:scale-110 hover:shadow-2xl hover:shadow-gold/60 hover:-translate-y-1 flex items-center justify-center gap-2 mx-auto group active:scale-95 animate-pulse-slow inline-block"
-          >
-            Hire Us
-            <svg
-              className="w-5 h-5 text-dark-green transition-transform duration-300 group-hover:translate-x-2 group-hover:scale-110"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
+          <RippleEffect className="inline-block">
+            <a
+              href="/contact"
+              className="bg-gradient-to-r from-white to-gray-300 text-black px-10 py-5 rounded-lg font-semibold text-lg transition-all duration-300 hover:from-gray-200 hover:to-white hover:scale-110 hover:shadow-2xl hover:shadow-white/60 hover:-translate-y-1 flex items-center justify-center gap-2 mx-auto group active:scale-95 animate-pulse-slow inline-block relative z-10"
             >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M17 8l4 4m0 0l-4 4m4-4H3"
-              />
-            </svg>
-          </a>
+              Hire Us
+              <svg
+                className="w-5 h-5 text-black transition-transform duration-300 group-hover:translate-x-2 group-hover:scale-110"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M17 8l4 4m0 0l-4 4m4-4H3"
+                />
+              </svg>
+            </a>
+          </RippleEffect>
         </div>
 
         {/* Bottom Features */}
@@ -132,7 +135,7 @@ export default function ContactSection() {
               key={index}
               className="flex items-center gap-3"
             >
-              <div className="w-2 h-2 bg-gold rounded-full flex-shrink-0" />
+              <div className="w-2 h-2 bg-white rounded-full flex-shrink-0" />
               <span className="text-white text-sm md:text-base">
                 {feature}
               </span>
@@ -143,8 +146,8 @@ export default function ContactSection() {
 
       {/* Decorative Background Elements */}
       <div className="absolute top-0 left-0 w-full h-full pointer-events-none overflow-hidden">
-        <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-gold-fade-light rounded-full blur-3xl animate-pulse-slow" />
-        <div className="absolute bottom-1/4 left-1/4 w-72 h-72 bg-light-green/10 rounded-full blur-3xl animate-pulse-slow" style={{ animationDelay: '2s' }} />
+        <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-white/5 rounded-full blur-3xl animate-pulse-slow" />
+        <div className="absolute bottom-1/4 left-1/4 w-72 h-72 bg-white/5 rounded-full blur-3xl animate-pulse-slow" style={{ animationDelay: '2s' }} />
       </div>
     </section>
   )

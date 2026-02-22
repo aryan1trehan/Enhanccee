@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useRef, useState } from 'react'
+import RippleEffect from '@/components/RippleEffect'
 
 export default function ClienteleSection() {
   const [isVisible, setIsVisible] = useState(false)
@@ -56,8 +57,8 @@ export default function ClienteleSection() {
                 : 'opacity-0 -translate-y-4'
             }`}
           >
-            <div className="px-6 py-2 border border-gold bg-dark-green flex items-center gap-2">
-              <div className="w-2 h-2 bg-gold rounded-full" />
+            <div className="px-6 py-2 border border-white bg-black flex items-center gap-2">
+              <div className="w-2 h-2 bg-white rounded-full" />
               <span className="text-white text-xs font-semibold tracking-wider uppercase">
                 TRUSTED BY
               </span>
@@ -74,7 +75,7 @@ export default function ClienteleSection() {
             style={{ animationDelay: '0.2s' }}
           >
             <span className="text-white">Our </span>
-            <span className="text-gold">Clientele</span>
+            <span className="text-white">Clientele</span>
           </h2>
 
           {/* Subtitle */}
@@ -93,34 +94,35 @@ export default function ClienteleSection() {
         {/* Clients Grid */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 mb-12">
           {clients.map((client, index) => (
-            <div
-              key={index}
-              className={`group relative bg-dark-green border border-gold p-8 md:p-12 flex items-center justify-center min-h-[120px] md:min-h-[150px] transition-all duration-700 cursor-pointer shadow-lg ${
-                isVisible
-                  ? 'opacity-100 scale-100'
-                  : 'opacity-0 scale-95'
-                } ${
-                  hoveredClient === index
-                    ? 'border-gold/80 bg-light-green/30 shadow-2xl shadow-gold/30 scale-110 -translate-y-2 animate-glow'
-                    : 'hover:border-gold/60 hover:bg-light-green/20 hover:shadow-xl hover:shadow-gold/10 hover:scale-105 hover:-translate-y-1'
-                }`}
-              style={{
-                transitionDelay: `${0.6 + index * 0.1}s`,
-              }}
-              onMouseEnter={() => setHoveredClient(index)}
-              onMouseLeave={() => setHoveredClient(null)}
-            >
-              <p className="text-white font-medium text-sm md:text-base transition-colors duration-300 group-hover:text-gold">
-                {client}
-              </p>
-
-              {/* Hover Effect - Gold Glow */}
+            <RippleEffect key={index} className="block">
               <div
-                className={`absolute inset-0 bg-gold-fade-light opacity-0 transition-opacity duration-500 ${
-                  hoveredClient === index ? 'opacity-100' : ''
-                }`}
-              />
-            </div>
+                className={`group relative bg-black border border-white p-8 md:p-12 flex items-center justify-center min-h-[120px] md:min-h-[150px] transition-all duration-700 cursor-pointer shadow-lg relative z-10 ${
+                  isVisible
+                    ? 'opacity-100 scale-100'
+                    : 'opacity-0 scale-95'
+                  } ${
+                    hoveredClient === index
+                      ? 'border-white/80 bg-white/10 shadow-2xl shadow-white/30 scale-110 -translate-y-2 animate-glow'
+                      : 'hover:border-white/60 hover:bg-white/5 hover:shadow-xl hover:shadow-white/10 hover:scale-105 hover:-translate-y-1'
+                  }`}
+                style={{
+                  transitionDelay: `${0.6 + index * 0.1}s`,
+                }}
+                onMouseEnter={() => setHoveredClient(index)}
+                onMouseLeave={() => setHoveredClient(null)}
+              >
+                <p className="text-white font-medium text-sm md:text-base transition-colors duration-300 group-hover:text-white">
+                  {client}
+                </p>
+
+                {/* Hover Effect - White Glow */}
+                <div
+                  className={`absolute inset-0 bg-white/10 opacity-0 transition-opacity duration-500 ${
+                    hoveredClient === index ? 'opacity-100' : ''
+                  }`}
+                />
+              </div>
+            </RippleEffect>
           ))}
         </div>
 
@@ -133,29 +135,31 @@ export default function ClienteleSection() {
           }`}
           style={{ animationDelay: '1.4s' }}
         >
-          <button className="bg-dark-green border-2 border-gold text-white px-8 py-4 rounded-lg font-semibold text-base transition-all duration-300 hover:bg-gold hover:text-dark-green hover:scale-110 hover:shadow-2xl hover:shadow-gold/60 hover:-translate-y-1 flex items-center justify-center gap-2 mx-auto group active:scale-95">
-            View All Clients
-            <svg
-              className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-2 group-hover:scale-110"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M17 8l4 4m0 0l-4 4m4-4H3"
-              />
-            </svg>
-          </button>
+          <RippleEffect className="inline-block">
+            <button className="bg-black border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-base transition-all duration-300 hover:bg-white hover:text-black hover:scale-110 hover:shadow-2xl hover:shadow-white/60 hover:-translate-y-1 flex items-center justify-center gap-2 mx-auto group active:scale-95 relative z-10">
+              View All Clients
+              <svg
+                className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-2 group-hover:scale-110"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M17 8l4 4m0 0l-4 4m4-4H3"
+                />
+              </svg>
+            </button>
+          </RippleEffect>
         </div>
       </div>
 
       {/* Decorative Background Elements */}
       <div className="absolute top-0 left-0 w-full h-full pointer-events-none overflow-hidden">
-        <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-gold-fade-light rounded-full blur-3xl animate-pulse-slow" />
-        <div className="absolute bottom-1/4 left-1/4 w-72 h-72 bg-light-green/10 rounded-full blur-3xl animate-pulse-slow" style={{ animationDelay: '2s' }} />
+        <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-white/5 rounded-full blur-3xl animate-pulse-slow" />
+        <div className="absolute bottom-1/4 left-1/4 w-72 h-72 bg-white/5 rounded-full blur-3xl animate-pulse-slow" style={{ animationDelay: '2s' }} />
       </div>
     </section>
   )

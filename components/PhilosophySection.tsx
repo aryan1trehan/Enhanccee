@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useRef, useState } from 'react'
+import RippleEffect from '@/components/RippleEffect'
 
 interface Feature {
   icon: React.ReactNode
@@ -98,7 +99,7 @@ export default function PhilosophySection() {
     <section
       ref={sectionRef}
       id="philosophy"
-      className="relative min-h-screen bg-dark-green flex items-center justify-center px-6 md:px-12 lg:px-16 py-20"
+      className="relative min-h-screen bg-white flex items-center justify-center px-6 md:px-12 lg:px-16 py-20"
     >
       <div className="max-w-7xl mx-auto w-full">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
@@ -112,9 +113,9 @@ export default function PhilosophySection() {
                   : 'opacity-0 -translate-y-4'
               }`}
             >
-              <div className="inline-flex items-center gap-2 px-4 py-2 border border-gold bg-dark-green/50 backdrop-blur-sm">
-                <div className="w-2 h-2 bg-gold rounded-full" />
-                <span className="text-white text-xs font-semibold tracking-wider uppercase">
+              <div className="inline-flex items-center gap-2 px-4 py-2 border border-black bg-white/50 backdrop-blur-sm">
+                <div className="w-2 h-2 bg-black rounded-full" />
+                <span className="text-black text-xs font-semibold tracking-wider uppercase">
                   OUR PHILOSOPHY
                 </span>
               </div>
@@ -122,7 +123,7 @@ export default function PhilosophySection() {
 
             {/* Main Heading */}
             <h2
-              className={`text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight transition-all duration-1000 ${
+              className={`text-4xl md:text-5xl lg:text-6xl font-bold text-black leading-tight transition-all duration-1000 ${
                 isVisible
                   ? 'opacity-100 translate-y-0'
                   : 'opacity-0 translate-y-4'
@@ -136,7 +137,7 @@ export default function PhilosophySection() {
 
             {/* Subheading */}
             <p
-              className={`text-xl md:text-2xl text-gold font-medium transition-all duration-1000 ${
+              className={`text-xl md:text-2xl text-black font-medium transition-all duration-1000 ${
                 isVisible
                   ? 'opacity-100 translate-y-0'
                   : 'opacity-0 translate-y-4'
@@ -148,7 +149,7 @@ export default function PhilosophySection() {
 
             {/* Paragraph */}
             <p
-              className={`text-lg text-white/80 leading-relaxed transition-all duration-1000 ${
+              className={`text-lg text-black/80 leading-relaxed transition-all duration-1000 ${
                 isVisible
                   ? 'opacity-100 translate-y-0'
                   : 'opacity-0 translate-y-4'
@@ -170,73 +171,76 @@ export default function PhilosophySection() {
               }`}
               style={{ animationDelay: '0.8s' }}
             >
-              <button className="bg-gold text-dark-green px-8 py-4 rounded-lg font-semibold text-base transition-all duration-300 hover:bg-gold-light hover:scale-110 hover:shadow-2xl hover:shadow-gold/60 hover:-translate-y-1 flex items-center justify-center gap-2 group active:scale-95">
-                Explore Our Methodology
-                <svg
-                  className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-2 group-hover:scale-110"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M17 8l4 4m0 0l-4 4m4-4H3"
-                  />
-                </svg>
-              </button>
+              <RippleEffect className="inline-block" color="black">
+                <button className="bg-black text-white px-8 py-4 rounded-lg font-semibold text-base transition-all duration-300 hover:bg-gray-800 hover:scale-110 hover:shadow-2xl hover:shadow-black/60 hover:-translate-y-1 flex items-center justify-center gap-2 group active:scale-95 relative z-10">
+                  Explore Our Methodology
+                  <svg
+                    className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-2 group-hover:scale-110"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M17 8l4 4m0 0l-4 4m4-4H3"
+                    />
+                  </svg>
+                </button>
+              </RippleEffect>
             </div>
           </div>
 
           {/* Right Column - Feature Cards */}
           <div className="space-y-6">
             {features.map((feature, index) => (
-              <div
-                key={index}
-                className={`group relative bg-dark-green/60 backdrop-blur-sm border border-light-green/20 p-6 transition-all duration-500 cursor-pointer ${
-                  isVisible
-                    ? 'opacity-100 translate-x-0'
-                    : 'opacity-0 translate-x-8'
-                } ${
-                  hoveredCard === index
-                    ? 'border-gold/50 bg-dark-green/80 shadow-2xl shadow-gold/30 scale-105 -translate-y-2 animate-glow'
-                    : 'hover:border-gold/30 hover:bg-dark-green/70 hover:shadow-xl hover:shadow-gold/10 hover:-translate-y-1'
-                }`}
-                style={{
-                  animationDelay: `${1 + index * 0.15}s`,
-                }}
-                onMouseEnter={() => setHoveredCard(index)}
-                onMouseLeave={() => setHoveredCard(null)}
-              >
+              <RippleEffect key={index} className="block" color="black">
+                <div
+                  className={`group relative bg-white/60 backdrop-blur-sm border border-black/20 p-6 transition-all duration-500 cursor-pointer relative z-10 ${
+                    isVisible
+                      ? 'opacity-100 translate-x-0'
+                      : 'opacity-0 translate-x-8'
+                  } ${
+                    hoveredCard === index
+                      ? 'border-black/50 bg-white/80 shadow-2xl shadow-black/30 scale-105 -translate-y-2 animate-glow'
+                      : 'hover:border-black/30 hover:bg-white/70 hover:shadow-xl hover:shadow-black/10 hover:-translate-y-1'
+                  }`}
+                  style={{
+                    animationDelay: `${1 + index * 0.15}s`,
+                  }}
+                  onMouseEnter={() => setHoveredCard(index)}
+                  onMouseLeave={() => setHoveredCard(null)}
+                >
                 {/* Icon and Title Row */}
                 <div className="flex items-center gap-4 mb-4">
                   <div
-                    className={`w-12 h-12 bg-gold flex items-center justify-center text-dark-green transition-all duration-500 ${
+                    className={`w-12 h-12 bg-black flex items-center justify-center text-white transition-all duration-500 ${
                       hoveredCard === index
-                        ? 'scale-125 rotate-6 shadow-xl shadow-gold/60 animate-pulse-slow'
-                        : 'group-hover:scale-110 group-hover:rotate-3 group-hover:shadow-lg group-hover:shadow-gold/40'
+                        ? 'scale-125 rotate-6 shadow-xl shadow-black/60 animate-pulse-slow'
+                        : 'group-hover:scale-110 group-hover:rotate-3 group-hover:shadow-lg group-hover:shadow-black/40'
                     }`}
                   >
                     {feature.icon}
                   </div>
-                  <h3 className="text-xl font-bold text-white transition-colors duration-300 group-hover:text-gold">
+                  <h3 className="text-xl font-bold text-black transition-colors duration-300 group-hover:text-black">
                     {feature.title}
                   </h3>
                 </div>
 
                 {/* Description */}
-                <p className="text-white/70 leading-relaxed transition-colors duration-300 group-hover:text-white/90 ml-16">
+                <p className="text-black/70 leading-relaxed transition-colors duration-300 group-hover:text-black/90 ml-16">
                   {feature.description}
                 </p>
 
-                {/* Hover Effect - Gold Glow */}
+                {/* Hover Effect - Black Glow */}
                 <div
-                  className={`absolute inset-0 bg-gold-fade-light opacity-0 transition-opacity duration-500 ${
+                  className={`absolute inset-0 bg-black/5 opacity-0 transition-opacity duration-500 ${
                     hoveredCard === index ? 'opacity-100' : ''
                   }`}
                 />
-              </div>
+                </div>
+              </RippleEffect>
             ))}
           </div>
         </div>
@@ -244,8 +248,8 @@ export default function PhilosophySection() {
 
       {/* Decorative Background Elements */}
       <div className="absolute top-0 left-0 w-full h-full pointer-events-none overflow-hidden">
-        <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-gold-fade-light rounded-full blur-3xl animate-pulse-slow" />
-        <div className="absolute bottom-1/4 left-1/4 w-72 h-72 bg-light-green/10 rounded-full blur-3xl animate-pulse-slow" style={{ animationDelay: '2s' }} />
+        <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-black/5 rounded-full blur-3xl animate-pulse-slow" />
+        <div className="absolute bottom-1/4 left-1/4 w-72 h-72 bg-black/5 rounded-full blur-3xl animate-pulse-slow" style={{ animationDelay: '2s' }} />
       </div>
     </section>
   )

@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useRef, useState } from 'react'
+import RippleEffect from '@/components/RippleEffect'
 
 interface Statistic {
   value: string
@@ -94,7 +95,7 @@ export default function ResultsSection() {
     <section
       ref={sectionRef}
       id="results"
-      className="relative bg-dark-green px-6 md:px-12 lg:px-16 py-20"
+      className="relative bg-white px-6 md:px-12 lg:px-16 py-20"
     >
       <div className="max-w-7xl mx-auto w-full">
         {/* Part 1: Numbers That Speak Louder Than Words */}
@@ -109,8 +110,8 @@ export default function ResultsSection() {
                   : 'opacity-0 -translate-y-4'
               }`}
             >
-              <div className="px-4 py-2 bg-gold">
-                <span className="text-dark-green text-xs font-semibold tracking-wider uppercase">
+              <div className="px-4 py-2 bg-black">
+                <span className="text-white text-xs font-semibold tracking-wider uppercase">
                   PROVEN RESULTS
                 </span>
               </div>
@@ -125,46 +126,47 @@ export default function ResultsSection() {
               }`}
               style={{ animationDelay: '0.2s' }}
             >
-              <span className="text-white">Numbers That Speak</span>
+              <span className="text-black">Numbers That Speak</span>
               <br />
-              <span className="text-gold">Louder Than Words</span>
+              <span className="text-black">Louder Than Words</span>
             </h2>
           </div>
 
           {/* Statistics Cards */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
             {statistics.map((stat, index) => (
-              <div
-                key={index}
-                className={`group relative bg-light-green/30 border border-gold/30 p-6 md:p-8 text-center transition-all duration-500 cursor-pointer ${
-                  isVisible
-                    ? 'opacity-100 scale-100'
-                    : 'opacity-0 scale-95'
-                } ${
-                  hoveredStat === index
-                    ? 'border-gold/80 bg-light-green/50 shadow-2xl shadow-gold/30 scale-110 -translate-y-2 animate-glow'
-                    : 'hover:border-gold/60 hover:bg-light-green/40 hover:shadow-xl hover:shadow-gold/10 hover:scale-105 hover:-translate-y-1'
-                }`}
-                style={{
-                  transitionDelay: `${0.4 + index * 0.15}s`,
-                }}
-                onMouseEnter={() => setHoveredStat(index)}
-                onMouseLeave={() => setHoveredStat(null)}
-              >
-                <div className="text-4xl md:text-5xl font-bold text-white mb-2 transition-colors duration-300 group-hover:text-gold">
-                  {stat.value}
-                </div>
-                <p className="text-white/70 text-sm md:text-base transition-colors duration-300 group-hover:text-white/90">
-                  {stat.label}
-                </p>
-
-                {/* Hover Effect */}
+              <RippleEffect key={index} className="block" color="black">
                 <div
-                  className={`absolute inset-0 bg-gold-fade-light opacity-0 transition-opacity duration-500 ${
-                    hoveredStat === index ? 'opacity-100' : ''
+                  className={`group relative bg-black/5 border border-black/30 p-6 md:p-8 text-center transition-all duration-500 cursor-pointer relative z-10 ${
+                    isVisible
+                      ? 'opacity-100 scale-100'
+                      : 'opacity-0 scale-95'
+                  } ${
+                    hoveredStat === index
+                      ? 'border-black/80 bg-black/10 shadow-2xl shadow-black/30 scale-110 -translate-y-2 animate-glow'
+                      : 'hover:border-black/60 hover:bg-black/8 hover:shadow-xl hover:shadow-black/10 hover:scale-105 hover:-translate-y-1'
                   }`}
-                />
-              </div>
+                  style={{
+                    transitionDelay: `${0.4 + index * 0.15}s`,
+                  }}
+                  onMouseEnter={() => setHoveredStat(index)}
+                  onMouseLeave={() => setHoveredStat(null)}
+                >
+                  <div className="text-4xl md:text-5xl font-bold text-black mb-2 transition-colors duration-300 group-hover:text-black">
+                    {stat.value}
+                  </div>
+                  <p className="text-black/70 text-sm md:text-base transition-colors duration-300 group-hover:text-black/90">
+                    {stat.label}
+                  </p>
+
+                  {/* Hover Effect */}
+                  <div
+                    className={`absolute inset-0 bg-black/5 opacity-0 transition-opacity duration-500 ${
+                      hoveredStat === index ? 'opacity-100' : ''
+                    }`}
+                  />
+                </div>
+              </RippleEffect>
             ))}
           </div>
         </div>
@@ -173,7 +175,7 @@ export default function ResultsSection() {
         <div>
           {/* Header */}
           <h2
-            className={`text-4xl md:text-5xl font-bold text-white text-center mb-12 transition-all duration-1000 ${
+            className={`text-4xl md:text-5xl font-bold text-black text-center mb-12 transition-all duration-1000 ${
               isVisible
                 ? 'opacity-100 translate-y-0'
                 : 'opacity-0 translate-y-4'
@@ -186,41 +188,41 @@ export default function ResultsSection() {
           {/* Testimonial Cards */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
             {testimonials.map((testimonial, index) => (
-              <div
-                key={index}
-                className={`group relative bg-light-green/30 border border-gold/30 p-6 md:p-8 transition-all duration-700 cursor-pointer ${
-                  isVisible
-                    ? 'opacity-100 translate-y-0'
-                    : 'opacity-0 translate-y-8'
-                } ${
-                  hoveredTestimonial === index
-                    ? 'border-gold/80 bg-light-green/50 shadow-2xl shadow-gold/30 scale-105 -translate-y-2 animate-glow'
-                    : 'hover:border-gold/60 hover:bg-light-green/40 hover:shadow-xl hover:shadow-gold/10 hover:-translate-y-1'
-                }`}
-                style={{
-                  transitionDelay: `${1 + index * 0.2}s`,
-                }}
-                onMouseEnter={() => setHoveredTestimonial(index)}
-                onMouseLeave={() => setHoveredTestimonial(null)}
-              >
+              <RippleEffect key={index} className="block" color="black">
+                <div
+                  className={`group relative bg-black/5 border border-black/30 p-6 md:p-8 transition-all duration-700 cursor-pointer relative z-10 ${
+                    isVisible
+                      ? 'opacity-100 translate-y-0'
+                      : 'opacity-0 translate-y-8'
+                  } ${
+                    hoveredTestimonial === index
+                      ? 'border-black/80 bg-black/10 shadow-2xl shadow-black/30 scale-105 -translate-y-2 animate-glow'
+                      : 'hover:border-black/60 hover:bg-black/8 hover:shadow-xl hover:shadow-black/10 hover:-translate-y-1'
+                  }`}
+                  style={{
+                    transitionDelay: `${1 + index * 0.2}s`,
+                  }}
+                  onMouseEnter={() => setHoveredTestimonial(index)}
+                  onMouseLeave={() => setHoveredTestimonial(null)}
+                >
                 {/* Quote */}
-                <p className="text-white text-base md:text-lg leading-relaxed mb-6 relative z-10 transition-colors duration-300 group-hover:text-white/95">
+                <p className="text-black text-base md:text-lg leading-relaxed mb-6 relative z-10 transition-colors duration-300 group-hover:text-black/95">
                   "{testimonial.quote}"
                 </p>
 
                 {/* Author Info */}
                 <div className="flex items-center gap-4 relative z-10">
                   {/* Initials Circle */}
-                  <div className="w-12 h-12 bg-gold rounded-full flex items-center justify-center text-dark-green font-semibold text-sm flex-shrink-0 transition-all duration-300 group-hover:scale-110">
+                  <div className="w-12 h-12 bg-black rounded-full flex items-center justify-center text-white font-semibold text-sm flex-shrink-0 transition-all duration-300 group-hover:scale-110">
                     {testimonial.initials}
                   </div>
 
                   {/* Name and Title */}
                   <div>
-                    <p className="text-white font-bold text-sm md:text-base transition-colors duration-300 group-hover:text-gold">
+                    <p className="text-black font-bold text-sm md:text-base transition-colors duration-300 group-hover:text-black">
                       {testimonial.name}
                     </p>
-                    <p className="text-white/70 text-xs md:text-sm transition-colors duration-300 group-hover:text-white/90">
+                    <p className="text-black/70 text-xs md:text-sm transition-colors duration-300 group-hover:text-black/90">
                       {testimonial.title}, {testimonial.company}
                     </p>
                   </div>
@@ -228,11 +230,12 @@ export default function ResultsSection() {
 
                 {/* Hover Effect */}
                 <div
-                  className={`absolute inset-0 bg-gold-fade-light opacity-0 transition-opacity duration-500 ${
+                  className={`absolute inset-0 bg-black/5 opacity-0 transition-opacity duration-500 ${
                     hoveredTestimonial === index ? 'opacity-100' : ''
                   }`}
                 />
-              </div>
+                </div>
+              </RippleEffect>
             ))}
           </div>
         </div>
@@ -240,8 +243,8 @@ export default function ResultsSection() {
 
       {/* Decorative Background Elements */}
       <div className="absolute top-0 left-0 w-full h-full pointer-events-none overflow-hidden">
-        <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-gold-fade-light rounded-full blur-3xl animate-pulse-slow" />
-        <div className="absolute bottom-1/4 left-1/4 w-72 h-72 bg-light-green/10 rounded-full blur-3xl animate-pulse-slow" style={{ animationDelay: '2s' }} />
+        <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-black/5 rounded-full blur-3xl animate-pulse-slow" />
+        <div className="absolute bottom-1/4 left-1/4 w-72 h-72 bg-black/5 rounded-full blur-3xl animate-pulse-slow" style={{ animationDelay: '2s' }} />
       </div>
     </section>
   )

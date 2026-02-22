@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from 'react'
 import Link from 'next/link'
 import Header from '@/components/Header'
+import RippleEffect from '@/components/RippleEffect'
 
 interface Service {
   icon: React.ReactNode
@@ -181,24 +182,24 @@ export default function ServicesPage() {
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
             {allServices.map((service, index) => (
-              <Link
-                key={index}
-                href={service.href}
-                className={`group relative bg-dark-green/60 backdrop-blur-sm border border-light-green/20 p-8 transition-all duration-700 cursor-pointer block ${
-                  isVisible
-                    ? 'opacity-100 translate-y-0'
-                    : 'opacity-0 translate-y-8'
-                } ${
-                  hoveredService === index
-                    ? 'border-gold/50 bg-dark-green/80 shadow-2xl shadow-gold/30 scale-105 -translate-y-2'
-                    : 'hover:border-gold/30 hover:bg-dark-green/70 hover:shadow-xl hover:shadow-gold/10 hover:-translate-y-1'
-                }`}
-                style={{
-                  transitionDelay: `${0.6 + index * 0.1}s`,
-                }}
-                onMouseEnter={() => setHoveredService(index)}
-                onMouseLeave={() => setHoveredService(null)}
-              >
+              <RippleEffect key={index} className="block">
+                <Link
+                  href={service.href}
+                  className={`group relative bg-dark-green/60 backdrop-blur-sm border border-light-green/20 p-8 transition-all duration-700 cursor-pointer block relative z-10 ${
+                    isVisible
+                      ? 'opacity-100 translate-y-0'
+                      : 'opacity-0 translate-y-8'
+                  } ${
+                    hoveredService === index
+                      ? 'border-gold/50 bg-dark-green/80 shadow-2xl shadow-gold/30 scale-105 -translate-y-2'
+                      : 'hover:border-gold/30 hover:bg-dark-green/70 hover:shadow-xl hover:shadow-gold/10 hover:-translate-y-1'
+                  }`}
+                  style={{
+                    transitionDelay: `${0.6 + index * 0.1}s`,
+                  }}
+                  onMouseEnter={() => setHoveredService(index)}
+                  onMouseLeave={() => setHoveredService(null)}
+                >
                 {/* Icon */}
                 <div
                   className={`w-14 h-14 bg-gold flex items-center justify-center text-dark-green mb-6 transition-all duration-500 ${
@@ -256,7 +257,8 @@ export default function ServicesPage() {
                     hoveredService === index ? 'opacity-100' : ''
                   }`}
                 />
-              </Link>
+                </Link>
+              </RippleEffect>
             ))}
           </div>
         </div>
@@ -271,12 +273,14 @@ export default function ServicesPage() {
           <p className="text-lg text-white/80 mb-8">
             Let's discuss how we can help you achieve your goals
           </p>
-          <a
-            href="/contact"
-            className="bg-gold text-dark-green px-10 py-5 rounded-lg font-semibold text-lg transition-all duration-300 hover:bg-gold-light hover:scale-110 hover:shadow-2xl hover:shadow-gold/60 hover:-translate-y-1 inline-block active:scale-95"
-          >
-            Get Started
-          </a>
+          <RippleEffect className="inline-block">
+            <a
+              href="/contact"
+              className="bg-gold text-dark-green px-10 py-5 rounded-lg font-semibold text-lg transition-all duration-300 hover:bg-gold-light hover:scale-110 hover:shadow-2xl hover:shadow-gold/60 hover:-translate-y-1 inline-block active:scale-95 relative z-10"
+            >
+              Enquiry
+            </a>
+          </RippleEffect>
         </div>
       </section>
 
@@ -286,12 +290,14 @@ export default function ServicesPage() {
           <p className="text-white/60 text-sm">
             © 2026 Enhanccee. All rights reserved.
           </p>
-          <a
-            href="/"
-            className="text-white/60 text-sm hover:text-gold transition-colors duration-300"
-          >
-            Back to Home
-          </a>
+          <RippleEffect className="inline-block">
+            <a
+              href="/"
+              className="text-white/60 text-sm hover:text-gold transition-colors duration-300 relative z-10"
+            >
+              Back to Home
+            </a>
+          </RippleEffect>
         </div>
       </footer>
     </div>
