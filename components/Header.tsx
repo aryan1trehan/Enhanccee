@@ -8,22 +8,31 @@ export default function Header() {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-bg/95 backdrop-blur-sm border-b border-gold-dim">
-      <nav className="container mx-auto px-6 py-4">
+      <nav className="w-full max-w-[1920px] mx-auto px-6 py-4 relative">
         <div className="flex items-center justify-between">
-          <div className="flex-1"></div>
-          
-          {/* Desktop Navigation - Centered */}
-          <div className="hidden md:flex items-center space-x-8 flex-1 justify-center">
-            <Link href="/" className="text-cream hover:text-gold transition-colors">Home</Link>
-            <Link href="/services" className="text-cream hover:text-gold transition-colors">Services</Link>
-            <Link href="/seo" className="text-cream hover:text-gold transition-colors">SEO</Link>
-            <Link href="/meta" className="text-cream hover:text-gold transition-colors">Meta</Link>
+          {/* Logo - Left Side */}
+          <div className="flex-shrink-0">
+            <Link href="/" className="text-xl lg:text-2xl font-bold text-gold hover:text-gold-light transition-colors">
+              ENHANCE
+            </Link>
           </div>
 
-          {/* Right side spacer and Contact button */}
-          <div className="hidden md:flex items-center flex-1 justify-end">
-            <Link href="/contact" className="bg-gold text-bg px-6 py-2 rounded-lg font-semibold hover:bg-gold-light transition-all duration-300 hover:scale-105">
-              Contact
+          {/* Desktop Navigation - Centered */}
+          <div className="hidden md:flex items-center justify-center space-x-6 lg:space-x-10 xl:space-x-12 flex-1">
+            <Link href="/" className="text-xs lg:text-sm text-cream hover:text-gold transition-colors whitespace-nowrap uppercase tracking-wider">HOME</Link>
+            <Link href="/clientele" className="text-xs lg:text-sm text-cream hover:text-gold transition-colors whitespace-nowrap uppercase tracking-wider">CLIENTELE</Link>
+            <Link href="/services" className="text-xs lg:text-sm text-cream hover:text-gold transition-colors whitespace-nowrap uppercase tracking-wider">OUR SERVICES</Link>
+            <Link href="/#why-choose-us" className="text-xs lg:text-sm text-cream hover:text-gold transition-colors whitespace-nowrap uppercase tracking-wider">WHY CHOOSE US?</Link>
+            <Link href="/#blog" className="text-xs lg:text-sm text-cream hover:text-gold transition-colors whitespace-nowrap uppercase tracking-wider">BLOG</Link>
+          </div>
+
+          {/* Inquiry Button - Right Side */}
+          <div className="hidden md:flex items-center flex-shrink-0">
+            <Link 
+              href="/contact" 
+              className="bg-gold text-bg px-6 py-2 rounded-lg font-semibold text-xs lg:text-sm hover:bg-gold-light transition-all duration-300 hover:scale-105 uppercase tracking-wider whitespace-nowrap"
+            >
+              INQUIRY
             </Link>
           </div>
 
@@ -45,13 +54,12 @@ export default function Header() {
         {/* Mobile Menu */}
         {isMenuOpen && (
           <div className="md:hidden mt-4 pb-4 space-y-4">
-            <Link href="/" className="block text-cream hover:text-gold transition-colors">Home</Link>
-            <Link href="/services" className="block text-cream hover:text-gold transition-colors">Services</Link>
-            <Link href="/seo" className="block text-cream hover:text-gold transition-colors">SEO</Link>
-            <Link href="/meta" className="block text-cream hover:text-gold transition-colors">Meta</Link>
-            <Link href="/contact" className="block bg-gold text-bg px-6 py-2 rounded-lg font-semibold text-center">
-              Contact
-            </Link>
+            <Link href="/" className="block text-xs text-cream hover:text-gold transition-colors uppercase tracking-wider">HOME</Link>
+            <Link href="/clientele" className="block text-xs text-cream hover:text-gold transition-colors uppercase tracking-wider">CLIENTELE</Link>
+            <Link href="/services" className="block text-xs text-cream hover:text-gold transition-colors uppercase tracking-wider">OUR SERVICES</Link>
+            <Link href="/#why-choose-us" className="block text-xs text-cream hover:text-gold transition-colors uppercase tracking-wider">WHY CHOOSE US?</Link>
+            <Link href="/#blog" className="block text-xs text-cream hover:text-gold transition-colors uppercase tracking-wider">BLOG</Link>
+            <Link href="/contact" className="block bg-gold text-bg px-6 py-2 rounded-lg font-semibold text-xs text-center uppercase tracking-wider mt-4">INQUIRY</Link>
           </div>
         )}
       </nav>

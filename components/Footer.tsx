@@ -25,7 +25,7 @@ export default function Footer() {
             <a
               key={item.label}
               href={item.href}
-              className="flex items-center justify-center gap-2 rounded-full bg-emerald/40 hover:bg-teal/60 border border-gold-dim px-6 py-3 text-sm text-cream transition-all duration-300"
+              className="flex items-center justify-center gap-2 rounded-full bg-bg border border-gold-dim px-6 py-3 text-sm text-cream transition-all duration-300 hover:bg-bg"
             >
               <span className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-gold/10 text-gold text-xs">
                 ●
@@ -35,10 +35,10 @@ export default function Footer() {
           ))}
         </div>
 
-        {/* Bottom grid: brand + menus + contact */}
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-10 md:gap-14 mb-10">
+        {/* Bottom grid: brand left, nav + office grouped right */}
+        <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-10 md:gap-16 mb-10">
           {/* Brand + description + email capture */}
-          <div className="space-y-4">
+          <div className="space-y-4 md:max-w-md">
             <h3 className="text-xl text-gold">Enhanccee</h3>
             <p className="text-cream-dim text-sm leading-relaxed">
               We combine strategy, creativity, and technology to help brands grow in today&apos;s
@@ -58,7 +58,7 @@ export default function Footer() {
                 />
                 <button
                   type="submit"
-                  className="flex items-center justify-center px-4 bg-teal hover:bg-emerald transition-colors"
+                  className="flex items-center justify-center px-4 bg-bg transition-colors"
                   aria-label="Submit email"
                 >
                   <span className="h-7 w-7 rounded-full bg-gold flex items-center justify-center text-bg text-xs">
@@ -69,81 +69,63 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Main Pages */}
-          <div>
-            <h4 className="text-cream mb-4">Main Pages</h4>
-            <ul className="space-y-2 text-sm text-cream-dim">
-              <li>
-                <Link href="/" className="hover:text-gold transition-colors">
-                  Home
-                </Link>
-              </li>
-              <li>
-                <Link href="/services" className="hover:text-gold transition-colors">
-                  Services
-                </Link>
-              </li>
-              <li>
-                <Link href="/seo" className="hover:text-gold transition-colors">
-                  SEO
-                </Link>
-              </li>
-              <li>
-                <Link href="/meta" className="hover:text-gold transition-colors">
-                  Meta
-                </Link>
-              </li>
-              <li>
-                <Link href="/contact" className="hover:text-gold transition-colors">
-                  Contact
-                </Link>
-              </li>
-            </ul>
-          </div>
+          {/* Main Pages + Office grouped on the right */}
+          <div className="flex-1 flex flex-col md:flex-row md:justify-end gap-10 md:gap-16">
+            {/* Main Pages */}
+            <div>
+              <h4 className="text-cream mb-4">Main Pages</h4>
+              <ul className="space-y-2 text-sm text-cream-dim">
+                <li>
+                  <Link href="/" className="hover:text-gold transition-colors">
+                    Home
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/clientele" className="hover:text-gold transition-colors">
+                    Clientele
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/services" className="hover:text-gold transition-colors">
+                    Our Services
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/#why-choose-us" className="hover:text-gold transition-colors">
+                    Why Choose Us?
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/#blog" className="hover:text-gold transition-colors">
+                    Blog
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/contact" className="hover:text-gold transition-colors">
+                    Contact Us
+                  </Link>
+                </li>
+              </ul>
+            </div>
 
-          {/* Utility Pages */}
-          <div>
-            <h4 className="text-cream mb-4">Utility Pages</h4>
-            <ul className="space-y-2 text-sm text-cream-dim">
-              <li>
-                <a href="#" className="hover:text-gold transition-colors">
-                  Privacy Policy
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-gold transition-colors">
-                  Terms &amp; Conditions
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-gold transition-colors">
-                  Style Guide
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-gold transition-colors">
-                  404 Page
-                </a>
-              </li>
-            </ul>
-          </div>
+            {/* Location / Contact */}
+            <div>
+              <h4 className="text-cream mb-4">Office</h4>
+              <p className="text-cream-dim text-sm mb-4 leading-relaxed">
+                Enhanccee Studio <br />
+                Jaipur, India
+              </p>
 
-          {/* Location / Contact */}
-          <div>
-            <h4 className="text-cream mb-4">Location</h4>
-            <p className="text-cream-dim text-sm mb-4 leading-relaxed">
-              4140 Parker Rd. <br />
-              Allentown, New Mexico 31134
-            </p>
-
-            <h4 className="text-cream mb-2 mt-4">Contact</h4>
-            <p className="text-cream-dim text-sm">
-              <a href="mailto:hello@enhanccee.com" className="hover:text-gold transition-colors">
-                hello@enhanccee.com
-              </a>
-              <br />
-              <span className="block mt-1">+1 (302) 555-0127</span>
-            </p>
+              <h4 className="text-cream mb-2 mt-4">Contact</h4>
+              <p className="text-cream-dim text-sm space-y-1">
+                <a href="tel:+917891368868" className="block hover:text-gold transition-colors">
+                  +91 7891368868
+                </a>
+                <a href="mailto:info@enhanccee.com" className="block hover:text-gold transition-colors">
+                  info@enhanccee.com
+                </a>
+              </p>
+            </div>
           </div>
         </div>
 

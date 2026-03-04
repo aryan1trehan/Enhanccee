@@ -65,7 +65,7 @@ export default function ServicesSection() {
   ]
 
   return (
-    <section className="py-20 bg-bg">
+    <section id="services" className="py-20 bg-bg">
       <div className="container mx-auto px-6 md:px-12 lg:px-16">
         <div className="text-center mb-16">
           <div className="mb-4">
@@ -83,7 +83,7 @@ export default function ServicesSection() {
             <Link
               key={index}
               href={service.link}
-              className="bg-emerald border border-gold-dim p-8 transition-all duration-300 hover:border-gold hover:bg-teal hover:scale-105 group"
+              className="bg-bg border border-gold-dim p-8 transition-all duration-300 hover:border-gold hover:scale-105 group"
             >
               <div className="text-gold mb-6 group-hover:scale-110 transition-transform">
                 {service.icon}

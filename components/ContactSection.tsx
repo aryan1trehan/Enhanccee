@@ -20,7 +20,7 @@ export default function ContactSection() {
     <section className="py-20 bg-bg" id="contact">
       <div className="container mx-auto px-6 md:px-12 lg:px-16">
         <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-16">
+          <div className="text-center mb-12">
             <div className="mb-4">
               <span className="text-gold text-xs font-semibold uppercase tracking-wider">
                 GET IN TOUCH
@@ -36,7 +36,7 @@ export default function ContactSection() {
             </p>
           </div>
 
-            <div className="bg-emerald border border-gold-dim p-8 md:p-12">
+          <div className="border border-gold-dim p-8 md:p-12 bg-bg">
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
                 <input

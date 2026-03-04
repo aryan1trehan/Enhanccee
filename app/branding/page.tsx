@@ -89,7 +89,7 @@ export default function BrandingPage() {
       </section>
 
       {/* Brand Universes Section */}
-      <section className="px-6 md:px-12 lg:px-20 py-24 md:py-32 bg-teal">
+      <section className="px-6 md:px-12 lg:px-20 py-24 md:py-32 bg-bg">
         <div className="max-w-7xl mx-auto">
           <h2 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-normal mb-14 leading-[1.08] tracking-tight">
             <span className="text-cream">We build </span>
@@ -167,7 +167,7 @@ export default function BrandingPage() {
           {/* Four Quadrants Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-gold-dim">
             {/* Section I - Brand Strategy & Foundation */}
-            <div className="bg-emerald p-10 md:p-14 relative group cursor-pointer transition-all duration-500 hover:bg-teal">
+            <div className="bg-bg p-10 md:p-14 relative group cursor-pointer transition-all duration-500">
               <div className="relative">
                 <div className="text-[60px] md:text-[80px] lg:text-[100px] text-cream-dim/20 font-normal leading-none mb-4 group-hover:text-cream-dim/30 transition-all duration-500">
                   I
@@ -185,7 +185,7 @@ export default function BrandingPage() {
                   {['PURPOSE', 'POSITIONING', 'ARCHETYPE', 'PERSONALITY', 'AUDIENCE CLARITY'].map((tag, i) => (
                     <span
                       key={i}
-                      className="px-5 py-2.5 border border-gold-dim text-gold text-xs uppercase tracking-[0.15em] bg-emerald group-hover:bg-teal group-hover:border-gold transition-all duration-300 hover:scale-105 cursor-pointer font-light"
+                      className="px-5 py-2.5 border border-gold-dim text-gold text-xs uppercase tracking-[0.15em] bg-bg group-hover:border-gold transition-all duration-300 hover:scale-105 cursor-pointer font-light"
                     >
                       {tag}
                     </span>
@@ -195,7 +195,7 @@ export default function BrandingPage() {
             </div>
 
             {/* Section II - Visual Identity System */}
-            <div className="bg-emerald p-10 md:p-14 relative group cursor-pointer transition-all duration-500 hover:bg-teal">
+            <div className="bg-bg p-10 md:p-14 relative group cursor-pointer transition-all duration-500">
               <div className="relative">
                 <div className="text-[60px] md:text-[80px] lg:text-[100px] text-cream-dim/20 font-normal leading-none mb-4 group-hover:text-cream-dim/30 transition-all duration-500">
                   II
@@ -213,7 +213,7 @@ export default function BrandingPage() {
                   {['LOGOMARKS', 'COLOUR PALETTES', 'TYPOGRAPHY', 'VISUAL DIRECTION'].map((tag, i) => (
                     <span
                       key={i}
-                      className="px-5 py-2.5 border border-gold-dim text-gold text-xs uppercase tracking-[0.15em] bg-emerald group-hover:bg-teal group-hover:border-gold transition-all duration-300 hover:scale-105 cursor-pointer font-light"
+                      className="px-5 py-2.5 border border-gold-dim text-gold text-xs uppercase tracking-[0.15em] bg-bg group-hover:border-gold transition-all duration-300 hover:scale-105 cursor-pointer font-light"
                     >
                       {tag}
                     </span>
@@ -223,7 +223,7 @@ export default function BrandingPage() {
             </div>
 
             {/* Section III - Communication & Voice */}
-            <div className="bg-emerald p-10 md:p-14 relative group cursor-pointer transition-all duration-500 hover:bg-teal">
+            <div className="bg-bg p-10 md:p-14 relative group cursor-pointer transition-all duration-500">
               <div className="relative">
                 <div className="text-[60px] md:text-[80px] lg:text-[100px] text-cream-dim/20 font-normal leading-none mb-4 group-hover:text-cream-dim/30 transition-all duration-500">
                   III
@@ -241,7 +241,7 @@ export default function BrandingPage() {
                   {['BRAND VOICE', 'TONE FRAMEWORKS', 'MESSAGING', 'CAMPAIGN DIRECTION'].map((tag, i) => (
                     <span
                       key={i}
-                      className="px-5 py-2.5 border border-gold-dim text-gold text-xs uppercase tracking-[0.15em] bg-emerald group-hover:bg-teal group-hover:border-gold transition-all duration-300 hover:scale-105 cursor-pointer font-light"
+                      className="px-5 py-2.5 border border-gold-dim text-gold text-xs uppercase tracking-[0.15em] bg-bg group-hover:border-gold transition-all duration-300 hover:scale-105 cursor-pointer font-light"
                     >
                       {tag}
                     </span>
@@ -251,7 +251,7 @@ export default function BrandingPage() {
             </div>
 
             {/* Section IV - Brand in Action */}
-            <div className="bg-emerald p-10 md:p-14 relative group cursor-pointer transition-all duration-500 hover:bg-teal">
+            <div className="bg-bg p-10 md:p-14 relative group cursor-pointer transition-all duration-500">
               <div className="relative">
                 <div className="text-[60px] md:text-[80px] lg:text-[100px] text-cream-dim/20 font-normal leading-none mb-4 group-hover:text-cream-dim/30 transition-all duration-500">
                   IV
@@ -269,7 +269,7 @@ export default function BrandingPage() {
                   {['BRAND GUIDELINES', 'COLLATERAL', 'SOUND IDENTITY', 'REBRANDING'].map((tag, i) => (
                     <span
                       key={i}
-                      className="px-5 py-2.5 border border-gold-dim text-gold text-xs uppercase tracking-[0.15em] bg-emerald group-hover:bg-teal group-hover:border-gold transition-all duration-300 hover:scale-105 cursor-pointer font-light"
+                      className="px-5 py-2.5 border border-gold-dim text-gold text-xs uppercase tracking-[0.15em] bg-bg group-hover:border-gold transition-all duration-300 hover:scale-105 cursor-pointer font-light"
                     >
                       {tag}
                     </span>
@@ -282,7 +282,7 @@ export default function BrandingPage() {
       </section>
 
       {/* Process Section */}
-      <section className="px-6 md:px-12 lg:px-20 py-24 md:py-32 bg-teal">
+      <section className="px-6 md:px-12 lg:px-20 py-24 md:py-32 bg-bg">
         <div className="max-w-7xl mx-auto">
           <div className="mb-20 text-center">
             <h2 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-normal text-cream leading-[1.1] tracking-tight mb-10">
@@ -293,7 +293,7 @@ export default function BrandingPage() {
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             {/* Left - Image Placeholder */}
-            <div className="relative h-[450px] md:h-[550px] bg-emerald rounded-lg overflow-hidden group cursor-pointer">
+            <div className="relative h-[450px] md:h-[550px] bg-bg rounded-lg overflow-hidden group cursor-pointer">
               <div className="absolute inset-0 bg-gradient-to-br from-gold-dim/20 to-transparent group-hover:from-gold-dim/30 transition-all duration-500"></div>
               <div className="absolute inset-0 flex items-center justify-center">
                 <div className="text-center p-8">

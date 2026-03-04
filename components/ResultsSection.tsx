@@ -18,7 +18,7 @@ export default function ResultsSection() {
   ]
 
   return (
-    <section className="py-20 bg-teal">
+    <section id="blog" className="py-20 bg-bg">
       <div className="container mx-auto px-6 md:px-12 lg:px-16">
         <div className="text-center mb-16">
           <div className="mb-4">
@@ -35,7 +35,7 @@ export default function ResultsSection() {
           {results.map((result, index) => (
             <div
               key={index}
-              className="bg-emerald border border-gold-dim p-8 text-center transition-all duration-300 hover:border-gold hover:bg-teal"
+              className="bg-bg border border-gold-dim p-8 text-center transition-all duration-300 hover:border-gold"
             >
               <div className="text-5xl md:text-6xl font-bold text-gold mb-4">
                 {result.number}

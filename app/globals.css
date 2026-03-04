@@ -43,3 +43,110 @@
     scroll-behavior: smooth;
   }
 }
+
+/* Cinematic cursor + scroll effects (home page) */
+
+#cur {
+  position: fixed;
+  width: 6px;
+  height: 6px;
+  border-radius: 9999px;
+  background: var(--gold);
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+}
+
+#curR {
+  position: fixed;
+  width: 28px;
+  height: 28px;
+  border-radius: 9999px;
+  border: 1px solid rgba(201, 169, 110, 0.35);
+  pointer-events: none;
+  z-index: 9998;
+  transform: translate(-50%, -50%);
+  transition:
+    width 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+    height 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 0.25s ease;
+}
+
+#curR.big {
+  width: 44px;
+  height: 44px;
+  border-color: var(--gold);
+}
+
+/* Scroll hint (bottom center) */
+#scrollHint {
+  position: fixed;
+  bottom: 32px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 600;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+}
+
+.sh-text {
+  font-size: 0.5rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: rgba(240, 235, 226, 0.32);
+}
+
+.sh-bar {
+  width: 1px;
+  height: 40px;
+  background: linear-gradient(to bottom, rgba(201, 169, 110, 0.4), transparent);
+  animation: scrollHintPulse 2.4s ease-in-out infinite;
+}
+
+@keyframes scrollHintPulse {
+  0%,
+  100% {
+    opacity: 0.2;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+/* Section reveal */
+.cinematic-section {
+  opacity: 0;
+  transform: translateY(40px);
+  transition:
+    opacity 0.9s ease,
+    transform 0.9s ease;
+}
+
+.cinematic-section-visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* Clientele carousel */
+@keyframes clientele-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.clientele-track {
+  display: flex;
+  gap: 3rem;
+  animation: clientele-scroll 40s linear infinite;
+}
+
+.clientele-track:hover {
+  animation-play-state: paused;
+}
