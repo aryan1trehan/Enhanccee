@@ -1,84 +1,60 @@
 'use client'
 
-import { useState, useEffect } from 'react'
-import { usePathname } from 'next/navigation'
-import RippleEffect from '@/components/RippleEffect'
+import Link from 'next/link'
+import { useState } from 'react'
 
 export default function Header() {
-  const [isLoaded, setIsLoaded] = useState(false)
-  const pathname = usePathname()
-
-  const navItems = [
-    { name: 'HOME', href: '/' },
-    { name: 'CLIENTELE', href: '/#clientele' },
-    { name: 'OUR SERVICES', href: '/services' },
-    { name: 'WHY CHOOSE US?', href: '/#philosophy' },
-    { name: 'BLOG', href: '/blog' },
-    { name: 'CONTACT US', href: '/contact', isActive: true },
-  ]
-
-  useEffect(() => {
-    setIsLoaded(true)
-  }, [])
-
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   return (
-    <header className="relative z-10 px-6 md:px-12 lg:px-16 py-6 flex items-center justify-between border-b border-black/20">
-      {/* Logo */}
-      <a
-        href="/"
-        className={`text-2xl font-bold text-black tracking-tight hover:text-black transition-all duration-500 cursor-pointer ${
-          isLoaded ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-4'
-        }`}
-      >
-        Enhanccee
-      </a>
+    <header className="fixed top-0 left-0 right-0 z-50 bg-bg/95 backdrop-blur-sm border-b border-gold-dim">
+      <nav className="container mx-auto px-6 py-4">
+        <div className="flex items-center justify-between">
+          <div className="flex-1"></div>
+          
+          {/* Desktop Navigation - Centered */}
+          <div className="hidden md:flex items-center space-x-8 flex-1 justify-center">
+            <Link href="/" className="text-cream hover:text-gold transition-colors">Home</Link>
+            <Link href="/services" className="text-cream hover:text-gold transition-colors">Services</Link>
+            <Link href="/seo" className="text-cream hover:text-gold transition-colors">SEO</Link>
+            <Link href="/meta" className="text-cream hover:text-gold transition-colors">Meta</Link>
+          </div>
 
-      {/* Navigation */}
-      <nav className="hidden md:flex items-center gap-6 lg:gap-8">
-        {navItems.map((item, index) => {
-          // Check if current page matches the nav item
-          const isActive = 
-            (pathname === '/contact' && item.name === 'CONTACT US') ||
-            (pathname === '/services' && item.name === 'OUR SERVICES') ||
-            (pathname === '/' && item.name === 'HOME') ||
-            (pathname === '/blog' && item.name === 'BLOG')
+          {/* Right side spacer and Contact button */}
+          <div className="hidden md:flex items-center flex-1 justify-end">
+            <Link href="/contact" className="bg-gold text-bg px-6 py-2 rounded-lg font-semibold hover:bg-gold-light transition-all duration-300 hover:scale-105">
+              Contact
+            </Link>
+          </div>
 
-          return (
-            <RippleEffect key={item.name} className="inline-block" color="black">
-              <a
-                href={item.href}
-                className={`text-sm font-semibold uppercase tracking-wider transition-all duration-500 relative group ${
-                  isActive
-                    ? 'text-black'
-                    : 'text-black'
-                } ${
-                  isLoaded
-                    ? 'opacity-100 translate-y-0'
-                    : 'opacity-0 -translate-y-4'
-                }`}
-                style={{ transitionDelay: `${0.1 + index * 0.1}s` }}
-              >
-                {item.name}
-              </a>
-            </RippleEffect>
-          )
-        })}
+          {/* Mobile Menu Button */}
+          <button
+            className="md:hidden text-cream"
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+          >
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              {isMenuOpen ? (
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              ) : (
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+              )}
+            </svg>
+          </button>
+        </div>
+
+        {/* Mobile Menu */}
+        {isMenuOpen && (
+          <div className="md:hidden mt-4 pb-4 space-y-4">
+            <Link href="/" className="block text-cream hover:text-gold transition-colors">Home</Link>
+            <Link href="/services" className="block text-cream hover:text-gold transition-colors">Services</Link>
+            <Link href="/seo" className="block text-cream hover:text-gold transition-colors">SEO</Link>
+            <Link href="/meta" className="block text-cream hover:text-gold transition-colors">Meta</Link>
+            <Link href="/contact" className="block bg-gold text-bg px-6 py-2 rounded-lg font-semibold text-center">
+              Contact
+            </Link>
+          </div>
+        )}
       </nav>
-
-      {/* Enquiry Button */}
-      <RippleEffect className="inline-block" color="black">
-        <a
-          href="/contact"
-          className={`bg-black text-white px-6 py-4 rounded-lg font-semibold text-sm transition-all duration-500 hover:bg-gray-800 hover:scale-110 hover:shadow-xl hover:shadow-black/40 hover:-translate-y-0.5 active:scale-95 relative z-10 ${
-            isLoaded ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-4'
-          }`}
-          style={{ transitionDelay: '0.5s' }}
-        >
-          Enquiry
-        </a>
-      </RippleEffect>
     </header>
   )
 }
-

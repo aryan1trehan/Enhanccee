@@ -2,139 +2,44 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --bg: #071414;
+  --teal: #0a2020;
+  --emerald: #0f3535;
+  --gold: #debf70;
+  --gold-light: #e2c992;
+  --gold-dim: rgba(201,169,110,0.25);
+  --cream: #f0ebe2;
+  --cream-dim: rgba(240,235,226,0.65);
+  --white: #faf8f4;
+}
+
 @layer base {
   html {
     scroll-behavior: smooth;
   }
   
   body {
-    background-color: #000000;
-    color: white;
+    @apply bg-[var(--bg)] text-[var(--cream)];
+    font-family: var(--font-playfair), Georgia, serif;
+  }
+  
+  .font-serif {
+    font-family: var(--font-playfair), Georgia, serif;
+  }
+  
+  .font-sans {
+    font-family: var(--font-inter), system-ui, sans-serif;
+  }
+  
+  * {
+    @apply border-[var(--gold-dim)];
   }
 }
 
-@layer utilities {
-  .text-gradient {
-    @apply bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent;
-  }
-  
-  .hover-lift {
-    @apply transition-all duration-300 ease-out;
-  }
-  
-  .hover-lift:hover {
-    @apply -translate-y-1 shadow-lg;
-  }
-  
-  .smooth-transition {
-    @apply transition-all duration-500 ease-in-out;
-  }
-  
-  .glow-on-hover {
-    @apply transition-all duration-300;
-  }
-  
-  .glow-on-hover:hover {
-    @apply shadow-lg shadow-white/50;
-  }
-  
-  .parallax-slow {
-    transition: transform 0.3s ease-out;
-  }
-  
-  .shimmer-effect {
-    background: linear-gradient(
-      90deg,
-      transparent,
-      rgba(255, 255, 255, 0.1),
-      transparent
-    );
-    background-size: 200% 100%;
-    animation: shimmer 2s linear infinite;
-  }
-  
-  .water-ripple {
-    position: absolute;
-    border-radius: 50%;
-    background: radial-gradient(
-      circle,
-      rgba(255, 255, 255, 0.4) 0%,
-      rgba(255, 255, 255, 0.25) 30%,
-      rgba(255, 255, 255, 0.1) 50%,
-      transparent 70%
-    );
-    transform: translate(-50%, -50%) scale(0);
-    animation: water-ripple 2.5s ease-out forwards;
-    pointer-events: none;
-    z-index: 1;
-    box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
-  }
-  
-  .water-ripple-black {
-    position: absolute;
-    border-radius: 50%;
-    background: radial-gradient(
-      circle,
-      rgba(0, 0, 0, 0.4) 0%,
-      rgba(0, 0, 0, 0.25) 30%,
-      rgba(0, 0, 0, 0.1) 50%,
-      transparent 70%
-    );
-    transform: translate(-50%, -50%) scale(0);
-    animation: water-ripple 2.5s ease-out forwards;
-    pointer-events: none;
-    z-index: 1;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-  }
-  
-  @keyframes water-ripple {
-    0% {
-      transform: translate(-50%, -50%) scale(0);
-      opacity: 0.9;
-    }
-    25% {
-      opacity: 0.7;
-    }
-    50% {
-      opacity: 0.5;
-    }
-    75% {
-      opacity: 0.2;
-    }
-    100% {
-      transform: translate(-50%, -50%) scale(2.5);
-      opacity: 0;
-    }
-  }
-  
-  .water-hover {
-    position: relative;
-    overflow: hidden;
-  }
-  
-  .water-hover::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 0;
-    height: 0;
-    border-radius: 50%;
-    background: radial-gradient(
-      circle,
-      rgba(255, 255, 255, 0.2) 0%,
-      transparent 70%
-    );
-    transform: translate(-50%, -50%);
-    transition: width 0.6s ease-out, height 0.6s ease-out, opacity 0.6s ease-out;
-    pointer-events: none;
-    z-index: 0;
-  }
-  
-  .water-hover:hover::before {
-    width: 300px;
-    height: 300px;
-    opacity: 0;
+/* Smooth scroll for all browsers */
+@supports (scroll-behavior: smooth) {
+  html {
+    scroll-behavior: smooth;
   }
 }
-

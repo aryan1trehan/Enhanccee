@@ -6,10 +6,12 @@ import ClienteleSection from '@/components/ClienteleSection'
 import ResultsSection from '@/components/ResultsSection'
 import ContactSection from '@/components/ContactSection'
 import Footer from '@/components/Footer'
+import Header from '@/components/Header'
 
 export default function Home() {
   return (
-    <main>
+    <main className="min-h-screen bg-bg">
+      <Header />
       <Hero />
       <QuoteSection />
       <ServicesSection />
@@ -21,4 +23,3 @@ export default function Home() {
     </main>
   )
 }
-

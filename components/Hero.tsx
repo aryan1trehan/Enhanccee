@@ -1,144 +1,68 @@
 'use client'
 
-import { useState, useEffect } from 'react'
-import Header from '@/components/Header'
-import RippleEffect from '@/components/RippleEffect'
+import Link from 'next/link'
 
 export default function Hero() {
-  const [isLoaded, setIsLoaded] = useState(false)
-
-  useEffect(() => {
-    setIsLoaded(true)
-  }, [])
-
   return (
-    <div className="relative min-h-screen bg-white overflow-hidden">
-      {/* Header */}
-      <Header />
+    <section className="relative min-h-screen bg-bg flex items-center justify-center px-6 md:px-12 lg:px-16 py-32">
+      {/* Background Pattern */}
+      <div className="absolute inset-0 opacity-10">
+        <div className="absolute inset-0" style={{
+          backgroundImage: 'linear-gradient(rgba(201,169,110, 0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(201,169,110, 0.1) 1px, transparent 1px)',
+          backgroundSize: '50px 50px'
+        }} />
+      </div>
 
-      {/* Main Hero Content */}
-      <div className="relative z-10 flex flex-col items-center justify-center min-h-[calc(100vh-120px)] px-6 md:px-12 lg:px-16">
-        {/* Badge */}
-        <div
-          className={`mb-8 transition-all duration-700 ${
-            isLoaded ? 'opacity-100 translate-y-0 scale-100' : 'opacity-0 -translate-y-8 scale-95'
-          }`}
-          style={{ transitionDelay: '0.3s' }}
-        >
-          <div className="inline-flex items-center gap-2 px-4 py-2 border border-black bg-white/50 backdrop-blur-sm">
-            <svg
-              className="w-4 h-4 text-black"
-              fill="currentColor"
-              viewBox="0 0 20 20"
-            >
-              <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-            </svg>
-            <span className="text-black text-sm font-medium">
-              Elite Marketing & Growth Partner
-            </span>
-          </div>
+      {/* Content */}
+      <div className="relative z-10 max-w-5xl mx-auto text-center">
+        <div className="mb-8">
+          <span className="text-gold text-xs font-semibold uppercase tracking-wider">
+            ELITE MARKETING & GROWTH PARTNER
+          </span>
         </div>
-
-        {/* Main Headline */}
-        <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-black text-center mb-6 leading-tight">
-          <span
-            className={`inline-block transition-all duration-700 ${
-              isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-            }`}
-            style={{ transitionDelay: '0.8s' }}
-          >
-            Crafting Brands That
-          </span>
-          <br />
-          <span
-            className={`inline-block transition-all duration-700 ${
-              isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-            }`}
-            style={{ transitionDelay: '1.0s' }}
-          >
-            Stand Above{' '}
-          </span>
-          <span
-            className={`text-black relative inline-block animate-pulse-slow transition-all duration-700 ${
-              isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-            }`}
-            style={{ transitionDelay: '1.2s' }}
-          >
-            the
-            <span className="absolute -bottom-2 left-0 right-0 h-1 bg-black/30 transform -skew-x-12 animate-glow" />
-          </span>{' '}
-          <span
-            className={`inline-block transition-all duration-700 ${
-              isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-            }`}
-            style={{ transitionDelay: '1.4s' }}
-          >
-            Noise
-          </span>
-        </h1>
-
-        {/* Description */}
-        <p
-          className={`text-lg md:text-xl text-black/80 text-center max-w-2xl mb-12 transition-all duration-700 ${
-            isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-          }`}
-          style={{ transitionDelay: '1.6s' }}
-        >
-          Crafted with intention. Built with ambition. We help ambitious brands
-          define their legacy — not chase trends.
+        
+          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
+            <span className="text-cream">Crafting brands that</span>
+            <br />
+            <span className="text-gold">stand above the noise</span>
+          </h1>
+          
+          <p className="text-lg md:text-xl text-cream-dim max-w-3xl mx-auto mb-12">
+          We engineer scalable growth for brands that demand authority, not just visibility.
         </p>
-
-        {/* CTA Buttons */}
+        
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-          <div
-            className={`transition-all duration-700 ${
-              isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-            }`}
-            style={{ transitionDelay: '1.8s' }}
+          <Link
+            href="/contact"
+            className="bg-gold text-bg px-8 py-4 font-semibold text-base rounded-lg transition-all duration-300 hover:bg-gold-light hover:scale-110 hover:shadow-2xl hover:shadow-gold-dim hover:-translate-y-1 active:scale-95"
           >
-            <RippleEffect className="inline-block" color="black">
-              <button className="bg-black text-white px-8 py-4 rounded-lg font-semibold text-base transition-all duration-300 hover:bg-gray-800 hover:scale-110 hover:shadow-2xl hover:shadow-black/40 hover:-translate-y-1 flex items-center justify-center gap-2 group active:scale-95 relative z-10">
-                View Portfolio
-                <svg
-                  className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-2 group-hover:scale-110"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M17 8l4 4m0 0l-4 4m4-4H3"
-                  />
-                </svg>
-              </button>
-            </RippleEffect>
-          </div>
-          <div
-            className={`transition-all duration-700 ${
-              isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-            }`}
-            style={{ transitionDelay: '2.0s' }}
+            GET STARTED
+          </Link>
+          <Link
+            href="/services"
+            className="bg-transparent border-2 border-gold text-cream px-8 py-4 font-semibold text-base rounded-lg transition-all duration-300 hover:bg-gold hover:text-bg hover:scale-110 hover:shadow-2xl hover:shadow-gold-dim hover:-translate-y-1 active:scale-95"
           >
-            <RippleEffect className="inline-block" color="black">
-              <a
-                href="/services"
-                className="bg-transparent border-2 border-black text-black px-8 py-4 rounded-lg font-semibold text-base transition-all duration-300 hover:bg-black hover:text-white hover:scale-110 hover:shadow-2xl hover:shadow-black/40 hover:-translate-y-1 active:scale-95 inline-block text-center relative z-10"
-              >
-                Our Services
-              </a>
-            </RippleEffect>
-          </div>
+            OUR SERVICES
+          </Link>
         </div>
       </div>
 
-      {/* Decorative Elements */}
-      <div className="absolute top-0 left-0 w-full h-full pointer-events-none overflow-hidden">
-        <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-black/5 rounded-full blur-3xl animate-pulse-slow" />
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-black/5 rounded-full blur-3xl animate-pulse-slow" style={{ animationDelay: '1s' }} />
+      {/* Scroll Indicator */}
+      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+        <svg
+          className="w-6 h-6 text-cream"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+            d="M19 14l-7 7m0 0l-7-7m7 7V3"
+          />
+        </svg>
       </div>
-    </div>
+    </section>
   )
 }
-
