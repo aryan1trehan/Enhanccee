@@ -4,18 +4,40 @@ import Link from 'next/link'
 
 export default function Footer() {
   return (
-    <footer className="bg-bg border-t border-gold-dim pt-16 pb-10">
+    <footer className="bg-white border-t border-black/10 pt-16 pb-10">
       <div className="container mx-auto px-6 md:px-12 lg:px-20">
-        {/* Top CTA: PROJECT IN MIND? */}
-        <div className="text-center mb-10 md:mb-12">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl tracking-[0.15em] uppercase">
-            <span className="text-cream">PROJECT IN </span>
-            <span className="text-gold">MIND?</span>
+
+        {/* ── Top CTA ── */}
+        <div className="text-center mb-14 md:mb-16">
+          <h2 className="text-3xl md:text-4xl lg:text-6xl tracking-[0.1em] uppercase font-serif font-light text-black inline-flex items-center gap-2 flex-wrap justify-center">
+            <span>PR</span>
+            <Link
+              href="/contact"
+              className="inline-flex items-center justify-center w-10 h-10 md:w-12 md:h-12 rounded-full bg-black text-white hover:bg-gray-800 transition-all duration-300 hover:scale-110 group"
+              aria-label="Go to contact page"
+            >
+              <svg
+                className="w-5 h-5 md:w-6 md:h-6 group-hover:translate-x-0.5 transition-transform duration-300"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                strokeWidth={2.5}
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+              </svg>
+            </Link>
+            <span>JECT IN MIND?</span>
           </h2>
+          <p className="mt-4 text-black/40 text-sm uppercase tracking-[0.2em]">
+            Let&apos;s build something extraordinary together
+          </p>
         </div>
 
-        {/* Social buttons row */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-14">
+        {/* ── Divider ── */}
+        <div className="h-px bg-black/10 mb-12" />
+
+        {/* ── Social buttons ── */}
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-14">
           {[
             { label: 'Facebook', href: '#' },
             { label: 'Twitter', href: '#' },
@@ -25,43 +47,42 @@ export default function Footer() {
             <a
               key={item.label}
               href={item.href}
-              className="flex items-center justify-center gap-2 rounded-full bg-bg border border-gold-dim px-6 py-3 text-sm text-cream transition-all duration-300 hover:bg-bg"
+              className="flex items-center justify-center gap-3 rounded-full bg-white border border-black/15 px-6 py-3 text-black transition-all duration-300 hover:bg-black hover:text-white hover:border-black group"
             >
-              <span className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-gold/10 text-gold text-xs">
+              <span className="inline-flex h-5 w-5 items-center justify-center rounded-full bg-black/10 text-black text-xs group-hover:bg-white/20 group-hover:text-white transition-colors">
                 ●
               </span>
-              <span className="uppercase tracking-[0.15em] text-[11px]">{item.label}</span>
+              <span className="uppercase tracking-[0.15em] text-[11px] font-semibold">{item.label}</span>
             </a>
           ))}
         </div>
 
-        {/* Bottom grid: brand left, nav + office grouped right */}
-        <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-10 md:gap-16 mb-10">
-          {/* Brand + description + email capture */}
-          <div className="space-y-4 md:max-w-md">
-            <h3 className="text-xl text-gold">Enhanccee</h3>
-            <p className="text-cream-dim text-sm leading-relaxed">
-              We combine strategy, creativity, and technology to help brands grow in today&apos;s
-              digital landscape.
-            </p>
+        {/* ── Bottom grid ── */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-8 mb-10">
 
+          {/* Brand + email */}
+          <div className="space-y-4">
+            <h3 className="text-xl text-black font-bold tracking-wider uppercase">Enhanccee</h3>
+            <p className="text-black text-sm leading-relaxed">
+              We combine strategy, creativity, and technology to help brands grow in today&apos;s digital landscape.
+            </p>
             <div className="mt-6">
-              <p className="text-cream text-sm mb-3">Stay in the loop</p>
+              <p className="text-black text-sm font-semibold mb-3 uppercase tracking-wider">Stay in the loop</p>
               <form
                 onSubmit={(e) => e.preventDefault()}
-                className="flex items-stretch rounded-full bg-bg border border-gold-dim overflow-hidden"
+                className="flex items-stretch rounded-full bg-white border border-black/20 overflow-hidden hover:border-black transition-colors duration-200 focus-within:border-black"
               >
                 <input
                   type="email"
                   placeholder="Enter your email..."
-                  className="flex-1 px-4 py-2 text-sm bg-transparent text-cream placeholder-cream-dim focus:outline-none"
+                  className="flex-1 px-4 py-2.5 text-sm bg-transparent text-black placeholder-black/40 focus:outline-none"
                 />
                 <button
                   type="submit"
-                  className="flex items-center justify-center px-4 bg-bg transition-colors"
+                  className="flex items-center justify-center px-3 bg-transparent transition-colors"
                   aria-label="Submit email"
                 >
-                  <span className="h-7 w-7 rounded-full bg-gold flex items-center justify-center text-bg text-xs">
+                  <span className="h-7 w-7 rounded-full bg-black flex items-center justify-center text-white text-xs hover:bg-gray-800 transition-colors">
                     ↑
                   </span>
                 </button>
@@ -69,71 +90,72 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Main Pages + Office grouped on the right */}
-          <div className="flex-1 flex flex-col md:flex-row md:justify-end gap-10 md:gap-16">
+          {/* Nav + Office — centered across remaining 2 cols */}
+          <div className="col-span-1 md:col-span-2 flex flex-col md:flex-row gap-10 md:gap-20 md:justify-center">
+
             {/* Main Pages */}
             <div>
-              <h4 className="text-cream mb-4">Main Pages</h4>
-              <ul className="space-y-2 text-sm text-cream-dim">
-                <li>
-                  <Link href="/" className="hover:text-gold transition-colors">
-                    Home
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/clientele" className="hover:text-gold transition-colors">
-                    Clientele
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/services" className="hover:text-gold transition-colors">
-                    Our Services
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/#why-choose-us" className="hover:text-gold transition-colors">
-                    Why Choose Us?
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/#blog" className="hover:text-gold transition-colors">
-                    Blog
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/contact" className="hover:text-gold transition-colors">
-                    Contact Us
-                  </Link>
-                </li>
+              <h4 className="text-black text-xs font-bold uppercase tracking-[0.25em] mb-6">Main Pages</h4>
+              <ul className="space-y-3 text-sm">
+                {[
+                  { label: 'Home', href: '/' },
+                  { label: 'Clientele', href: '/clientele' },
+                  { label: 'Our Services', href: '/services' },
+                  { label: 'Why Choose Us?', href: '/#why-choose-us' },
+                  { label: 'Blog', href: '/#blog' },
+                  { label: 'Contact Us', href: '/contact' },
+                ].map((link) => (
+                  <li key={link.label}>
+                    <Link
+                      href={link.href}
+                      className="text-black font-medium hover:text-black/50 transition-colors duration-200 hover:underline underline-offset-4 decoration-1"
+                    >
+                      {link.label}
+                    </Link>
+                  </li>
+                ))}
               </ul>
             </div>
 
-            {/* Location / Contact */}
+            {/* Office / Contact */}
             <div>
-              <h4 className="text-cream mb-4">Office</h4>
-              <p className="text-cream-dim text-sm mb-4 leading-relaxed">
-                Enhanccee Studio <br />
-                Jaipur, India
+              <h4 className="text-black text-xs font-bold uppercase tracking-[0.25em] mb-6">Office</h4>
+              <p className="text-black text-sm mb-6 leading-relaxed">
+                Enhanccee Studio<br />Jaipur, India
               </p>
-
-              <h4 className="text-cream mb-2 mt-4">Contact</h4>
-              <p className="text-cream-dim text-sm space-y-1">
-                <a href="tel:+917891368868" className="block hover:text-gold transition-colors">
+              <h4 className="text-black text-xs font-bold uppercase tracking-[0.25em] mb-4">Contact</h4>
+              <div className="space-y-2 text-sm">
+                <a
+                  href="tel:+917891368868"
+                  className="block text-black font-medium hover:text-black/50 transition-colors duration-200 hover:underline underline-offset-4 decoration-1"
+                >
                   +91 7891368868
                 </a>
-                <a href="mailto:info@enhanccee.com" className="block hover:text-gold transition-colors">
+                <a
+                  href="mailto:info@enhanccee.com"
+                  className="block text-black font-medium hover:text-black/50 transition-colors duration-200 hover:underline underline-offset-4 decoration-1"
+                >
                   info@enhanccee.com
                 </a>
-              </p>
+              </div>
             </div>
+
           </div>
         </div>
 
-        <div className="border-t border-gold-dim pt-6 text-center">
-          <p className="text-cream-dim text-xs">
+        {/* ── Bottom bar ── */}
+        <div className="border-t border-black/10 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <p className="text-black text-xs">
             &copy; {new Date().getFullYear()} Enhanccee. All rights reserved.
           </p>
+          <Link
+            href="/contact"
+            className="text-black text-xs hover:text-black/50 transition-colors duration-200 uppercase tracking-wider hover:underline underline-offset-4"
+          >
+            Start a Project →
+          </Link>
         </div>
+
       </div>
     </footer>
   )

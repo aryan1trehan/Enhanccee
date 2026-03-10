@@ -25,7 +25,7 @@ export default function LoadingScreen() {
   if (!isLoading) return null
 
   return (
-    <div className="fixed inset-0 z-50 bg-dark-green flex items-center justify-center transition-opacity duration-500">
+    <div className="fixed inset-0 z-50 bg-black flex items-center justify-center transition-opacity duration-500">
       <div className="text-center">
         {/* Logo Animation */}
         <div className="mb-8 animate-fade-in">
@@ -35,9 +35,9 @@ export default function LoadingScreen() {
         </div>
 
         {/* Loading Bar */}
-        <div className="w-64 h-1 bg-light-green/20 rounded-full overflow-hidden">
+        <div className="w-64 h-1 bg-white/20 rounded-full overflow-hidden">
           <div
-            className="h-full bg-gold rounded-full transition-all duration-300 ease-out"
+            className="h-full bg-white rounded-full transition-all duration-300 ease-out"
             style={{ width: `${progress}%` }}
           />
         </div>
@@ -50,4 +50,5 @@ export default function LoadingScreen() {
     </div>
   )
 }
+
 

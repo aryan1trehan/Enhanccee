@@ -3,110 +3,90 @@ import Footer from '@/components/Footer'
 
 export default function AboutPage() {
   return (
-    <main className="min-h-screen bg-bg pt-24">
+    <div className="min-h-screen">
       <Header />
 
-      <section className="py-20">
-        <div className="max-w-6xl mx-auto px-6 md:px-10 lg:px-12">
-          {/* Hero / Intro */}
-          <div className="mb-14 text-center">
-            <span className="text-gold text-xs font-semibold uppercase tracking-[0.35em] mb-4 block">
-              About Enhanccee
-            </span>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl text-cream mb-6">
-              Engineering Growth Through <span className="text-gold">Intelligent Craft</span>
-            </h1>
-            <p className="text-cream-dim text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">
-              Enhanccee is a strategy, design, and growth studio for brands that refuse to be
-              average. We combine rigorous thinking, sharp creative, and performance discipline to
-              build brands that compound in value over time.
-            </p>
-          </div>
+      {/* ── SECTION 1: HERO — BLACK ── */}
+      <section className="py-24 md:py-36 px-6 md:px-12 lg:px-16 bg-black flex items-center justify-center min-h-[70vh]">
+        <div className="max-w-6xl mx-auto text-center">
+          <span className="text-white/40 text-xs font-semibold uppercase tracking-[0.35em] mb-6 block">
+            About Enhanccee
+          </span>
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-light text-white mb-6 leading-tight">
+            Engineering Growth Through<br />
+            <em className="not-italic text-white/60">Intelligent Craft</em>
+          </h1>
+          <div className="h-px w-16 bg-white/20 mx-auto mb-8" />
+          <p className="text-white/60 text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">
+            Enhanccee is a strategy, design, and growth studio for brands that refuse to be average. We combine rigorous thinking, sharp creative, and performance discipline to build brands that compound in value over time.
+          </p>
+        </div>
+      </section>
 
-          {/* Two-column story */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
-            <div className="space-y-6">
-              <h2 className="text-2xl md:text-3xl text-gold">What We Stand For</h2>
-              <p className="text-cream-dim leading-relaxed">
-                We believe durable brands are engineered, not improvised. Every engagement starts
-                with clarity—on your market, your customer, and the outcomes that actually matter.
-                From there, we design systems: of identity, of experience, of acquisition and
-                retention.
-              </p>
-              <p className="text-cream-dim leading-relaxed">
-                Our work blends editorial-level storytelling, product-level craft, and performance
-                marketing rigour. Strategy lives in every layout, every word, and every campaign
-                decision.
-              </p>
-            </div>
-
-            <div className="space-y-6">
-              <h2 className="text-2xl md:text-3xl text-gold">How We Work</h2>
-              <p className="text-cream-dim leading-relaxed">
-                Enhanccee operates as an embedded partner, not a rotating vendor. We work with a
-                limited number of brands at a time so senior talent stays on the work, from first
-                principles through execution.
-              </p>
-              <p className="text-cream-dim leading-relaxed">
-                Our team is intentionally small, multidisciplinary, and remote-first—bringing
-                together strategists, designers, engineers, and performance specialists around a
-                single, shared architecture for your brand.
-              </p>
+      {/* ── SECTION 2: OUR STORY — WHITE ── */}
+      <section className="py-24 px-6 md:px-12 lg:px-16 bg-white">
+        <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16">
+          <div>
+            <span className="text-black/40 text-xs uppercase tracking-[0.3em] mb-4 block">What We Stand For</span>
+            <h2 className="text-3xl md:text-4xl font-serif font-light text-black mb-6">What We Stand For</h2>
+            <div className="h-px w-12 bg-black/20 mb-6" />
+            <div className="space-y-4 text-black/70 leading-relaxed">
+              <p>We believe durable brands are engineered, not improvised. Every engagement starts with clarity — on your market, your customer, and the outcomes that actually matter. From there, we design systems: of identity, of experience, of acquisition and retention.</p>
+              <p>Our work blends editorial-level storytelling, product-level craft, and performance marketing rigour. Strategy lives in every layout, every word, and every campaign decision.</p>
             </div>
           </div>
-
-          {/* Signature principles */}
-          <div className="border border-gold-dim bg-emerald/40 px-8 md:px-10 lg:px-12 py-10 rounded-xl mb-16">
-            <h3 className="text-cream text-xl md:text-2xl mb-6">The Enhanccee Standard</h3>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <div>
-                <h4 className="text-gold text-sm font-semibold uppercase tracking-[0.2em] mb-3">
-                  Precision
-                </h4>
-                <p className="text-cream-dim text-sm leading-relaxed">
-                  We sweat the structure—of messaging, of funnels, of interfaces—because small
-                  details shift big outcomes.
-                </p>
-              </div>
-              <div>
-                <h4 className="text-gold text-sm font-semibold uppercase tracking-[0.2em] mb-3">
-                  Partnership
-                </h4>
-                <p className="text-cream-dim text-sm leading-relaxed">
-                  We work with founders and teams who value long-term brand building over short
-                  spikes in attention.
-                </p>
-              </div>
-              <div>
-                <h4 className="text-gold text-sm font-semibold uppercase tracking-[0.2em] mb-3">
-                  Performance
-                </h4>
-                <p className="text-cream-dim text-sm leading-relaxed">
-                  Every idea is held to a simple standard: does it move the metrics that matter for
-                  your business?
-                </p>
-              </div>
+          <div>
+            <span className="text-black/40 text-xs uppercase tracking-[0.3em] mb-4 block">How We Work</span>
+            <h2 className="text-3xl md:text-4xl font-serif font-light text-black mb-6">How We Work</h2>
+            <div className="h-px w-12 bg-black/20 mb-6" />
+            <div className="space-y-4 text-black/70 leading-relaxed">
+              <p>Enhanccee operates as an embedded partner, not a rotating vendor. We work with a limited number of brands at a time so senior talent stays on the work, from first principles through execution.</p>
+              <p>Our team is intentionally small, multidisciplinary, and remote-first — bringing together strategists, designers, engineers, and performance specialists around a single, shared architecture for your brand.</p>
             </div>
-          </div>
-
-          {/* Call to action */}
-          <div className="text-center">
-            <p className="text-cream-dim text-sm uppercase tracking-[0.25em] mb-4">
-              Ready to build something enduring?
-            </p>
-            <a
-              href="/contact"
-              className="inline-flex items-center gap-3 bg-gold text-bg px-10 py-4 rounded-lg font-semibold text-sm tracking-[0.25em] uppercase transition-all duration-300 hover:bg-gold-light hover:scale-110 hover:shadow-2xl hover:shadow-gold-dim hover:-translate-y-1 active:scale-95"
-            >
-              Speak to Enhanccee
-            </a>
           </div>
         </div>
       </section>
 
+      {/* ── SECTION 3: THE STANDARD — BLACK ── */}
+      <section className="py-24 px-6 md:px-12 lg:px-16 bg-black">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-16">
+            <span className="text-white/40 text-xs uppercase tracking-[0.3em] mb-4 block">Our Principles</span>
+            <h3 className="text-3xl md:text-4xl font-semibold text-white">The Enhanccee Standard</h3>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-white/10">
+            {[
+              { title: 'Precision', desc: 'We sweat the structure — of messaging, of funnels, of interfaces — because small details shift big outcomes.' },
+              { title: 'Partnership', desc: 'We work with founders and teams who value long-term brand building over short spikes in attention.' },
+              { title: 'Performance', desc: 'Every idea is held to a simple standard: does it move the metrics that matter for your business?' },
+            ].map((item, i) => (
+              <div key={i} className="bg-black p-10 group hover:bg-white/5 transition-all duration-300">
+                <h4 className="text-white text-sm font-semibold uppercase tracking-[0.2em] mb-4">{item.title}</h4>
+                <div className="h-px w-8 bg-white/20 mb-4 group-hover:w-16 transition-all duration-300" />
+                <p className="text-white/60 text-sm leading-relaxed">{item.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── SECTION 4: CTA — WHITE ── */}
+      <section className="py-24 md:py-32 px-6 md:px-12 lg:px-16 bg-white">
+        <div className="max-w-4xl mx-auto text-center">
+          <span className="text-black/40 text-xs uppercase tracking-[0.3em] mb-6 block">Work With Us</span>
+          <h2 className="text-3xl md:text-4xl font-serif font-light text-black mb-6">Ready to build something enduring?</h2>
+          <div className="h-px w-16 bg-black/20 mx-auto mb-10" />
+          <a
+            href="/contact"
+            className="inline-flex items-center gap-3 bg-black text-white px-12 py-5 font-semibold text-sm tracking-[0.2em] uppercase transition-all duration-300 hover:bg-gray-800 hover:scale-105 hover:-translate-y-0.5 active:scale-95"
+          >
+            Speak to Enhanccee
+          </a>
+        </div>
+      </section>
+
       <Footer />
-    </main>
+    </div>
   )
 }
-
 

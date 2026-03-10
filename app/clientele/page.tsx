@@ -19,32 +19,36 @@ const clients = [
 
 export default function ClientelePage() {
   return (
-    <main className="min-h-screen bg-bg pt-24">
+    <main className="min-h-screen bg-black pt-24">
       <Header />
 
-      <section className="py-20">
+      <section className="py-20 bg-black">
         <div className="max-w-6xl mx-auto px-6 md:px-10 lg:px-12">
-          <div className="text-center mb-12">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl text-gold mb-6">
+          <div className="text-center mb-14">
+            <span className="text-white/40 text-xs font-semibold uppercase tracking-[0.3em] mb-4 block">
+              Our Clientele
+            </span>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-light text-white mb-6">
               Our Collaborations
             </h1>
-            <p className="text-lg md:text-xl text-cream font-serif italic max-w-3xl mx-auto leading-relaxed">
+            <div className="h-px w-16 bg-white/20 mx-auto mb-6" />
+            <p className="text-lg md:text-xl text-white/60 italic max-w-3xl mx-auto leading-relaxed">
               Select brands that trust Enhanccee with their identity, digital presence, and growth.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px bg-white/10">
             {clients.map((client) => (
               <div
                 key={client.name}
-                className="flex items-center justify-center px-12 py-10 transition-transform duration-300 hover:-translate-y-1"
+                className="flex items-center justify-center px-12 py-14 bg-black hover:bg-white/5 transition-all duration-300 group"
               >
                 <Image
                   src={client.logo}
                   alt={client.name}
                   width={520}
                   height={320}
-                  className="object-contain h-full w-auto max-h-[260px]"
+                  className="object-contain h-full w-auto max-h-[200px] filter invert opacity-60 group-hover:opacity-100 transition-opacity duration-300"
                 />
               </div>
             ))}
@@ -56,5 +60,6 @@ export default function ClientelePage() {
     </main>
   )
 }
+
 
 

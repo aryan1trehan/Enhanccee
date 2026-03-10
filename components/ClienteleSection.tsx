@@ -16,23 +16,25 @@ const clients = [
 ]
 
 export default function ClienteleSection() {
-
   return (
-    <section id="clientele" className="py-20 bg-bg">
+    <section id="clientele" className="py-24 bg-black">
       <div className="container mx-auto px-6 md:px-12 lg:px-16">
-        <div className="text-center mb-10">
-          <div className="mb-4">
-            <span className="text-gold text-xs font-semibold uppercase tracking-wider">
-              OUR CLIENTELE
-            </span>
-          </div>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl text-cream mb-4">Trusted by Leading Brands</h2>
-          <p className="text-sm md:text-base text-cream-dim max-w-2xl mx-auto">
+        <div className="text-center mb-12">
+          <span className="text-white/50 text-xs font-semibold uppercase tracking-[0.3em] mb-4 block">
+            Our Clientele
+          </span>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl text-white font-serif font-light mb-4">
+            Trusted by Leading Brands
+          </h2>
+          <p className="text-sm md:text-base text-white/60 max-w-2xl mx-auto">
             A selection of partners across fashion, lifestyle, retail, and culture-driven brands.
           </p>
         </div>
 
-        <div className="overflow-hidden py-6">
+        {/* Divider */}
+        <div className="h-px bg-white/10 mb-10" />
+
+        <div className="overflow-hidden py-4">
           <div className="clientele-track">
             {[...clients, ...clients].map((client, index) => (
               <div
@@ -44,7 +46,7 @@ export default function ClienteleSection() {
                   alt={client.name}
                   width={260}
                   height={120}
-                  className="object-contain h-full w-auto opacity-80 hover:opacity-100 transition-opacity"
+                  className="object-contain h-full w-auto opacity-50 hover:opacity-100 transition-opacity duration-300 filter invert"
                 />
               </div>
             ))}

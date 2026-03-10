@@ -1,12 +1,12 @@
 export default function QuoteSection() {
   return (
-    <section className="py-20 bg-bg">
+    <section className="py-24 bg-white">
       <div className="container mx-auto px-6 md:px-12 lg:px-16">
         <div className="max-w-4xl mx-auto text-center">
-          <blockquote className="text-3xl md:text-4xl italic text-gold mb-4">
+          <blockquote className="text-3xl md:text-4xl lg:text-5xl italic text-black font-serif leading-snug mb-6">
             &quot;Crafting brands that stand above the noise&quot;
           </blockquote>
-          <div className="h-px w-24 bg-gold mx-auto" />
+          <div className="h-px w-24 bg-black mx-auto" />
         </div>
       </div>
     </section>

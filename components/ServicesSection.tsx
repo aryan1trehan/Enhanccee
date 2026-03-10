@@ -3,22 +3,22 @@ import Link from 'next/link'
 export default function ServicesSection() {
   const services = [
     {
-      title: 'SEO',
-      description: 'Scalable organic growth for brands that demand authority',
-      link: '/seo',
-      icon: (
-        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-        </svg>
-      ),
-    },
-    {
       title: 'Meta Advertising',
       description: 'High-performance campaigns that drive measurable results',
       link: '/meta',
       icon: (
         <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+        </svg>
+      ),
+    },
+    {
+      title: 'SEO',
+      description: 'Scalable organic growth for brands that demand authority',
+      link: '/seo',
+      icon: (
+        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
         </svg>
       ),
     },
@@ -48,7 +48,7 @@ export default function ServicesSection() {
       link: '/branding',
       icon: (
         <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" />
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
         </svg>
       ),
     },
@@ -65,32 +65,33 @@ export default function ServicesSection() {
   ]
 
   return (
-    <section id="services" className="py-20 bg-bg">
+    <section id="services" className="py-24 bg-black">
       <div className="container mx-auto px-6 md:px-12 lg:px-16">
         <div className="text-center mb-16">
-          <div className="mb-4">
-            <span className="text-gold text-xs font-semibold uppercase tracking-wider">
-              OUR SERVICES
-            </span>
-          </div>
-          <h2 className="text-4xl md:text-5xl lg:text-6xl text-cream mb-8">
+          <span className="text-white/50 text-xs font-semibold uppercase tracking-[0.3em] mb-4 block">
+            Our Services
+          </span>
+          <h2 className="text-4xl md:text-5xl lg:text-6xl text-white font-serif font-light">
             Focused. Strategic. Built for Scale.
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-white/10">
           {services.map((service, index) => (
             <Link
               key={index}
               href={service.link}
-              className="bg-bg border border-gold-dim p-8 transition-all duration-300 hover:border-gold hover:scale-105 group"
+              className="bg-black p-10 transition-all duration-300 hover:bg-white/5 group flex flex-col"
             >
-              <div className="text-gold mb-6 group-hover:scale-110 transition-transform">
+              <div className="text-white/60 mb-6 group-hover:text-white group-hover:scale-110 transition-all duration-300">
                 {service.icon}
               </div>
-              <h3 className="text-xl font-bold text-cream uppercase mb-4">{service.title}</h3>
-              <p className="text-cream-dim mb-6 leading-relaxed">{service.description}</p>
-              <span className="text-gold text-sm font-semibold hover:text-gold-light transition-colors">
+              <h3 className="text-lg font-semibold text-white uppercase tracking-widest mb-3">
+                {service.title}
+              </h3>
+              <div className="h-px w-8 bg-white/20 mb-4 group-hover:w-16 transition-all duration-300" />
+              <p className="text-white/60 leading-relaxed text-sm flex-1">{service.description}</p>
+              <span className="mt-6 text-white/40 text-xs uppercase tracking-[0.2em] group-hover:text-white transition-colors duration-300">
                 Learn More →
               </span>
             </Link>

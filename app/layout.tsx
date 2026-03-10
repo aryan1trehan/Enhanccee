@@ -1,19 +1,23 @@
 import type { Metadata } from 'next'
-import { Playfair_Display, Inter } from 'next/font/google'
+import { Cormorant_Garamond, Montserrat } from 'next/font/google'
 import './globals.css'
 import CinematicEffects from '@/components/CinematicEffects'
 
-const playfair = Playfair_Display({
+/* ─── Cormorant Garamond — Headings (H1 / H2) ─── */
+const cormorant = Cormorant_Garamond({
   subsets: ['latin'],
-  weight: ['400', '500', '600', '700', '800', '900'],
-  variable: '--font-playfair',
+  weight: ['300', '400', '500', '600', '700'],
+  style: ['normal', 'italic'],
+  variable: '--font-cormorant',
   display: 'swap',
 })
 
-const inter = Inter({
+/* ─── Montserrat — Body / UI / Navigation ─── */
+const montserrat = Montserrat({
   subsets: ['latin'],
-  weight: ['300', '400', '500', '600', '700'],
-  variable: '--font-inter',
+  weight: ['300', '400', '500', '600', '700', '800'],
+  style: ['normal', 'italic'],
+  variable: '--font-montserrat',
   display: 'swap',
 })
 
@@ -28,17 +32,18 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={`${playfair.variable} ${inter.variable} bg-bg`}>
-      <body className="bg-bg text-cream min-h-screen">
+    <html
+      lang="en"
+      className={`${cormorant.variable} ${montserrat.variable}`}
+      style={{ backgroundColor: '#000000' }}
+    >
+      <body
+        className="min-h-screen font-body"
+        style={{ backgroundColor: '#000000', color: '#ffffff' }}
+      >
         <CinematicEffects />
         {children}
       </body>
     </html>
   )
 }
-
-
-
-
-
-
