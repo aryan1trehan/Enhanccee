@@ -45,7 +45,7 @@ export default function ResultsSection() {
   ]
 
   return (
-    <section ref={sectionRef} className="py-32 bg-white relative overflow-hidden">
+    <section ref={sectionRef} className="py-32 bg-black relative overflow-hidden">
         {/* Subtle background pattern */}
         <div className="absolute inset-0 opacity-[0.02]" style={{
           backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23000000' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
@@ -53,20 +53,20 @@ export default function ResultsSection() {
 
         <div className="container mx-auto px-6 md:px-12 lg:px-16 relative z-10">
           <div className={`text-center mb-20 ${visible ? 'result-header-visible' : 'result-header-hidden'}`}>
-            <span className="text-black/40 text-xs font-semibold uppercase tracking-[0.3em] mb-6 block">
+            <span className="text-white/40 text-xs font-semibold uppercase tracking-[0.3em] mb-6 block">
               Results
             </span>
-            <h2 className="text-5xl md:text-6xl lg:text-7xl text-black font-serif font-light mb-4">
+            <h2 className="text-5xl md:text-6xl lg:text-7xl text-white font-serif font-light mb-4">
               Measurable Impact
             </h2>
-            <div className="h-px w-24 bg-gradient-to-r from-transparent via-black/20 to-transparent mx-auto mt-6" />
+            <div className="h-px w-24 bg-gradient-to-r from-transparent via-white/20 to-transparent mx-auto mt-6" />
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
             {results.map((result, index) => (
               <div
                 key={index}
-                className={`result-card bg-white border border-black/10 p-12 text-center transition-all duration-500 hover:border-black/30 hover:shadow-2xl group relative ${visible ? 'result-card-visible' : 'result-card-hidden'}`}
+                className={`result-card bg-black border border-white/10 p-12 text-center transition-all duration-500 hover:border-white/30 hover:shadow-2xl group relative ${visible ? 'result-card-visible' : 'result-card-hidden'}`}
                 style={{
                   transitionDelay: visible ? `${index * 150}ms` : '0ms',
                   transition: `opacity 0.8s ease ${index * 150}ms, transform 0.8s ease ${index * 150}ms, border-color 0.4s, box-shadow 0.4s`
@@ -82,15 +82,15 @@ export default function ResultsSection() {
                 </div>
                 
                 {/* Label */}
-                <h3 className="text-base md:text-lg font-semibold text-black uppercase tracking-[0.15em] mb-4 group-hover:text-black transition-colors">
+                <h3 className="text-base md:text-lg font-semibold text-white uppercase tracking-[0.15em] mb-4 group-hover:text-white transition-colors">
                   {result.label}
                 </h3>
                 
                 {/* Decorative line */}
-                <div className="h-px w-12 bg-gradient-to-r from-transparent via-black/30 to-transparent mx-auto mb-4 group-hover:w-16 transition-all duration-500" />
+                <div className="h-px w-12 bg-gradient-to-r from-transparent via-white/30 to-transparent mx-auto mb-4 group-hover:w-16 transition-all duration-500" />
                 
                 {/* Description */}
-                <p className="text-black/60 text-sm md:text-base leading-relaxed max-w-xs mx-auto group-hover:text-black/70 transition-colors">
+                <p className="text-white/60 text-sm md:text-base leading-relaxed max-w-xs mx-auto group-hover:text-white/70 transition-colors">
                   {result.description}
                 </p>
 
@@ -105,9 +105,9 @@ export default function ResultsSection() {
             <div className={`inline-flex items-center gap-4 ${visible ? 'result-footer-visible' : 'result-footer-hidden'}`} style={{
               transitionDelay: visible ? `${results.length * 150 + 300}ms` : '0ms'
             }}>
-              <div className="h-px w-16 bg-gradient-to-r from-transparent to-black/20" />
-              <span className="text-black/30 text-xs uppercase tracking-widest">Trusted by Industry Leaders</span>
-              <div className="h-px w-16 bg-gradient-to-l from-transparent to-black/20" />
+              <div className="h-px w-16 bg-gradient-to-r from-transparent to-white/20" />
+              <span className="text-white/30 text-xs uppercase tracking-widest">Trusted by Industry Leaders</span>
+              <div className="h-px w-16 bg-gradient-to-l from-transparent to-white/20" />
             </div>
           </div>
         </div>

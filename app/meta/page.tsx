@@ -81,7 +81,7 @@ export default function MetaPage() {
             We engineer high-performance Meta campaigns that drive measurable business results, not just clicks.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="bg-white text-black px-10 py-4 font-semibold text-sm uppercase tracking-[0.2em] hover:bg-gray-100 transition-all duration-300 hover:scale-105">
+            <button className="bg-white text-black px-10 py-4 font-semibold text-sm uppercase tracking-[0.2em] hover:bg-gray-100 transition-all duration-300 hover:scale-105" style={{ color: '#000000' }}>
               Get Your Strategy
             </button>
             <button className="border border-white/30 text-white px-10 py-4 font-semibold text-sm uppercase tracking-[0.2em] hover:bg-white hover:text-black transition-all duration-300 hover:scale-105">
@@ -235,7 +235,7 @@ export default function MetaPage() {
               <span className="text-white/60 text-xs uppercase tracking-[0.3em] mb-4 block">Recognition</span>
               <h3 className="text-3xl md:text-4xl font-semibold text-white mb-6">Recognised among emerging best Meta advertising agencies</h3>
               <p className="text-white/80 mb-8 leading-relaxed">Delivering Meta advertising services across India, UAE, Australia, and the US — supporting both local and global growth.</p>
-              <button className="bg-white text-black px-8 py-4 font-semibold text-sm uppercase tracking-[0.2em] hover:bg-gray-100 transition-all duration-300 hover:scale-105 w-fit">
+              <button className="bg-white text-black px-8 py-4 font-semibold text-sm uppercase tracking-[0.2em] hover:bg-gray-100 transition-all duration-300 hover:scale-105 w-fit" style={{ color: '#000000' }}>
                 Start Your Growth
               </button>
             </div>

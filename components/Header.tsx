@@ -53,7 +53,7 @@ export default function Header() {
           <div className="hidden md:flex items-center flex-shrink-0">
             <Link
               href="/contact"
-              className="bg-white text-black px-6 py-2 font-semibold text-xs lg:text-sm hover:bg-white/90 transition-all duration-300 hover:scale-105 uppercase tracking-wider whitespace-nowrap"
+              className="bg-white text-black px-6 py-2 font-semibold text-xs lg:text-sm hover:bg-gray-200 transition-all duration-300 hover:scale-105 uppercase tracking-wider whitespace-nowrap"
             >
               INQUIRY
             </Link>
@@ -95,7 +95,7 @@ export default function Header() {
             ))}
             <Link
               href="/contact"
-              className="block bg-white text-black px-6 py-2 font-semibold text-xs text-center uppercase tracking-wider mt-4 hover:bg-white/90 transition-colors"
+              className="block bg-white text-black px-6 py-2 font-semibold text-xs text-center uppercase tracking-wider mt-4 hover:bg-gray-200 transition-colors"
             >
               INQUIRY
             </Link>

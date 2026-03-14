@@ -4,22 +4,22 @@ import Link from 'next/link'
 
 export default function Footer() {
   return (
-    <footer className="bg-white border-t border-black/10 pt-16 pb-10">
+    <footer className="bg-black border-t border-white/10 pt-16 pb-10">
       <div className="container mx-auto px-6 md:px-12 lg:px-20">
 
         {/* ── Top CTA ── */}
         <div className="text-center mb-14 md:mb-16">
-          <h2 className="text-3xl md:text-4xl lg:text-6xl tracking-[0.1em] uppercase font-serif font-light text-black inline-flex items-center gap-2 flex-wrap justify-center">
+          <h2 className="text-3xl md:text-4xl lg:text-6xl tracking-[0.1em] uppercase font-serif font-light text-white inline-flex items-center gap-2 flex-wrap justify-center">
             <span>PR</span>
             <Link
               href="/contact"
-              className="inline-flex items-center justify-center w-10 h-10 md:w-12 md:h-12 rounded-full bg-black text-white hover:bg-gray-800 transition-all duration-300 hover:scale-110 group"
+              className="inline-flex items-center justify-center w-10 h-10 md:w-12 md:h-12 rounded-full bg-white text-black hover:bg-gray-200 transition-all duration-300 hover:scale-110 group"
               aria-label="Go to contact page"
             >
               <svg
                 className="w-5 h-5 md:w-6 md:h-6 group-hover:translate-x-0.5 transition-transform duration-300"
                 fill="none"
-                stroke="currentColor"
+                stroke="#000000"
                 viewBox="0 0 24 24"
                 strokeWidth={2.5}
               >
@@ -28,13 +28,13 @@ export default function Footer() {
             </Link>
             <span>JECT IN MIND?</span>
           </h2>
-          <p className="mt-4 text-black/40 text-sm uppercase tracking-[0.2em]">
+          <p className="mt-4 text-white/40 text-sm uppercase tracking-[0.2em]">
             Let&apos;s build something extraordinary together
           </p>
         </div>
 
         {/* ── Divider ── */}
-        <div className="h-px bg-black/10 mb-12" />
+        <div className="h-px bg-white/10 mb-12" />
 
         {/* ── Social buttons ── */}
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-14">
@@ -47,12 +47,12 @@ export default function Footer() {
             <a
               key={item.label}
               href={item.href}
-              className="flex items-center justify-center gap-3 rounded-full bg-white border border-black/15 px-6 py-3 text-black transition-all duration-300 hover:bg-black hover:text-white hover:border-black group"
+              className="flex items-center justify-center gap-3 rounded-full bg-black border border-white/15 px-6 py-3 text-white transition-all duration-300 hover:bg-white hover:border-white group"
             >
-              <span className="inline-flex h-5 w-5 items-center justify-center rounded-full bg-black/10 text-black text-xs group-hover:bg-white/20 group-hover:text-white transition-colors">
+              <span className="inline-flex h-5 w-5 items-center justify-center rounded-full bg-white/10 text-white text-xs group-hover:bg-black/20 group-hover:text-black transition-colors">
                 ●
               </span>
-              <span className="uppercase tracking-[0.15em] text-[11px] font-semibold">{item.label}</span>
+              <span className="uppercase tracking-[0.15em] text-[11px] font-semibold text-white" style={{ color: '#ffffff' }}>{item.label}</span>
             </a>
           ))}
         </div>
@@ -62,27 +62,27 @@ export default function Footer() {
 
           {/* Brand + email */}
           <div className="space-y-4">
-            <h3 className="text-xl text-black font-bold tracking-wider uppercase">Enhanccee</h3>
-            <p className="text-black text-sm leading-relaxed">
+            <h3 className="text-xl text-white font-bold tracking-wider uppercase">Enhanccee</h3>
+            <p className="text-white text-sm leading-relaxed">
               We combine strategy, creativity, and technology to help brands grow in today&apos;s digital landscape.
             </p>
             <div className="mt-6">
-              <p className="text-black text-sm font-semibold mb-3 uppercase tracking-wider">Stay in the loop</p>
+              <p className="text-white text-sm font-semibold mb-3 uppercase tracking-wider">Stay in the loop</p>
               <form
                 onSubmit={(e) => e.preventDefault()}
-                className="flex items-stretch rounded-full bg-white border border-black/20 overflow-hidden hover:border-black transition-colors duration-200 focus-within:border-black"
+                className="flex items-stretch rounded-full bg-black border border-white/20 overflow-hidden hover:border-white transition-colors duration-200 focus-within:border-white"
               >
                 <input
                   type="email"
                   placeholder="Enter your email..."
-                  className="flex-1 px-4 py-2.5 text-sm bg-transparent text-black placeholder-black/40 focus:outline-none"
+                  className="flex-1 px-4 py-2.5 text-sm bg-transparent text-white placeholder-white/40 focus:outline-none"
                 />
                 <button
                   type="submit"
                   className="flex items-center justify-center px-3 bg-transparent transition-colors"
                   aria-label="Submit email"
                 >
-                  <span className="h-7 w-7 rounded-full bg-black flex items-center justify-center text-white text-xs hover:bg-gray-800 transition-colors">
+                  <span className="h-7 w-7 rounded-full bg-white flex items-center justify-center text-black text-xs hover:bg-gray-200 transition-colors">
                     ↑
                   </span>
                 </button>
@@ -95,7 +95,7 @@ export default function Footer() {
 
             {/* Main Pages */}
             <div>
-              <h4 className="text-black text-xs font-bold uppercase tracking-[0.25em] mb-6">Main Pages</h4>
+              <h4 className="text-white text-xs font-bold uppercase tracking-[0.25em] mb-6">Main Pages</h4>
               <ul className="space-y-3 text-sm">
                 {[
                   { label: 'Home', href: '/' },
@@ -108,7 +108,7 @@ export default function Footer() {
                   <li key={link.label}>
                     <Link
                       href={link.href}
-                      className="text-black font-medium hover:text-black/50 transition-colors duration-200 hover:underline underline-offset-4 decoration-1"
+                      className="text-white font-medium hover:text-white/50 transition-colors duration-200 hover:underline underline-offset-4 decoration-1"
                     >
                       {link.label}
                     </Link>
@@ -119,21 +119,21 @@ export default function Footer() {
 
             {/* Office / Contact */}
             <div>
-              <h4 className="text-black text-xs font-bold uppercase tracking-[0.25em] mb-6">Office</h4>
-              <p className="text-black text-sm mb-6 leading-relaxed">
+              <h4 className="text-white text-xs font-bold uppercase tracking-[0.25em] mb-6">Office</h4>
+              <p className="text-white text-sm mb-6 leading-relaxed">
                 Enhanccee Studio<br />Jaipur, India
               </p>
-              <h4 className="text-black text-xs font-bold uppercase tracking-[0.25em] mb-4">Contact</h4>
+              <h4 className="text-white text-xs font-bold uppercase tracking-[0.25em] mb-4">Contact</h4>
               <div className="space-y-2 text-sm">
                 <a
                   href="tel:+917891368868"
-                  className="block text-black font-medium hover:text-black/50 transition-colors duration-200 hover:underline underline-offset-4 decoration-1"
+                  className="block text-white font-medium hover:text-white/50 transition-colors duration-200 hover:underline underline-offset-4 decoration-1"
                 >
                   +91 7891368868
                 </a>
                 <a
                   href="mailto:info@enhanccee.com"
-                  className="block text-black font-medium hover:text-black/50 transition-colors duration-200 hover:underline underline-offset-4 decoration-1"
+                  className="block text-white font-medium hover:text-white/50 transition-colors duration-200 hover:underline underline-offset-4 decoration-1"
                 >
                   info@enhanccee.com
                 </a>
@@ -144,13 +144,13 @@ export default function Footer() {
         </div>
 
         {/* ── Bottom bar ── */}
-        <div className="border-t border-black/10 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-black text-xs">
+        <div className="border-t border-white/10 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <p className="text-white text-xs">
             &copy; {new Date().getFullYear()} Enhanccee. All rights reserved.
           </p>
           <Link
             href="/contact"
-            className="text-black text-xs hover:text-black/50 transition-colors duration-200 uppercase tracking-wider hover:underline underline-offset-4"
+            className="text-white text-xs hover:text-white/50 transition-colors duration-200 uppercase tracking-wider hover:underline underline-offset-4"
           >
             Start a Project →
           </Link>

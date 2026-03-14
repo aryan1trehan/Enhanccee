@@ -62,7 +62,7 @@ export default function ContactSection() {
               <div className="text-center pt-4">
                 <button
                   type="submit"
-                  className="bg-white text-black px-12 py-4 font-semibold text-sm uppercase tracking-[0.2em] transition-all duration-300 hover:bg-gray-100 hover:scale-105 hover:-translate-y-0.5 active:scale-95"
+                  className="bg-white text-black px-12 py-4 font-semibold text-sm uppercase tracking-[0.2em] transition-all duration-300 hover:bg-gray-200 hover:scale-105 hover:-translate-y-0.5 active:scale-95"
                 >
                   Send Message
                 </button>

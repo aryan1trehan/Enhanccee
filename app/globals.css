@@ -17,11 +17,106 @@
 /* Hard reset — no green, no teal, ever */
 html, body {
   background-color: #000000 !important;
+  color: #ffffff !important;
+  scroll-behavior: smooth !important;
+}
+
+/* Force all sections to have black background and white text */
+section {
+  background-color: #000000 !important;
+  color: #ffffff !important;
+}
+
+/* Force all text to be white by default */
+p, h1, h2, h3, h4, h5, h6, span, div, a, li, td, th, label, input, textarea, select, button {
+  color: #ffffff !important;
+}
+
+/* Exception: White background sections and their content should have black text */
+section.bg-white,
+div.bg-white,
+.bg-white,
+section[style*="background"][style*="#ffffff"],
+section[style*="background"][style*="white"],
+div[style*="background"][style*="#ffffff"],
+div[style*="background"][style*="white"] {
+  color: #000000 !important;
+}
+
+section.bg-white *,
+div.bg-white *,
+.bg-white *,
+section[style*="background"][style*="#ffffff"] *,
+section[style*="background"][style*="white"] *,
+div[style*="background"][style*="#ffffff"] *,
+div[style*="background"][style*="white"] * {
+  color: #000000 !important;
+}
+
+/* Override for specific cases where we want white text on black */
+.text-black, .text-black\/\d+ {
+  color: #ffffff !important;
+}
+
+/* ═══════════════════════════════════════════════
+   WHITE BACKGROUND BUTTONS - BLACK TEXT
+   MUST COME AFTER .text-black rule for higher specificity
+   ═══════════════════════════════════════════════ */
+
+/* Force black text on all white background buttons and links - HIGHEST SPECIFICITY */
+button.bg-white.text-black,
+a.bg-white.text-black,
+button[class*="bg-white"].text-black,
+a[class*="bg-white"].text-black,
+button.bg-white,
+a.bg-white,
+button[class*="bg-white"],
+a[class*="bg-white"] {
+  color: #000000 !important;
+}
+
+/* Force black text for all children inside white background buttons */
+button.bg-white *,
+a.bg-white *,
+button[class*="bg-white"] *,
+a[class*="bg-white"] *,
+button.bg-white span,
+button.bg-white p,
+button.bg-white div,
+a.bg-white span,
+a.bg-white p,
+a.bg-white div {
+  color: #000000 !important;
+}
+
+/* Force black text on inline style white backgrounds */
+button[style*="background"][style*="#ffffff"],
+button[style*="background"][style*="white"],
+a[style*="background"][style*="#ffffff"],
+a[style*="background"][style*="white"] {
+  color: #000000 !important;
+}
+
+button[style*="background"][style*="#ffffff"] *,
+button[style*="background"][style*="white"] *,
+a[style*="background"][style*="#ffffff"] *,
+a[style*="background"][style*="white"] * {
+  color: #000000 !important;
 }
 
 @layer base {
   html {
+    scroll-behavior: smooth !important;
+  }
+  
+  /* Smooth scrolling for all anchor links */
+  a[href^="#"] {
     scroll-behavior: smooth;
+  }
+  
+  /* Smooth transitions for all interactive elements */
+  a, button, input, select, textarea {
+    transition: all 0.3s ease;
   }
 
   /* ══════════════════════════════════════════
@@ -855,7 +950,7 @@ html, body {
   left: 0;
   right: 0;
   height: 2px;
-  background: linear-gradient(to right, transparent, #000000, transparent);
+  background: linear-gradient(to right, transparent, #ffffff, transparent);
   transform: scaleX(0);
   transform-origin: left;
   transition: transform 0.6s cubic-bezier(.16,1,.3,1);
@@ -869,7 +964,7 @@ html, body {
   content: '';
   position: absolute;
   inset: 0;
-  background: radial-gradient(circle at center, rgba(0,0,0,.02) 0%, transparent 70%);
+  background: radial-gradient(circle at center, rgba(255,255,255,.02) 0%, transparent 70%);
   opacity: 0;
   transition: opacity 0.4s;
 }
@@ -879,7 +974,7 @@ html, body {
 }
 
 .result-number {
-  background: linear-gradient(135deg, #000000 0%, rgba(0,0,0,.8) 100%);
+  background: linear-gradient(135deg, #ffffff 0%, rgba(255,255,255,.8) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;

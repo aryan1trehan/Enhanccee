@@ -67,10 +67,29 @@ export default function CinematicEffects() {
       if (window.scrollY > 120) scrollHint.style.opacity = '0'
     }
     window.addEventListener('scroll', onScroll, { passive: true })
+    
+    // Smooth scrolling for anchor links
+    const handleAnchorClick = (e: MouseEvent) => {
+      const target = e.target as HTMLElement
+      const link = target.closest('a[href^="#"]') as HTMLAnchorElement
+      if (link && link.hash) {
+        e.preventDefault()
+        const targetId = link.hash.substring(1)
+        const targetElement = document.getElementById(targetId)
+        if (targetElement) {
+          targetElement.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start',
+          })
+        }
+      }
+    }
+    document.addEventListener('click', handleAnchorClick)
 
     return () => {
       document.removeEventListener('mousemove', onMove)
       window.removeEventListener('scroll', onScroll)
+      document.removeEventListener('click', handleAnchorClick)
       io.disconnect()
     }
   }, [])

@@ -31,8 +31,8 @@ export default function ServiceLayout({ title, subtitle, description, badge, chi
         </div>
       </section>
 
-      {/* ── CONTENT — WHITE ── */}
-      <section className="px-6 md:px-12 lg:px-16 py-24 bg-white">
+      {/* ── CONTENT — BLACK ── */}
+      <section className="px-6 md:px-12 lg:px-16 py-24 bg-black">
         <div className="max-w-7xl mx-auto">
           {children}
         </div>

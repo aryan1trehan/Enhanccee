@@ -1,33 +1,33 @@
 export default function PhilosophySection() {
   return (
-    <section id="why-choose-us" className="py-24 bg-white">
+    <section id="why-choose-us" className="py-24 bg-black">
       <div className="container mx-auto px-6 md:px-12 lg:px-16">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
 
             {/* Left Column – Text */}
             <div>
-              <span className="text-black/40 text-xs font-semibold uppercase tracking-[0.3em] mb-4 block">
+              <span className="text-white/40 text-xs font-semibold uppercase tracking-[0.3em] mb-4 block">
                 Why Choose Us
               </span>
-              <h2 className="text-5xl md:text-6xl text-black font-serif font-light mb-4 leading-tight">
+              <h2 className="text-5xl md:text-6xl text-white font-serif font-light mb-4 leading-tight">
                 The Enhanccee
                 <br />
                 Standard
               </h2>
-              <div className="h-px w-24 bg-black mb-8" />
-              <div className="space-y-5 text-black/70">
+              <div className="h-px w-24 bg-white mb-8" />
+              <div className="space-y-5 text-white/70">
                 <p className="text-lg leading-relaxed">
                   The difference between ranking and relevance is{' '}
-                  <span className="text-black font-semibold">intention</span>.
+                  <span className="text-white font-semibold">intention</span>.
                 </p>
                 <p className="text-lg leading-relaxed">
                   We don&apos;t optimise for algorithms alone; we optimise for{' '}
-                  <span className="text-black font-semibold">business impact</span>.
+                  <span className="text-white font-semibold">business impact</span>.
                 </p>
                 <p className="text-lg leading-relaxed">
                   At Enhanccee, excellence isn&apos;t a service — it&apos;s a{' '}
-                  <span className="text-black font-semibold">signature experience</span>.
+                  <span className="text-white font-semibold">signature experience</span>.
                 </p>
               </div>
             </div>

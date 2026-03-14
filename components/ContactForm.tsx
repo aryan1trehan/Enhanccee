@@ -59,7 +59,7 @@ export default function ContactForm() {
   }
 
   const inputClass =
-    'w-full px-4 py-3 bg-white border border-black/20 rounded-lg text-black focus:outline-none focus:border-black focus:ring-2 focus:ring-black/20 transition-all hover:border-black/50 placeholder-black/40'
+    'w-full px-4 py-3 bg-black border border-white/20 rounded-lg text-white focus:outline-none focus:border-white focus:ring-2 focus:ring-white/20 transition-all hover:border-white/50 placeholder-white/40'
 
   return (
     <div className="w-full flex flex-col lg:flex-row min-h-[calc(100vh-6rem)]" style={{ backgroundColor: '#000000' }}>
@@ -118,12 +118,12 @@ export default function ContactForm() {
 
       {/* Right Column – Inquiry Form */}
       <div className="w-full lg:w-[62%] flex items-center justify-center py-16 lg:py-24 px-6 md:px-10 lg:px-16" style={{ backgroundColor: '#000000' }}>
-        <div className="w-full max-w-2xl bg-white px-8 md:px-12 py-12 shadow-2xl">
+        <div className="w-full max-w-2xl bg-black border border-white/10 px-8 md:px-12 py-12 shadow-2xl">
           <div className="mb-8">
-            <h2 className="text-4xl md:text-5xl font-serif text-black mb-4">
+            <h2 className="text-4xl md:text-5xl font-serif text-white mb-4">
               INQUIRY FORM
             </h2>
-            <p className="text-black/70 text-lg">
+            <p className="text-white/70 text-lg">
               Share a few details so we can dive into your world before we speak.
             </p>
           </div>
@@ -132,7 +132,7 @@ export default function ContactForm() {
             {/* Full Name & Brand */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div>
-                <label htmlFor="fullName" className="block text-black text-sm font-semibold mb-2">
+                <label htmlFor="fullName" className="block text-white text-sm font-semibold mb-2">
                   Full Name *
                 </label>
                 <input
@@ -147,7 +147,7 @@ export default function ContactForm() {
                 />
               </div>
               <div>
-                <label htmlFor="brandName" className="block text-black text-sm font-semibold mb-2">
+                <label htmlFor="brandName" className="block text-white text-sm font-semibold mb-2">
                   Brand/Company Name *
                 </label>
                 <input
@@ -166,7 +166,7 @@ export default function ContactForm() {
             {/* Phone & Email */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div>
-                <label htmlFor="phone" className="block text-black text-sm font-semibold mb-2">
+                <label htmlFor="phone" className="block text-white text-sm font-semibold mb-2">
                   Phone *
                 </label>
                 <input
@@ -181,7 +181,7 @@ export default function ContactForm() {
                 />
               </div>
               <div>
-                <label htmlFor="email" className="block text-black text-sm font-semibold mb-2">
+                <label htmlFor="email" className="block text-white text-sm font-semibold mb-2">
                   Email *
                 </label>
                 <input
@@ -199,7 +199,7 @@ export default function ContactForm() {
 
             {/* Project Category */}
             <div>
-              <label htmlFor="projectCategory" className="block text-black text-sm font-semibold mb-2">
+              <label htmlFor="projectCategory" className="block text-white text-sm font-semibold mb-2">
                 Project Category
               </label>
               <div className="relative">
@@ -219,7 +219,7 @@ export default function ContactForm() {
                   <option value="saas">SaaS Development</option>
                 </select>
                 <div className="absolute inset-y-0 right-0 flex items-center pr-4 pointer-events-none">
-                  <svg className="w-5 h-5 text-black/50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-5 h-5 text-white/50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                   </svg>
                 </div>
@@ -228,7 +228,7 @@ export default function ContactForm() {
 
             {/* Project Timeline */}
             <div>
-              <label htmlFor="projectTimeline" className="block text-black text-sm font-semibold mb-2">
+              <label htmlFor="projectTimeline" className="block text-white text-sm font-semibold mb-2">
                 Project Timeline
               </label>
               <div className="relative">
@@ -247,7 +247,7 @@ export default function ContactForm() {
                   <option value="6-plus-months">6+ months</option>
                 </select>
                 <div className="absolute inset-y-0 right-0 flex items-center pr-4 pointer-events-none">
-                  <svg className="w-5 h-5 text-black/50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-5 h-5 text-white/50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                   </svg>
                 </div>
@@ -256,7 +256,7 @@ export default function ContactForm() {
 
             {/* Vision */}
             <div>
-              <label htmlFor="vision" className="block text-black text-sm font-semibold mb-2">
+              <label htmlFor="vision" className="block text-white text-sm font-semibold mb-2">
                 Tell us about your vision *
               </label>
               <textarea
@@ -273,7 +273,7 @@ export default function ContactForm() {
 
             {/* Suitable Time */}
             <div>
-              <label htmlFor="suitableTime" className="block text-black text-sm font-semibold mb-2">
+              <label htmlFor="suitableTime" className="block text-white text-sm font-semibold mb-2">
                 Suitable Time to Connect *
               </label>
               <input
@@ -293,12 +293,13 @@ export default function ContactForm() {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full bg-black text-white px-8 py-4 font-semibold text-sm uppercase tracking-[0.2em] hover:bg-gray-900 transition-all duration-300 hover:scale-[1.01] active:scale-[0.99] disabled:opacity-70 disabled:cursor-not-allowed"
+                className="w-full bg-black border border-white text-white px-8 py-4 font-semibold text-sm uppercase tracking-[0.2em] hover:bg-white hover:text-black hover:border-white transition-all duration-300 hover:scale-[1.01] active:scale-[0.99] disabled:opacity-70 disabled:cursor-not-allowed"
+                style={{ color: '#ffffff', borderColor: '#ffffff'}}
               >
                 {isSubmitting ? 'Submitting…' : 'Submit'}
               </button>
               {submitMessage && (
-                <p className="text-sm text-black/70 text-center">{submitMessage}</p>
+                <p className="text-sm text-white/70 text-center">{submitMessage}</p>
               )}
             </div>
           </form>

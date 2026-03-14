@@ -45,7 +45,7 @@ const services = [
     disciplines: ['Google Ads', 'Meta Ads', 'Funnel Architecture', 'Creative Strategy', 'ROAS Optimisation', 'Attribution'],
     link: '/meta',
     image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&q=85&fit=crop',
-    bg: '#ffffff',   // white section
+    bg: '#000000',   // black section
     imageSide: 'left' as const,
   },
   {
@@ -69,7 +69,7 @@ const services = [
     disciplines: ['UX Research', 'Interface Design', 'Prototyping', 'Motion Design', 'Design Systems', 'Usability Testing'],
     link: '/ui-ux',
     image: 'https://images.unsplash.com/photo-1586717791821-3f44a563fa4c?w=1200&q=85&fit=crop',
-    bg: '#ffffff',
+    bg: '#000000',
     imageSide: 'left' as const,
   },
   {
@@ -93,7 +93,7 @@ const services = [
     disciplines: ['PLG Strategy', 'Onboarding', 'Churn Reduction', 'MRR Growth', 'Product Marketing', 'NRR Optimisation'],
     link: '/saas',
     image: 'https://images.unsplash.com/photo-1639322537228-f710d846310a?w=1200&q=85&fit=crop',
-    bg: '#ffffff',
+    bg: '#000000',
     imageSide: 'left' as const,
   },
 ]
@@ -106,12 +106,12 @@ export default function ServicesPage() {
         @keyframes svc-scrollPulse { 0%,100%{opacity:.4} 50%{opacity:1} }
         .svc-tag-black { font-size:.65rem; padding:.35rem .9rem; border:1px solid rgba(255,255,255,.15); color:rgba(255,255,255,.5); display:inline-block; transition:all .3s; line-height:1.5; }
         .svc-tag-black:hover { border-color:rgba(255,255,255,.5); color:#ffffff; }
-        .svc-tag-white { font-size:.65rem; padding:.35rem .9rem; border:1px solid rgba(0,0,0,.15); color:rgba(0,0,0,.5); display:inline-block; transition:all .3s; line-height:1.5; }
-        .svc-tag-white:hover { border-color:rgba(0,0,0,.6); color:#000000; }
+        .svc-tag-white { font-size:.65rem; padding:.35rem .9rem; border:1px solid rgba(255,255,255,.15); color:rgba(255,255,255,.5); display:inline-block; transition:all .3s; line-height:1.5; }
+        .svc-tag-white:hover { border-color:rgba(255,255,255,.5); color:#ffffff; }
         .svc-link-black { display:inline-flex; align-items:center; gap:.8rem; font-size:.72rem; letter-spacing:.22em; text-transform:uppercase; color:rgba(255,255,255,.5); text-decoration:none; transition:all .35s; border-bottom:1px solid rgba(255,255,255,.15); padding-bottom:.3rem; line-height:1.5; }
         .svc-link-black:hover { color:#ffffff; border-color:#ffffff; gap:1.4rem; }
-        .svc-link-white { display:inline-flex; align-items:center; gap:.8rem; font-size:.72rem; letter-spacing:.22em; text-transform:uppercase; color:rgba(0,0,0,.5); text-decoration:none; transition:all .35s; border-bottom:1px solid rgba(0,0,0,.2); padding-bottom:.3rem; line-height:1.5; }
-        .svc-link-white:hover { color:#000000; border-color:#000000; gap:1.4rem; }
+        .svc-link-white { display:inline-flex; align-items:center; gap:.8rem; font-size:.72rem; letter-spacing:.22em; text-transform:uppercase; color:rgba(255,255,255,.5); text-decoration:none; transition:all .35s; border-bottom:1px solid rgba(255,255,255,.15); padding-bottom:.3rem; line-height:1.5; }
+        .svc-link-white:hover { color:#ffffff; border-color:#ffffff; gap:1.4rem; }
         .svc-img-wrap { overflow:hidden; width:100%; }
         .svc-img-wrap img { width:100%; height:100%; object-fit:cover; display:block; transition:transform 8s ease; }
         .svc-img-wrap:hover img { transform:scale(1.04); }

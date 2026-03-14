@@ -4,7 +4,7 @@ import Link from 'next/link'
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen bg-white flex items-center justify-center px-6 md:px-12 lg:px-16 py-32">
+    <section className="relative min-h-screen bg-black flex items-center justify-center px-6 md:px-12 lg:px-16 py-32">
       {/* Subtle grid pattern */}
       <div className="absolute inset-0 opacity-[0.04]">
         <div className="absolute inset-0" style={{
@@ -16,19 +16,19 @@ export default function Hero() {
       {/* Content */}
       <div className="relative z-10 max-w-5xl mx-auto text-center">
         <div className="mb-8">
-          <span className="text-black/40 text-xs font-semibold uppercase tracking-[0.3em]">
+          <span className="text-white/40 text-xs font-semibold uppercase tracking-[0.3em]">
             Elite Marketing &amp; Growth Partner
           </span>
         </div>
 
-        <h1 className="text-5xl md:text-6xl lg:text-7xl font-serif font-light mb-6 leading-tight text-black">
+        <h1 className="text-5xl md:text-6xl lg:text-7xl font-serif font-light mb-6 leading-tight text-white">
           Crafting brands that<br />
           stand above the noise
         </h1>
 
-        <div className="h-px w-16 bg-black/20 mx-auto mb-8" />
+        <div className="h-px w-16 bg-white/20 mx-auto mb-8" />
 
-        <p className="text-lg md:text-xl text-black/60 max-w-3xl mx-auto mb-12">
+        <p className="text-lg md:text-xl text-white/60 max-w-3xl mx-auto mb-12">
           We engineer scalable growth for brands that demand authority, not just visibility.
         </p>
 
@@ -41,7 +41,8 @@ export default function Hero() {
           </Link>
           <Link
             href="/services"
-            className="bg-transparent border border-black text-black px-10 py-4 font-semibold text-sm uppercase tracking-[0.2em] transition-all duration-300 hover:bg-black hover:text-white hover:scale-105 hover:-translate-y-0.5 active:scale-95"
+            className="bg-transparent border-2 border-white text-white px-10 py-4 font-semibold text-sm uppercase tracking-[0.2em] transition-all duration-300 hover:bg-white hover:text-black hover:scale-105 hover:-translate-y-0.5 active:scale-95"
+            style={{ borderColor: '#ffffff', color: '#ffffff' }}
           >
             Our Services
           </Link>
@@ -50,7 +51,7 @@ export default function Hero() {
 
       {/* Scroll Indicator */}
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
-        <svg className="w-5 h-5 text-black/40" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <svg className="w-5 h-5 text-white/40" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
         </svg>
       </div>
