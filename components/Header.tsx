@@ -1,7 +1,9 @@
 'use client'
 
 import Link from 'next/link'
+import Image from 'next/image'
 import { useState } from 'react'
+import logoImage from './IMG/enhancceelogotemp.png'
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -15,9 +17,16 @@ export default function Header() {
           <div className="flex-shrink-0">
             <Link
               href="/"
-              className="text-xl lg:text-2xl font-bold text-white hover:text-white/70 transition-colors tracking-widest uppercase"
+              className="block hover:opacity-70 transition-opacity"
             >
-              ENHANCE
+              <Image
+                src={logoImage}
+                alt="Enhanccee Logo"
+                width={150}
+                height={40}
+                className="h-8 lg:h-10 w-auto"
+                priority
+              />
             </Link>
           </div>
 
