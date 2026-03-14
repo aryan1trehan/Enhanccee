@@ -57,8 +57,18 @@ export default function MetaPage() {
       <Header />
 
       {/* ── SECTION 1: HERO — BLACK ── */}
-      <section className="relative px-6 md:px-12 lg:px-16 py-20 md:py-36 flex flex-col items-center justify-center min-h-[85vh] bg-black">
-        <div className="max-w-4xl mx-auto text-center">
+      <section className="relative px-6 md:px-12 lg:px-16 py-20 md:py-36 flex flex-col items-center justify-center min-h-[85vh] bg-black overflow-hidden">
+        {/* Background Image */}
+        <div className="absolute inset-0 z-0">
+          <img
+            src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1920&q=80&fit=crop"
+            alt="Digital marketing analytics"
+            className="w-full h-full object-cover"
+            style={{ filter: 'brightness(0.3) saturate(0.7)' }}
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/60 to-black/80" />
+        </div>
+        <div className="max-w-4xl mx-auto text-center relative z-10">
           <span className="text-white/40 text-xs font-semibold uppercase tracking-[0.3em] mb-6 block">
             Meta Advertising
           </span>
@@ -83,21 +93,26 @@ export default function MetaPage() {
 
       {/* ── SECTION 2: ENHANCCEE STANDARD — WHITE ── */}
       <section className="px-6 md:px-12 lg:px-16 py-24 bg-white">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <div>
+        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+          <div className="order-2 lg:order-1">
             <span className="text-black/40 text-xs uppercase tracking-[0.3em] mb-4 block">Our Standard</span>
             <h2 className="text-5xl md:text-6xl font-serif font-light text-black mb-4 leading-tight">
               The Enhanccee<br />Standard
             </h2>
             <div className="h-px w-24 bg-black mb-8" />
-            <div className="space-y-5 text-black/70 text-lg">
+            <div className="space-y-5 text-black/70 text-lg leading-relaxed">
               <p>The difference between clicks and conversions is <span className="text-black font-semibold">strategy</span>.</p>
               <p>We don't just run ads; we engineer campaigns for <span className="text-black font-semibold">business impact</span>.</p>
               <p>At Enhanccee, Meta advertising isn't a service — it's a <span className="text-black font-semibold">signature experience</span>.</p>
             </div>
           </div>
-          <div className="relative h-96 lg:h-[480px] bg-black/[0.03] border border-black/10 rounded-lg">
-            <div className="absolute bottom-4 right-4 w-32 h-20 border border-black/20" />
+          <div className="relative h-96 lg:h-[480px] order-1 lg:order-2 overflow-hidden rounded-lg">
+            <img
+              src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&q=80&fit=crop"
+              alt="Marketing strategy and analytics"
+              className="w-full h-full object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
           </div>
         </div>
       </section>
@@ -115,7 +130,7 @@ export default function MetaPage() {
             {deliverables.map((item, i) => (
               <div key={i} className="bg-black p-8 group hover:bg-white/5 transition-all duration-300">
                 <div className="text-white/20 text-4xl font-light mb-4">{String(i+1).padStart(2,'0')}</div>
-                <h3 className="text-sm font-semibold text-white uppercase tracking-wider mb-4">{item.title}</h3>
+                <h3 className="text-sm font-semibold text-white uppercase tracking-wider mb-4 leading-tight">{item.title}</h3>
                 <div className="h-px w-8 bg-white/20 mb-4 group-hover:w-16 transition-all duration-300" />
                 <p className="text-white/60 text-sm leading-relaxed">{item.description}</p>
               </div>
@@ -142,7 +157,7 @@ export default function MetaPage() {
                     <div className={`flex-1 bg-white border border-black/10 p-8 ${i % 2 === 0 ? 'md:mr-auto md:pr-16' : 'md:ml-auto md:pl-16'} max-w-md hover:border-black/30 hover:shadow-lg transition-all duration-300`}>
                       <div className="text-5xl font-light text-black/10 mb-4">{step.number}</div>
                       <h3 className="text-3xl font-semibold text-black mb-3">{step.title}</h3>
-                      <p className="text-black/60 text-lg">{step.description}</p>
+                      <p className="text-black/60 text-lg leading-relaxed">{step.description}</p>
                     </div>
                   </div>
                 )
@@ -153,8 +168,18 @@ export default function MetaPage() {
       </section>
 
       {/* ── SECTION 5: WHY BRANDS CHOOSE — BLACK ── */}
-      <section className="px-6 md:px-12 lg:px-16 py-24 bg-black">
-        <div className="max-w-7xl mx-auto">
+      <section className="px-6 md:px-12 lg:px-16 py-24 bg-black relative overflow-hidden">
+        {/* Background Image */}
+        <div className="absolute inset-0 z-0">
+          <img
+            src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=1920&q=80&fit=crop"
+            alt="Social media marketing"
+            className="w-full h-full object-cover"
+            style={{ filter: 'brightness(0.25) saturate(0.6)' }}
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/90 via-black/80 to-black/90" />
+        </div>
+        <div className="max-w-7xl mx-auto relative z-10">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif font-light text-white mb-6">Why Brands Choose Enhanccee</h2>
             <p className="text-lg text-white/60 max-w-3xl mx-auto">
@@ -163,13 +188,13 @@ export default function MetaPage() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-white/10 mb-16">
             {[{ value: '3×', label: 'ROI Increase' }, { value: '85%', label: 'Conversion Rate' }, { value: '10+', label: 'Years Experience' }].map((s, i) => (
-              <div key={i} className="bg-black p-12 text-center">
+              <div key={i} className="bg-black/60 backdrop-blur-sm p-12 text-center border border-white/5">
                 <div className="text-6xl md:text-7xl font-bold text-white mb-4">{s.value}</div>
                 <div className="text-white/50 text-xs font-semibold uppercase tracking-[0.25em]">{s.label}</div>
               </div>
             ))}
           </div>
-          <div className="border border-white/15 p-12 text-center max-w-4xl mx-auto">
+          <div className="border border-white/15 p-12 text-center max-w-4xl mx-auto bg-black/40 backdrop-blur-sm">
             <p className="text-white/80 text-xl md:text-2xl italic mb-4">&quot;We don't optimize for impressions alone&quot;</p>
             <p className="text-white text-xl md:text-2xl font-semibold">We optimize for business impact</p>
           </div>
@@ -178,7 +203,7 @@ export default function MetaPage() {
 
       {/* ── SECTION 6: WHAT MAKES US DIFFERENT — WHITE ── */}
       <section className="px-6 md:px-12 lg:px-16 py-24 bg-white">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
           <div>
             <h2 className="text-5xl md:text-6xl font-serif font-light text-black mb-2">What Makes Us</h2>
             <h2 className="text-5xl md:text-6xl font-serif font-light text-black/40 mb-8">Different</h2>
@@ -193,19 +218,27 @@ export default function MetaPage() {
                   <div className="w-1.5 h-1.5 bg-black mt-3 flex-shrink-0" />
                   <div>
                     <h3 className="text-black font-semibold text-lg mb-1">{item.title}</h3>
-                    <p className="text-black/60">{item.description}</p>
+                    <p className="text-black/60 leading-relaxed">{item.description}</p>
                   </div>
                 </div>
               ))}
             </div>
           </div>
-          <div className="border border-black/15 p-8">
-            <span className="text-black/40 text-xs uppercase tracking-[0.3em] mb-4 block">Recognition</span>
-            <h3 className="text-3xl md:text-4xl font-semibold text-black mb-6">Recognised among emerging best Meta advertising agencies</h3>
-            <p className="text-black/60 mb-8 leading-relaxed">Delivering Meta advertising services across India, UAE, Australia, and the US — supporting both local and global growth.</p>
-            <button className="bg-black text-white px-8 py-4 font-semibold text-sm uppercase tracking-[0.2em] hover:bg-gray-800 transition-all duration-300 hover:scale-105">
-              Start Your Growth
-            </button>
+          <div className="relative overflow-hidden rounded-lg">
+            <img
+              src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=1200&q=80&fit=crop"
+              alt="Digital marketing team collaboration"
+              className="w-full h-full object-cover"
+              style={{ minHeight: '500px' }}
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent flex flex-col justify-end p-8">
+              <span className="text-white/60 text-xs uppercase tracking-[0.3em] mb-4 block">Recognition</span>
+              <h3 className="text-3xl md:text-4xl font-semibold text-white mb-6">Recognised among emerging best Meta advertising agencies</h3>
+              <p className="text-white/80 mb-8 leading-relaxed">Delivering Meta advertising services across India, UAE, Australia, and the US — supporting both local and global growth.</p>
+              <button className="bg-white text-black px-8 py-4 font-semibold text-sm uppercase tracking-[0.2em] hover:bg-gray-100 transition-all duration-300 hover:scale-105 w-fit">
+                Start Your Growth
+              </button>
+            </div>
           </div>
         </div>
       </section>
@@ -235,8 +268,18 @@ export default function MetaPage() {
       </section>
 
       {/* ── SECTION 8: CTA — WHITE ── */}
-      <section className="px-6 md:px-12 lg:px-16 py-24 md:py-36 bg-white">
-        <div className="max-w-4xl mx-auto text-center">
+      <section className="px-6 md:px-12 lg:px-16 py-24 md:py-36 bg-white relative overflow-hidden">
+        {/* Background Image */}
+        <div className="absolute inset-0 z-0">
+          <img
+            src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=1920&q=80&fit=crop"
+            alt="Business growth and strategy"
+            className="w-full h-full object-cover"
+            style={{ filter: 'brightness(0.4) saturate(0.5)' }}
+          />
+          <div className="absolute inset-0 bg-white/85" />
+        </div>
+        <div className="max-w-4xl mx-auto text-center relative z-10">
           <span className="text-black/40 text-sm uppercase tracking-[0.3em] mb-6 block">Ready to Scale?</span>
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif font-light text-black mb-6 leading-tight">
             Let&apos;s Engineer Your<br /><em className="not-italic">Meta Strategy</em>
