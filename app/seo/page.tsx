@@ -109,8 +109,8 @@ export default function SEOPage() {
         .seo-eco-card:hover { background:#111111; }
         .seo-eco-card::before { content:''; position:absolute; top:0; left:0; right:0; height:1px; background:linear-gradient(to right, transparent, #ffffff, transparent); opacity:0; transition:opacity .5s; }
         .seo-eco-card:hover::before { opacity:1; }
-        .seo-eco-num { font-family:var(--font-cormorant),serif; font-size:7rem; font-weight:300; color:rgba(255,255,255,.04); position:absolute; top:1rem; right:2rem; pointer-events:none; transition:color .5s; }
-        .seo-eco-card:hover .seo-eco-num { color:rgba(255,255,255,.07); }
+        .seo-eco-num { font-family:var(--font-cormorant),serif; font-size:7rem; font-weight:300; color:rgba(255,255,255,.15); position:absolute; top:1rem; right:2rem; pointer-events:none; transition:color .5s; }
+        .seo-eco-card:hover .seo-eco-num { color:rgba(255,255,255,.25); }
         .seo-tag-item { font-size:.72rem; padding:.3rem .8rem; border:1px solid rgba(255,255,255,.12); color:rgba(255,255,255,.45); transition:all .3s; display:inline-block; }
         .seo-eco-card:hover .seo-tag-item { border-color:rgba(255,255,255,.3); color:rgba(255,255,255,.75); }
         .seo-diff-item { padding:4rem; border-bottom:1px solid rgba(255,255,255,.06); border-right:1px solid rgba(255,255,255,.06); position:relative; overflow:hidden; }
@@ -188,7 +188,7 @@ export default function SEOPage() {
             ].map((b, i) => (
               <FadeIn key={i} delay={i * 100}>
                 <div>
-                  <div style={{ fontFamily:'var(--font-cormorant)', fontSize:'5rem', color:'rgba(255,255,255,.06)', lineHeight:1, marginBottom:'1.5rem', fontWeight:300 }}>{b.n}</div>
+                  <div style={{ fontFamily:'var(--font-cormorant)', fontSize:'5rem', color:'rgba(255,255,255,.15)', lineHeight:1, marginBottom:'1.5rem', fontWeight:300 }}>{b.n}</div>
                   <p style={{ fontSize:'clamp(1rem,1.4vw,1.15rem)', lineHeight:1.9, color:'rgba(255,255,255,.55)', fontWeight:200 }}>
                     <strong style={{ color:'#ffffff', fontWeight:400 }}>{b.strong}</strong> {b.body}
                   </p>

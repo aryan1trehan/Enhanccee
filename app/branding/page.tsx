@@ -23,10 +23,13 @@ function FadeIn({ children, delay = 0, style = {} }: { children: React.ReactNode
 }
 
 /* ─── GOLD DIVIDER → WHITE DIVIDER ─── */
-function Divider({ mb = '6rem' }: { mb?: string }) {
+function Divider({ mb = '6rem', isWhite = false }: { mb?: string; isWhite?: boolean }) {
+  const dividerColor = isWhite ? 'rgba(0,0,0,0.2)' : 'rgba(255,255,255,0.2)'
+  const bgColor = isWhite ? '#ffffff' : '#000000'
+  const dotColor = isWhite ? 'rgba(0,0,0,0.3)' : 'rgba(255,255,255,0.3)'
   return (
-    <div style={{ width:'100%', height:1, background:'linear-gradient(to right, transparent, rgba(255,255,255,0.2), transparent)', position:'relative', marginBottom:mb }}>
-      <span style={{ position:'absolute', left:'50%', top:'50%', transform:'translate(-50%,-50%)', color:'rgba(255,255,255,0.3)', fontSize:'.5rem', background:'#000', padding:'0 1rem' }}>◆</span>
+    <div style={{ width:'100%', height:1, background:`linear-gradient(to right, transparent, ${dividerColor}, transparent)`, position:'relative', marginBottom:mb }}>
+      <span style={{ position:'absolute', left:'50%', top:'50%', transform:'translate(-50%,-50%)', color:dotColor, fontSize:'.5rem', background:bgColor, padding:'0 1rem' }}>◆</span>
     </div>
   )
 }
@@ -111,8 +114,8 @@ export default function BrandingPage() {
         .br-eco-card:hover { background:#111111; }
         .br-eco-card::before { content:''; position:absolute; top:0; left:0; right:0; height:1px; background:linear-gradient(to right, transparent, #ffffff, transparent); opacity:0; transition:opacity .5s; }
         .br-eco-card:hover::before { opacity:1; }
-        .br-eco-num { font-family:var(--font-cormorant),serif; font-size:7rem; font-weight:300; color:rgba(255,255,255,.04); position:absolute; top:1rem; right:2rem; pointer-events:none; transition:color .5s; }
-        .br-eco-card:hover .br-eco-num { color:rgba(255,255,255,.07); }
+        .br-eco-num { font-family:var(--font-cormorant),serif; font-size:7rem; font-weight:300; color:rgba(255,255,255,.15); position:absolute; top:1rem; right:2rem; pointer-events:none; transition:color .5s; }
+        .br-eco-card:hover .br-eco-num { color:rgba(255,255,255,.25); }
         .br-tag-item { font-size:.72rem; padding:.3rem .8rem; border:1px solid rgba(255,255,255,.12); color:rgba(255,255,255,.45); transition:all .3s; display:inline-block; }
         .br-eco-card:hover .br-tag-item { border-color:rgba(255,255,255,.3); color:rgba(255,255,255,.75); }
         .br-diff-item { padding:4rem; border-bottom:1px solid rgba(255,255,255,.06); border-right:1px solid rgba(255,255,255,.06); position:relative; overflow:hidden; }
@@ -171,20 +174,20 @@ export default function BrandingPage() {
         {/* ══════════════ BANNER 1 ══════════════ */}
         <FadeIn>
           <div className="br-img-banner" style={{ height:'clamp(400px,58vh,700px)' }}>
-            <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=1800&q=80&fit=crop&crop=center" alt="Abstract luxury visual identity" loading="lazy"/>
+            <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?w=1800&q=80&fit=crop&crop=center" alt="Abstract luxury visual identity" loading="lazy"/>
             <span className="br-img-caption">Identity is felt before it is seen</span>
           </div>
         </FadeIn>
 
         {/* ══════════════ PHILOSOPHY ══════════════ */}
-        <section style={{ padding:'14vh 8vw' }}>
-          <Divider mb="6rem"/>
+        <section style={{ padding:'14vh 8vw', background:'#ffffff', transition:'background 0.6s ease' }}>
+          <Divider mb="6rem" isWhite={true}/>
           <FadeIn>
-            <p style={{ fontSize:'.7rem', letterSpacing:'.4em', textTransform:'uppercase', color:'rgba(255,255,255,.5)', marginBottom:'4rem' }}>The Philosophy</p>
+            <p style={{ fontSize:'.7rem', letterSpacing:'.4em', textTransform:'uppercase', color:'rgba(0,0,0,.5)', marginBottom:'4rem' }}>The Philosophy</p>
           </FadeIn>
           <FadeIn>
-            <h2 style={{ fontFamily:'var(--font-cormorant)', fontWeight:300, fontSize:'clamp(2.4rem,5.5vw,6rem)', lineHeight:1.1, color:'#ffffff', marginBottom:'5rem' }}>
-              We don&apos;t design logos.<br />We build <em style={{ fontStyle:'italic', color:'rgba(255,255,255,.7)' }}>brand universes.</em>
+            <h2 style={{ fontFamily:'var(--font-cormorant)', fontWeight:300, fontSize:'clamp(2.4rem,5.5vw,6rem)', lineHeight:1.1, color:'#000000', marginBottom:'5rem' }}>
+              We don&apos;t design logos.<br />We build <em style={{ fontStyle:'italic', color:'rgba(0,0,0,.7)' }}>brand universes.</em>
             </h2>
           </FadeIn>
           <div style={{ display:'grid', gridTemplateColumns:'1fr 1fr', gap:'5rem 8rem' }}>
@@ -196,9 +199,9 @@ export default function BrandingPage() {
             ].map((b, i) => (
               <FadeIn key={i} delay={i * 100}>
                 <div>
-                  <div style={{ fontFamily:'var(--font-cormorant)', fontSize:'5rem', color:'rgba(255,255,255,.06)', lineHeight:1, marginBottom:'1.5rem', fontWeight:300 }}>{b.n}</div>
-                  <p style={{ fontSize:'clamp(1rem,1.4vw,1.15rem)', lineHeight:1.9, color:'rgba(255,255,255,.55)', fontWeight:200 }}>
-                    <strong style={{ color:'#ffffff', fontWeight:400 }}>{b.strong}</strong> {b.body}
+                  <div style={{ fontFamily:'var(--font-cormorant)', fontSize:'5rem', color:'rgba(0,0,0,.15)', lineHeight:1, marginBottom:'1.5rem', fontWeight:300 }}>{b.n}</div>
+                  <p style={{ fontSize:'clamp(1rem,1.4vw,1.15rem)', lineHeight:1.9, color:'rgba(0,0,0,.55)', fontWeight:200 }}>
+                    <strong style={{ color:'#000000', fontWeight:400 }}>{b.strong}</strong> {b.body}
                   </p>
                 </div>
               </FadeIn>
@@ -210,21 +213,21 @@ export default function BrandingPage() {
         <div style={{ display:'grid', gridTemplateColumns:'1fr 1fr', gap:2, background:'rgba(255,255,255,.1)' }}>
           <FadeIn>
             <div className="br-img-banner" style={{ height:'clamp(300px,44vh,560px)' }}>
-              <img src="https://images.unsplash.com/photo-1559526324-4b87b5e36e44?w=1200&q=80&fit=crop" alt="Brand strategy session" loading="lazy"/>
+              <img src="https://images.unsplash.com/photo-1600508774634-4e11d34730e2?w=1200&q=80&fit=crop" alt="Brand strategy session" loading="lazy"/>
               <span className="br-img-caption">Brand Strategy</span>
             </div>
           </FadeIn>
           <FadeIn delay={120}>
             <div className="br-img-banner" style={{ height:'clamp(300px,44vh,560px)' }}>
-              <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?w=1200&q=80&fit=crop" alt="Visual identity exploration" loading="lazy"/>
+              <img src="https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=1200&q=80&fit=crop" alt="Visual identity exploration" loading="lazy"/>
               <span className="br-img-caption">Visual Identity</span>
             </div>
           </FadeIn>
         </div>
 
         {/* ══════════════ ECOSYSTEM ══════════════ */}
-        <section style={{ padding:'14vh 8vw' }}>
-          <Divider mb="8rem"/>
+        <section style={{ padding:'14vh 8vw', background:'#000000', transition:'background 0.6s ease' }}>
+          <Divider mb="8rem" isWhite={false}/>
           <div style={{ textAlign:'center', marginBottom:'8rem' }}>
             <FadeIn><span style={{ fontSize:'.7rem', letterSpacing:'.4em', textTransform:'uppercase', color:'rgba(255,255,255,.5)', display:'block', marginBottom:'1.5rem' }}>What We Deliver</span></FadeIn>
             <FadeIn delay={100}>
@@ -264,16 +267,16 @@ export default function BrandingPage() {
 
         {/* ══════════════ IMAGE + TEXT ROW — PROCESS ══════════════ */}
         <FadeIn>
-          <div style={{ display:'grid', gridTemplateColumns:'1fr 1fr', gap:2, background:'rgba(255,255,255,.08)', minHeight:500 }}>
+          <div style={{ display:'grid', gridTemplateColumns:'1fr 1fr', gap:2, background:'rgba(0,0,0,.08)', minHeight:500 }}>
             <div style={{ position:'relative', overflow:'hidden' }}>
-              <img src="https://images.unsplash.com/photo-1542744094-24638eff58bb?w=1200&q=80&fit=crop" alt="Creative brand design process" loading="lazy" style={{ width:'100%', height:'100%', objectFit:'cover', filter:'brightness(.4) saturate(.6)', display:'block' }}/>
+              <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=1200&q=80&fit=crop" alt="Creative brand design process" loading="lazy" style={{ width:'100%', height:'100%', objectFit:'cover', filter:'brightness(.4) saturate(.6)', display:'block' }}/>
             </div>
-            <div style={{ background:'#0a0a0a', padding:'6rem 5rem', display:'flex', flexDirection:'column', justifyContent:'center' }}>
-              <span style={{ fontSize:'.68rem', letterSpacing:'.4em', textTransform:'uppercase', color:'rgba(255,255,255,.4)', marginBottom:'1.8rem' }}>The Enhanccee Process</span>
-              <h2 style={{ fontFamily:'var(--font-cormorant)', fontWeight:300, fontSize:'clamp(2rem,3.5vw,4rem)', lineHeight:1.15, color:'#ffffff', marginBottom:'2rem' }}>
-                Intention<br />at <em style={{ fontStyle:'italic', color:'rgba(255,255,255,.65)' }}>every stage</em>
+            <div style={{ background:'#ffffff', padding:'6rem 5rem', display:'flex', flexDirection:'column', justifyContent:'center', transition:'background 0.6s ease' }}>
+              <span style={{ fontSize:'.68rem', letterSpacing:'.4em', textTransform:'uppercase', color:'rgba(0,0,0,.4)', marginBottom:'1.8rem' }}>The Enhanccee Process</span>
+              <h2 style={{ fontFamily:'var(--font-cormorant)', fontWeight:300, fontSize:'clamp(2rem,3.5vw,4rem)', lineHeight:1.15, color:'#000000', marginBottom:'2rem' }}>
+                Intention<br />at <em style={{ fontStyle:'italic', color:'rgba(0,0,0,.65)' }}>every stage</em>
               </h2>
-              <p style={{ fontSize:'.95rem', lineHeight:1.9, color:'rgba(255,255,255,.5)', fontWeight:200 }}>We begin where most agencies end — with deep discovery. Understanding your world, your audience, and the emotional territory your brand needs to own. From there, every decision is deliberate. Every pixel purposeful. Every word earned.</p>
+              <p style={{ fontSize:'.95rem', lineHeight:1.9, color:'rgba(0,0,0,.5)', fontWeight:200 }}>We begin where most agencies end — with deep discovery. Understanding your world, your audience, and the emotional territory your brand needs to own. From there, every decision is deliberate. Every pixel purposeful. Every word earned.</p>
             </div>
           </div>
         </FadeIn>
@@ -281,40 +284,40 @@ export default function BrandingPage() {
         {/* ══════════════ BANNER 3 ══════════════ */}
         <FadeIn>
           <div className="br-img-banner" style={{ height:'clamp(300px,42vh,540px)' }}>
-            <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=1800&q=80&fit=crop" alt="Premium creative studio workspace" loading="lazy"/>
+            <img src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?w=1800&q=80&fit=crop" alt="Premium creative studio workspace" loading="lazy"/>
             <span className="br-img-caption">Where strategy becomes sensation</span>
           </div>
         </FadeIn>
 
         {/* ══════════════ PHILOSOPHY STATS ══════════════ */}
-        <section style={{ padding:'16vh 8vw', position:'relative', overflow:'hidden', background:'#050505' }}>
-          <div style={{ position:'absolute', inset:0, background:'radial-gradient(ellipse 100% 80% at 50% 50%, rgba(30,30,30,.4) 0%, transparent 70%)', animation:'br-breathe 8s ease-in-out infinite', pointerEvents:'none' }}/>
+        <section style={{ padding:'16vh 8vw', position:'relative', overflow:'hidden', background:'#ffffff', transition:'background 0.6s ease' }}>
+          <div style={{ position:'absolute', inset:0, background:'radial-gradient(ellipse 100% 80% at 50% 50%, rgba(240,240,240,.4) 0%, transparent 70%)', animation:'br-breathe 8s ease-in-out infinite', pointerEvents:'none' }}/>
           <div style={{ maxWidth:900, margin:'0 auto', position:'relative', zIndex:1 }}>
             <FadeIn>
-              <p style={{ fontSize:'.7rem', letterSpacing:'.4em', textTransform:'uppercase', color:'rgba(255,255,255,.4)', marginBottom:'4rem', textAlign:'center' }}>Why Enhanccee</p>
+              <p style={{ fontSize:'.7rem', letterSpacing:'.4em', textTransform:'uppercase', color:'rgba(0,0,0,.4)', marginBottom:'4rem', textAlign:'center' }}>Why Enhanccee</p>
             </FadeIn>
             <FadeIn delay={100}>
-              <h2 style={{ fontFamily:'var(--font-cormorant)', fontWeight:300, fontSize:'clamp(2.8rem,6vw,6.5rem)', lineHeight:1.05, textAlign:'center', color:'#ffffff', marginBottom:'5rem' }}>
-                Luxury Begins<br /><em style={{ fontStyle:'italic', color:'rgba(255,255,255,.65)' }}>with Identity</em>
+              <h2 style={{ fontFamily:'var(--font-cormorant)', fontWeight:300, fontSize:'clamp(2.8rem,6vw,6.5rem)', lineHeight:1.05, textAlign:'center', color:'#000000', marginBottom:'5rem' }}>
+                Luxury Begins<br /><em style={{ fontStyle:'italic', color:'rgba(0,0,0,.65)' }}>with Identity</em>
               </h2>
             </FadeIn>
             <FadeIn delay={200}>
-              <p style={{ fontSize:'clamp(1.1rem,1.6vw,1.3rem)', lineHeight:1.9, color:'rgba(255,255,255,.5)', textAlign:'center', fontWeight:200, marginBottom:'5rem' }}>
+              <p style={{ fontSize:'clamp(1.1rem,1.6vw,1.3rem)', lineHeight:1.9, color:'rgba(0,0,0,.5)', textAlign:'center', fontWeight:200, marginBottom:'5rem' }}>
                 Functionality no longer defines value. Identity does.<br />
-                Brands win not on features, but on <strong style={{ color:'#ffffff' }}>meaning, narrative, and desire.</strong><br />
+                Brands win not on features, but on <strong style={{ color:'#000000' }}>meaning, narrative, and desire.</strong><br />
                 That is the power of branding.
               </p>
             </FadeIn>
-            <div style={{ display:'grid', gridTemplateColumns:'repeat(3,1fr)', gap:1, background:'rgba(255,255,255,.08)', marginTop:'4rem' }}>
+            <div style={{ display:'grid', gridTemplateColumns:'repeat(3,1fr)', gap:1, background:'rgba(0,0,0,.08)', marginTop:'4rem' }}>
               {[
                 { word:'Meaning', sub:'Over Features' },
                 { word:'Narrative', sub:'Over Noise' },
                 { word:'Desire', sub:'Over Utility' },
               ].map((s, i) => (
                 <FadeIn key={i} delay={i * 100}>
-                  <div style={{ background:'#000', padding:'3rem 2rem', textAlign:'center' }}>
-                    <span style={{ fontFamily:'var(--font-cormorant)', fontSize:'1.6rem', fontWeight:400, color:'#ffffff', display:'block', marginBottom:'.5rem' }}>{s.word}</span>
-                    <span style={{ fontSize:'.75rem', letterSpacing:'.15em', color:'rgba(255,255,255,.4)', textTransform:'uppercase', fontWeight:200 }}>{s.sub}</span>
+                  <div style={{ background:'#ffffff', padding:'3rem 2rem', textAlign:'center', border:'1px solid rgba(0,0,0,.1)' }}>
+                    <span style={{ fontFamily:'var(--font-cormorant)', fontSize:'1.6rem', fontWeight:400, color:'#000000', display:'block', marginBottom:'.5rem' }}>{s.word}</span>
+                    <span style={{ fontSize:'.75rem', letterSpacing:'.15em', color:'rgba(0,0,0,.4)', textTransform:'uppercase', fontWeight:200 }}>{s.sub}</span>
                   </div>
                 </FadeIn>
               ))}
@@ -325,9 +328,9 @@ export default function BrandingPage() {
         {/* ══════════════ BANNER 4 — TRIO ══════════════ */}
         <div style={{ display:'grid', gridTemplateColumns:'2fr 1fr 1fr', gap:2, background:'rgba(255,255,255,.08)' }}>
           {[
-            { src:'https://images.unsplash.com/photo-1600508774634-4e11d34730e2?w=1200&q=80&fit=crop', cap:'Brand Collateral' },
-            { src:'https://images.unsplash.com/photo-1586717791821-3f44a563fa4c?w=800&q=80&fit=crop', cap:'Typography' },
-            { src:'https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=800&q=80&fit=crop', cap:'Brand in Action' },
+            { src:'https://images.unsplash.com/photo-1559526324-4b87b5e36e44?w=1200&q=80&fit=crop', cap:'Brand Collateral' },
+            { src:'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=800&q=80&fit=crop', cap:'Typography' },
+            { src:'https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=800&q=80&fit=crop', cap:'Brand in Action' },
           ].map((img, i) => (
             <FadeIn key={i} delay={i * 100}>
               <div className="br-img-banner" style={{ height:'clamp(260px,38vh,460px)' }}>
@@ -339,8 +342,8 @@ export default function BrandingPage() {
         </div>
 
         {/* ══════════════ DIFFERENTIATORS ══════════════ */}
-        <section style={{ padding:'14vh 8vw' }}>
-          <Divider mb="6rem"/>
+        <section style={{ padding:'14vh 8vw', background:'#000000', transition:'background 0.6s ease' }}>
+          <Divider mb="6rem" isWhite={false}/>
           <div style={{ textAlign:'center', marginBottom:'4rem' }}>
             <FadeIn><span style={{ fontSize:'.7rem', letterSpacing:'.4em', textTransform:'uppercase', color:'rgba(255,255,255,.4)', display:'block', marginBottom:'1.5rem' }}>What Makes Enhanccee Different</span></FadeIn>
             <FadeIn delay={100}>
@@ -372,22 +375,22 @@ export default function BrandingPage() {
 
         {/* ══════════════ IMAGE + TEXT ROW REVERSED ══════════════ */}
         <FadeIn>
-          <div style={{ display:'grid', gridTemplateColumns:'1fr 1fr', gap:2, background:'rgba(255,255,255,.08)', minHeight:500 }}>
-            <div style={{ background:'#0a0a0a', padding:'6rem 5rem', display:'flex', flexDirection:'column', justifyContent:'center' }}>
-              <span style={{ fontSize:'.68rem', letterSpacing:'.4em', textTransform:'uppercase', color:'rgba(255,255,255,.4)', marginBottom:'1.8rem' }}>The Outcome</span>
-              <h2 style={{ fontFamily:'var(--font-cormorant)', fontWeight:300, fontSize:'clamp(2rem,3.5vw,4rem)', lineHeight:1.15, color:'#ffffff', marginBottom:'2rem' }}>
-                Brands that feel<br /><em style={{ fontStyle:'italic', color:'rgba(255,255,255,.65)' }}>inevitable</em>
+          <div style={{ display:'grid', gridTemplateColumns:'1fr 1fr', gap:2, background:'rgba(0,0,0,.08)', minHeight:500 }}>
+            <div style={{ background:'#ffffff', padding:'6rem 5rem', display:'flex', flexDirection:'column', justifyContent:'center', transition:'background 0.6s ease' }}>
+              <span style={{ fontSize:'.68rem', letterSpacing:'.4em', textTransform:'uppercase', color:'rgba(0,0,0,.4)', marginBottom:'1.8rem' }}>The Outcome</span>
+              <h2 style={{ fontFamily:'var(--font-cormorant)', fontWeight:300, fontSize:'clamp(2rem,3.5vw,4rem)', lineHeight:1.15, color:'#000000', marginBottom:'2rem' }}>
+                Brands that feel<br /><em style={{ fontStyle:'italic', color:'rgba(0,0,0,.65)' }}>inevitable</em>
               </h2>
-              <p style={{ fontSize:'.95rem', lineHeight:1.9, color:'rgba(255,255,255,.5)', fontWeight:200 }}>When we&apos;re done, your brand doesn&apos;t feel designed — it feels discovered. Like it was always meant to exist exactly this way. That is the mark of identity architecture done at the highest level.</p>
+              <p style={{ fontSize:'.95rem', lineHeight:1.9, color:'rgba(0,0,0,.5)', fontWeight:200 }}>When we&apos;re done, your brand doesn&apos;t feel designed — it feels discovered. Like it was always meant to exist exactly this way. That is the mark of identity architecture done at the highest level.</p>
             </div>
             <div style={{ position:'relative', overflow:'hidden' }}>
-              <img src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?w=1200&q=80&fit=crop" alt="Elevated premium brand environment" loading="lazy" style={{ width:'100%', height:'100%', objectFit:'cover', filter:'brightness(.4) saturate(.6)', display:'block' }}/>
+              <img src="https://images.unsplash.com/photo-1542744094-24638eff58bb?w=1200&q=80&fit=crop" alt="Elevated premium brand environment" loading="lazy" style={{ width:'100%', height:'100%', objectFit:'cover', filter:'brightness(.4) saturate(.6)', display:'block' }}/>
             </div>
           </div>
         </FadeIn>
 
         {/* ══════════════ SIGNATURE QUOTE ══════════════ */}
-        <section style={{ padding:'20vh 8vw', position:'relative', overflow:'hidden', textAlign:'center' }}>
+        <section style={{ padding:'20vh 8vw', position:'relative', overflow:'hidden', textAlign:'center', background:'#000000', transition:'background 0.6s ease' }}>
           <div style={{ position:'absolute', inset:0, background:'radial-gradient(ellipse 90% 70% at 50% 50%, rgba(25,25,25,.4) 0%, transparent 70%)', animation:'br-breathe 10s ease-in-out infinite alternate', pointerEvents:'none' }}/>
           <FadeIn>
             <p style={{ fontSize:'.7rem', letterSpacing:'.45em', textTransform:'uppercase', color:'rgba(255,255,255,.35)', marginBottom:'4rem', position:'relative', zIndex:1 }}>The Enhanccee Identity Statement</p>
@@ -405,24 +408,24 @@ export default function BrandingPage() {
         {/* ══════════════ BANNER 5 ══════════════ */}
         <FadeIn>
           <div className="br-img-banner" style={{ height:'clamp(200px,28vh,360px)' }}>
-            <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=1800&q=80&fit=crop" alt="Luxury brand discovery consultation" loading="lazy"/>
+            <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=1800&q=80&fit=crop" alt="Luxury brand discovery consultation" loading="lazy"/>
             <span className="br-img-caption">Where vision meets identity</span>
           </div>
         </FadeIn>
 
         {/* ══════════════ CTA ══════════════ */}
-        <section style={{ padding:'14vh 8vw' }}>
+        <section style={{ padding:'14vh 8vw', background:'#ffffff', transition:'background 0.6s ease' }}>
           <FadeIn>
-            <div style={{ background:'rgba(15,15,15,.9)', border:'1px solid rgba(255,255,255,.1)', backdropFilter:'blur(20px)', padding:'8rem 6rem', textAlign:'center', position:'relative', overflow:'hidden', maxWidth:1100, margin:'0 auto' }}>
+            <div style={{ background:'rgba(250,250,250,.9)', border:'1px solid rgba(0,0,0,.1)', backdropFilter:'blur(20px)', padding:'8rem 6rem', textAlign:'center', position:'relative', overflow:'hidden', maxWidth:1100, margin:'0 auto' }}>
               {/* Top line */}
-              <div style={{ position:'absolute', top:0, left:0, right:0, height:1, background:'linear-gradient(to right, transparent, rgba(255,255,255,.3), transparent)' }}/>
+              <div style={{ position:'absolute', top:0, left:0, right:0, height:1, background:'linear-gradient(to right, transparent, rgba(0,0,0,.3), transparent)' }}/>
               {/* Radial glow */}
-              <div style={{ position:'absolute', inset:0, background:'radial-gradient(ellipse 80% 60% at 50% 0%, rgba(255,255,255,.03) 0%, transparent 60%)', pointerEvents:'none' }}/>
-              <span style={{ fontSize:'.7rem', letterSpacing:'.4em', textTransform:'uppercase', color:'rgba(255,255,255,.4)', marginBottom:'2rem', display:'block', position:'relative', zIndex:1 }}>Begin Your Brand Journey</span>
-              <h2 style={{ fontFamily:'var(--font-cormorant)', fontWeight:300, fontSize:'clamp(2.5rem,5vw,5.5rem)', color:'#ffffff', lineHeight:1.1, marginBottom:'2rem', position:'relative', zIndex:1 }}>
-                Your brand identity is<br />your <em style={{ fontStyle:'italic', color:'rgba(255,255,255,.65)' }}>future</em> — designed with<br />clarity, elegance, and intention.
+              <div style={{ position:'absolute', inset:0, background:'radial-gradient(ellipse 80% 60% at 50% 0%, rgba(0,0,0,.03) 0%, transparent 60%)', pointerEvents:'none' }}/>
+              <span style={{ fontSize:'.7rem', letterSpacing:'.4em', textTransform:'uppercase', color:'rgba(0,0,0,.4)', marginBottom:'2rem', display:'block', position:'relative', zIndex:1 }}>Begin Your Brand Journey</span>
+              <h2 style={{ fontFamily:'var(--font-cormorant)', fontWeight:300, fontSize:'clamp(2.5rem,5vw,5.5rem)', color:'#000000', lineHeight:1.1, marginBottom:'2rem', position:'relative', zIndex:1 }}>
+                Your brand identity is<br />your <em style={{ fontStyle:'italic', color:'rgba(0,0,0,.65)' }}>future</em> — designed with<br />clarity, elegance, and intention.
               </h2>
-              <p style={{ fontSize:'clamp(.9rem,1.3vw,1.1rem)', color:'rgba(255,255,255,.45)', fontWeight:200, lineHeight:1.8, maxWidth:520, margin:'0 auto 4rem', position:'relative', zIndex:1 }}>We work with founders, leaders, and visionaries ready to build brands that are felt, not just seen. Let&apos;s begin.</p>
+              <p style={{ fontSize:'clamp(.9rem,1.3vw,1.1rem)', color:'rgba(0,0,0,.45)', fontWeight:200, lineHeight:1.8, maxWidth:520, margin:'0 auto 4rem', position:'relative', zIndex:1 }}>We work with founders, leaders, and visionaries ready to build brands that are felt, not just seen. Let&apos;s begin.</p>
               <div style={{ display:'flex', gap:'1.5rem', justifyContent:'center', flexWrap:'wrap', position:'relative', zIndex:1 }}>
                 <Link href="/contact" className="br-btn-white"><span>Book a Discovery Call</span></Link>
                 <Link href="/clientele" className="br-btn-ghost">View Our Work</Link>

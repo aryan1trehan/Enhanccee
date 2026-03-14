@@ -279,7 +279,7 @@ export default function WebDevPage() {
               { n:'04', t:'eCommerce Architecture', d:'Premium retail demands a premium experience. Environments that make purchasing feel as elevated as the products themselves.', tag:'Revenue Systems' },
             ].map((c, i) => (
               <div key={i} className="eco-card" style={{ padding:'52px 48px', position:'relative', display:'flex', flexDirection:'column' }}>
-                <div className="font-heading" style={{ fontFamily:'var(--font-cormorant)', fontSize:'3rem', lineHeight:1, color:'rgba(255,255,255,.06)', marginBottom:20 }}>{c.n}</div>
+                  <div className="font-heading" style={{ fontFamily:'var(--font-cormorant)', fontSize:'3rem', lineHeight:1, color:'rgba(255,255,255,.15)', marginBottom:20 }}>{c.n}</div>
                 <div className="font-heading" style={{ fontFamily:'var(--font-cormorant)', fontSize:'1.25rem', fontWeight:400, color:'#ffffff', marginBottom:14, lineHeight:1.3 }}>{c.t}</div>
                 <p style={{ fontSize:'.76rem', lineHeight:1.9, color:'rgba(255,255,255,.5)', flex:1 }}>{c.d}</p>
                 <span style={{ display:'inline-block', marginTop:28, fontSize:'.55rem', letterSpacing:'.22em', textTransform:'uppercase', color:'rgba(255,255,255,.5)', borderBottom:'1px solid rgba(255,255,255,.15)', paddingBottom:3, alignSelf:'flex-start' }}>{c.tag}</span>
@@ -287,14 +287,14 @@ export default function WebDevPage() {
             ))}
             {/* Wide card 05 */}
             <div className="eco-card" style={{ gridColumn:'span 2', padding:'52px 48px', position:'relative', display:'flex', flexDirection:'column' }}>
-              <div className="font-heading" style={{ fontFamily:'var(--font-cormorant)', fontSize:'3rem', lineHeight:1, color:'rgba(255,255,255,.06)', marginBottom:20 }}>05</div>
+              <div className="font-heading" style={{ fontFamily:'var(--font-cormorant)', fontSize:'3rem', lineHeight:1, color:'rgba(255,255,255,.15)', marginBottom:20 }}>05</div>
               <div className="font-heading" style={{ fontFamily:'var(--font-cormorant)', fontSize:'1.25rem', color:'#ffffff', marginBottom:14 }}>Intelligent Automation</div>
               <p style={{ fontSize:'.76rem', lineHeight:1.9, color:'rgba(255,255,255,.5)', flex:1 }}>Smart workflows that reduce operational overhead while elevating the customer experience across every touchpoint and market.</p>
               <span style={{ display:'inline-block', marginTop:28, fontSize:'.55rem', letterSpacing:'.22em', textTransform:'uppercase', color:'rgba(255,255,255,.5)', borderBottom:'1px solid rgba(255,255,255,.15)', paddingBottom:3, alignSelf:'flex-start' }}>Systems Integration</span>
             </div>
             {/* Card 06 */}
             <div className="eco-card" style={{ padding:'52px 48px', position:'relative', display:'flex', flexDirection:'column' }}>
-              <div className="font-heading" style={{ fontFamily:'var(--font-cormorant)', fontSize:'3rem', lineHeight:1, color:'rgba(255,255,255,.06)', marginBottom:20 }}>06</div>
+              <div className="font-heading" style={{ fontFamily:'var(--font-cormorant)', fontSize:'3rem', lineHeight:1, color:'rgba(255,255,255,.15)', marginBottom:20 }}>06</div>
               <div className="font-heading" style={{ fontFamily:'var(--font-cormorant)', fontSize:'1.25rem', color:'#ffffff', marginBottom:14 }}>Security &amp; Scale</div>
               <p style={{ fontSize:'.76rem', lineHeight:1.9, color:'rgba(255,255,255,.5)', flex:1 }}>Enterprise-grade infrastructure designed for global growth — built to protect your brand and handle demand without compromise.</p>
               <span style={{ display:'inline-block', marginTop:28, fontSize:'.55rem', letterSpacing:'.22em', textTransform:'uppercase', color:'rgba(255,255,255,.5)', borderBottom:'1px solid rgba(255,255,255,.15)', paddingBottom:3, alignSelf:'flex-start' }}>Infrastructure</span>
@@ -366,7 +366,7 @@ export default function WebDevPage() {
             <div style={{ display:'grid', gridTemplateColumns:'1fr 1fr', gap:3 }}>
               {processSteps.map((s, i) => (
                 <div key={i} className="proc-step">
-                  <div className="font-heading" style={{ fontFamily:'var(--font-cormorant)', fontSize:'5rem', lineHeight:1, color:'rgba(255,255,255,.05)', position:'absolute', top:32, right:40 }}>{s.num}</div>
+                  <div className="font-heading" style={{ fontFamily:'var(--font-cormorant)', fontSize:'5rem', lineHeight:1, color:'rgba(255,255,255,.15)', position:'absolute', top:32, right:40 }}>{s.num}</div>
                   <div style={{ fontFamily:'var(--font-montserrat)', fontSize:'.55rem', letterSpacing:'.35em', textTransform:'uppercase', color:'rgba(255,255,255,.45)', marginBottom:14 }}>{s.phase}</div>
                   <h3 className="font-heading" style={{ fontFamily:'var(--font-cormorant)', fontSize:'2rem', fontWeight:400, color:'#ffffff', marginBottom:20 }}>{s.title}</h3>
                   <p style={{ fontSize:'.78rem', lineHeight:2, color:'rgba(255,255,255,.5)', maxWidth:480 }}>{s.desc}</p>
@@ -379,7 +379,7 @@ export default function WebDevPage() {
               ))}
               {/* Full-width step 05 */}
               <div className="proc-step" style={{ gridColumn:'span 2' }}>
-                <div className="font-heading" style={{ fontFamily:'var(--font-cormorant)', fontSize:'5rem', lineHeight:1, color:'rgba(255,255,255,.05)', position:'absolute', top:32, right:40 }}>05</div>
+                <div className="font-heading" style={{ fontFamily:'var(--font-cormorant)', fontSize:'5rem', lineHeight:1, color:'rgba(255,255,255,.15)', position:'absolute', top:32, right:40 }}>05</div>
                 <div style={{ fontFamily:'var(--font-montserrat)', fontSize:'.55rem', letterSpacing:'.35em', textTransform:'uppercase', color:'rgba(255,255,255,.45)', marginBottom:14 }}>Phase Five</div>
                 <h3 className="font-heading" style={{ fontFamily:'var(--font-cormorant)', fontSize:'2rem', fontWeight:400, color:'#ffffff', marginBottom:20 }}>Launch &amp; Support</h3>
                 <p style={{ fontSize:'.78rem', lineHeight:2, color:'rgba(255,255,255,.5)', maxWidth:680 }}>We don&apos;t deliver and disappear. Launch is the beginning of our partnership — with ongoing performance monitoring, continuous improvement, and strategic support as your brand evolves across new markets.</p>

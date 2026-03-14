@@ -266,7 +266,7 @@ export default function SaaSPage() {
               { n:'04', t:'Revenue Expansion', d:'Net revenue retention above 120% is the hallmark of elite SaaS. We build the upsell, cross-sell, and expansion motions that compound your ARR quarter over quarter.', tag:'NRR Optimisation' },
             ].map((c, i) => (
               <div key={i} className="saas-eco-card" style={{ padding:'52px 48px', position:'relative', display:'flex', flexDirection:'column' }}>
-                <div style={{ fontFamily:'var(--font-cormorant)', fontSize:'3rem', lineHeight:1, color:'rgba(255,255,255,.06)', marginBottom:20 }}>{c.n}</div>
+                <div style={{ fontFamily:'var(--font-cormorant)', fontSize:'3rem', lineHeight:1, color:'rgba(255,255,255,.15)', marginBottom:20 }}>{c.n}</div>
                 <div style={{ fontFamily:'var(--font-cormorant)', fontSize:'1.25rem', fontWeight:400, color:'#ffffff', marginBottom:14, lineHeight:1.3 }}>{c.t}</div>
                 <p style={{ fontSize:'.76rem', lineHeight:1.9, color:'rgba(255,255,255,.5)', flex:1 }}>{c.d}</p>
                 <span style={{ display:'inline-block', marginTop:28, fontSize:'.55rem', letterSpacing:'.22em', textTransform:'uppercase', color:'rgba(255,255,255,.5)', borderBottom:'1px solid rgba(255,255,255,.15)', paddingBottom:3, alignSelf:'flex-start' }}>{c.tag}</span>
@@ -274,14 +274,14 @@ export default function SaaSPage() {
             ))}
             {/* Wide card 05 */}
             <div className="saas-eco-card" style={{ gridColumn:'span 2', padding:'52px 48px', position:'relative', display:'flex', flexDirection:'column' }}>
-              <div style={{ fontFamily:'var(--font-cormorant)', fontSize:'3rem', lineHeight:1, color:'rgba(255,255,255,.06)', marginBottom:20 }}>05</div>
+              <div style={{ fontFamily:'var(--font-cormorant)', fontSize:'3rem', lineHeight:1, color:'rgba(255,255,255,.15)', marginBottom:20 }}>05</div>
               <div style={{ fontFamily:'var(--font-cormorant)', fontSize:'1.25rem', color:'#ffffff', marginBottom:14 }}>Growth Analytics & Intelligence</div>
               <p style={{ fontSize:'.76rem', lineHeight:1.9, color:'rgba(255,255,255,.5)', flex:1 }}>You cannot optimise what you cannot measure. We instrument your full growth stack to surface the cohort insights, attribution clarity, and leading indicators that drive compounding decisions.</p>
               <span style={{ display:'inline-block', marginTop:28, fontSize:'.55rem', letterSpacing:'.22em', textTransform:'uppercase', color:'rgba(255,255,255,.5)', borderBottom:'1px solid rgba(255,255,255,.15)', paddingBottom:3, alignSelf:'flex-start' }}>Data Infrastructure</span>
             </div>
             {/* Card 06 */}
             <div className="saas-eco-card" style={{ padding:'52px 48px', position:'relative', display:'flex', flexDirection:'column' }}>
-              <div style={{ fontFamily:'var(--font-cormorant)', fontSize:'3rem', lineHeight:1, color:'rgba(255,255,255,.06)', marginBottom:20 }}>06</div>
+              <div style={{ fontFamily:'var(--font-cormorant)', fontSize:'3rem', lineHeight:1, color:'rgba(255,255,255,.15)', marginBottom:20 }}>06</div>
               <div style={{ fontFamily:'var(--font-cormorant)', fontSize:'1.25rem', color:'#ffffff', marginBottom:14 }}>Technical Scalability</div>
               <p style={{ fontSize:'.76rem', lineHeight:1.9, color:'rgba(255,255,255,.5)', flex:1 }}>Growth breaks infrastructure. We build the cloud architecture, API design, and operational foundations that hold under demand — from first paying customer to enterprise scale.</p>
               <span style={{ display:'inline-block', marginTop:28, fontSize:'.55rem', letterSpacing:'.22em', textTransform:'uppercase', color:'rgba(255,255,255,.5)', borderBottom:'1px solid rgba(255,255,255,.15)', paddingBottom:3, alignSelf:'flex-start' }}>Platform Engineering</span>
@@ -351,7 +351,7 @@ export default function SaaSPage() {
             <div style={{ display:'grid', gridTemplateColumns:'1fr 1fr', gap:3 }}>
               {processSteps.map((s, i) => (
                 <div key={i} className="saas-proc-step">
-                  <div style={{ fontFamily:'var(--font-cormorant)', fontSize:'5rem', lineHeight:1, color:'rgba(255,255,255,.05)', position:'absolute', top:32, right:40 }}>{s.num}</div>
+                  <div style={{ fontFamily:'var(--font-cormorant)', fontSize:'5rem', lineHeight:1, color:'rgba(255,255,255,.15)', position:'absolute', top:32, right:40 }}>{s.num}</div>
                   <div style={{ fontFamily:'var(--font-montserrat)', fontSize:'.55rem', letterSpacing:'.35em', textTransform:'uppercase', color:'rgba(255,255,255,.45)', marginBottom:14 }}>{s.phase}</div>
                   <h3 style={{ fontFamily:'var(--font-cormorant)', fontSize:'2rem', fontWeight:400, color:'#ffffff', marginBottom:20 }}>{s.title}</h3>
                   <p style={{ fontSize:'.78rem', lineHeight:2, color:'rgba(255,255,255,.5)', maxWidth:480 }}>{s.desc}</p>
@@ -364,7 +364,7 @@ export default function SaaSPage() {
               ))}
               {/* Full-width step 05 */}
               <div className="saas-proc-step" style={{ gridColumn:'span 2' }}>
-                <div style={{ fontFamily:'var(--font-cormorant)', fontSize:'5rem', lineHeight:1, color:'rgba(255,255,255,.05)', position:'absolute', top:32, right:40 }}>05</div>
+                <div style={{ fontFamily:'var(--font-cormorant)', fontSize:'5rem', lineHeight:1, color:'rgba(255,255,255,.15)', position:'absolute', top:32, right:40 }}>05</div>
                 <div style={{ fontFamily:'var(--font-montserrat)', fontSize:'.55rem', letterSpacing:'.35em', textTransform:'uppercase', color:'rgba(255,255,255,.45)', marginBottom:14 }}>Phase Five</div>
                 <h3 style={{ fontFamily:'var(--font-cormorant)', fontSize:'2rem', fontWeight:400, color:'#ffffff', marginBottom:20 }}>Scale &amp; Institutionalise</h3>
                 <p style={{ fontSize:'.78rem', lineHeight:2, color:'rgba(255,255,255,.5)', maxWidth:680 }}>The experiments that work become channels. The channels that compound become institutions. We build the playbooks, the dashboards, and the team capability that ensures your growth engine accelerates without us — long after our engagement ends.</p>
