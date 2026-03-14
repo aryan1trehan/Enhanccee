@@ -45,97 +45,7 @@ export default function ResultsSection() {
   ]
 
   return (
-    <>
-      <style>{`
-        @keyframes resultFadeUp {
-          from {
-            opacity: 0;
-            transform: translateY(40px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-        @keyframes resultNumberPop {
-          0%, 100% { transform: scale(1); }
-          50% { transform: scale(1.05); }
-        }
-        .result-card {
-          position: relative;
-          overflow: hidden;
-        }
-        .result-card::before {
-          content: '';
-          position: absolute;
-          top: 0;
-          left: 0;
-          right: 0;
-          height: 2px;
-          background: linear-gradient(to right, transparent, #000000, transparent);
-          transform: scaleX(0);
-          transform-origin: left;
-          transition: transform 0.6s cubic-bezier(.16,1,.3,1);
-        }
-        .result-card:hover::before {
-          transform: scaleX(1);
-        }
-        .result-card::after {
-          content: '';
-          position: absolute;
-          inset: 0;
-          background: radial-gradient(circle at center, rgba(0,0,0,.02) 0%, transparent 70%);
-          opacity: 0;
-          transition: opacity 0.4s;
-        }
-        .result-card:hover::after {
-          opacity: 1;
-        }
-        .result-number {
-          background: linear-gradient(135deg, #000000 0%, rgba(0,0,0,.8) 100%);
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
-          background-clip: text;
-          position: relative;
-        }
-        .result-icon {
-          position: absolute;
-          top: -10px;
-          right: -10px;
-          font-size: 2rem;
-          opacity: 0.05;
-          transition: opacity 0.4s, transform 0.4s;
-        }
-        .result-card:hover .result-icon {
-          opacity: 0.15;
-          transform: scale(1.2) rotate(10deg);
-        }
-        .result-header-hidden {
-          opacity: 0;
-          transform: translateY(30px);
-        }
-        .result-header-visible {
-          opacity: 1;
-          transform: translateY(0);
-          transition: opacity 0.8s ease, transform 0.8s ease;
-        }
-        .result-card-hidden {
-          opacity: 0;
-          transform: translateY(40px);
-        }
-        .result-card-visible {
-          opacity: 1;
-          transform: translateY(0);
-        }
-        .result-footer-hidden {
-          opacity: 0;
-        }
-        .result-footer-visible {
-          opacity: 1;
-          transition: opacity 1s ease;
-        }
-      `}</style>
-      <section ref={sectionRef} className="py-32 bg-white relative overflow-hidden">
+    <section ref={sectionRef} className="py-32 bg-white relative overflow-hidden">
         {/* Subtle background pattern */}
         <div className="absolute inset-0 opacity-[0.02]" style={{
           backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23000000' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
@@ -202,6 +112,5 @@ export default function ResultsSection() {
           </div>
         </div>
       </section>
-    </>
   )
 }
