@@ -58,6 +58,22 @@ div[style*="background"][style*="white"] * {
   color: #ffffff !important;
 }
 
+/* Force white text on black background buttons and links with borders */
+a.bg-black.border,
+button.bg-black.border,
+a.bg-black[class*="border"],
+button.bg-black[class*="border"],
+a[class*="bg-black"].border,
+button[class*="bg-black"].border {
+  color: #ffffff !important;
+}
+
+/* Force white text on all black background buttons/links */
+a.bg-black,
+button.bg-black {
+  color: #ffffff !important;
+}
+
 /* ═══════════════════════════════════════════════
    WHITE BACKGROUND BUTTONS - BLACK TEXT
    MUST COME AFTER .text-black rule for higher specificity
