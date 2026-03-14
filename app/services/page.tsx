@@ -266,25 +266,32 @@ function ContentBlock({ svc, textColor, subColor, mutedColor, borderColor, numCo
 }) {
   return (
     <div style={{ position:'relative', width:'100%', maxWidth:'100%', paddingTop:'1rem' }}>
-      {/* Big watermark number - BOLD */}
-      <div style={{ fontFamily:'var(--font-cormorant)', fontSize:'9rem', fontWeight:700, color: numColor, lineHeight:1, userSelect:'none', position:'absolute', top:'-1rem', left:0, zIndex:0, pointerEvents:'none', letterSpacing:'-0.02em' }}>
-        {svc.num}
+      {/* Chapter label - above everything */}
+      <FadeIn>
+        <p style={{ fontFamily:'var(--font-montserrat)', fontSize:'.6rem', letterSpacing:'.38em', textTransform:'uppercase', color: mutedColor, marginBottom:'2rem', lineHeight:1.5, fontWeight:400, textAlign:'left' }}>
+          {svc.chapter}
+        </p>
+      </FadeIn>
+
+      {/* Number and heading side by side */}
+      <div style={{ position:'relative', display:'flex', alignItems:'flex-start', gap:'1.5rem', marginBottom:'2rem' }}>
+        {/* Big watermark number - BOLD */}
+        <div style={{ fontFamily:'var(--font-cormorant)', fontSize:'9rem', fontWeight:700, color: numColor, lineHeight:1, userSelect:'none', flexShrink:0, pointerEvents:'none', letterSpacing:'-0.02em', marginTop:'-0.5rem' }}>
+          {svc.num}
+        </div>
+
+        {/* Heading to the right of number */}
+        <div style={{ flex:1, paddingTop:'1rem' }}>
+          <FadeIn delay={80}>
+            <h2 style={{ fontFamily:'var(--font-cormorant)', fontWeight:300, fontSize:'clamp(2.4rem,4vw,4.5rem)', lineHeight:1.08, color: textColor, marginBottom:0, textAlign:'left' }}>
+              {svc.title}<br />
+              <em style={{ fontStyle:'italic', color: textColor === '#ffffff' ? 'rgba(255,255,255,.65)' : 'rgba(0,0,0,.55)' }}>{svc.titleEm}</em>
+            </h2>
+          </FadeIn>
+        </div>
       </div>
 
       <div style={{ position:'relative', zIndex:1, paddingLeft:0 }}>
-        <FadeIn>
-          <p style={{ fontFamily:'var(--font-montserrat)', fontSize:'.6rem', letterSpacing:'.38em', textTransform:'uppercase', color: mutedColor, marginBottom:'1.5rem', lineHeight:1.5, fontWeight:400 }}>
-            {svc.chapter}
-          </p>
-        </FadeIn>
-
-        <FadeIn delay={80}>
-          <h2 style={{ fontFamily:'var(--font-cormorant)', fontWeight:300, fontSize:'clamp(2.4rem,4vw,4.5rem)', lineHeight:1.08, color: textColor, marginBottom:'2rem', textAlign:'left' }}>
-            {svc.title}<br />
-            <em style={{ fontStyle:'italic', color: textColor === '#ffffff' ? 'rgba(255,255,255,.65)' : 'rgba(0,0,0,.55)' }}>{svc.titleEm}</em>
-          </h2>
-        </FadeIn>
-
         <FadeIn delay={150}>
           <div style={{ width:56, height:1, background: textColor === '#ffffff' ? 'rgba(255,255,255,.3)' : 'rgba(0,0,0,.25)', marginBottom:'2rem', marginLeft:0 }}/>
         </FadeIn>
