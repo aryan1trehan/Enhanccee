@@ -130,7 +130,7 @@ export default function ServicesPage() {
           {/* Subtle grain */}
           <div style={{ position:'absolute', inset:0, opacity:.025, pointerEvents:'none', backgroundImage:`url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")` }}/>
 
-          <div style={{ position:'relative', zIndex:2, maxWidth:900, width:'100%', margin:'0 auto' }}>
+          <div style={{ position:'relative', zIndex:2, maxWidth:1280, width:'100%', margin:'0 auto' }}>
             <p style={{ fontFamily:'var(--font-montserrat)', fontSize:'.7rem', letterSpacing:'.4em', textTransform:'uppercase', color:'rgba(255,255,255,.4)', marginBottom:'2.5rem', opacity:0, animation:'svc-fadeUp 1s ease .3s forwards', lineHeight:1.5 }}>
               Enhanccee — Six Disciplines
             </p>

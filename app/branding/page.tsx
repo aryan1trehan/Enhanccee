@@ -149,7 +149,7 @@ export default function BrandingPage() {
           <div style={{ position:'absolute', inset:0, opacity:.03, zIndex:2, pointerEvents:'none', backgroundImage:`url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")` }}/>
 
           {/* Content */}
-          <div style={{ position:'relative', zIndex:3, textAlign:'center', maxWidth:1000 }}>
+          <div style={{ position:'relative', zIndex:3, textAlign:'center', maxWidth:1280 }}>
             <p style={{ fontWeight:200, fontSize:'clamp(.65rem,1.2vw,.8rem)', letterSpacing:'.35em', textTransform:'uppercase', color:'rgba(255,255,255,.5)', opacity:0, animation:'br-fadeUp 1s ease .3s forwards', marginBottom:'2rem' }}>
               Enhanccee — Branding &amp; Identity
             </p>
@@ -292,7 +292,7 @@ export default function BrandingPage() {
         {/* ══════════════ PHILOSOPHY STATS ══════════════ */}
         <section style={{ padding:'16vh 8vw', position:'relative', overflow:'hidden', background:'#ffffff', transition:'background 0.6s ease' }}>
           <div style={{ position:'absolute', inset:0, background:'radial-gradient(ellipse 100% 80% at 50% 50%, rgba(240,240,240,.4) 0%, transparent 70%)', animation:'br-breathe 8s ease-in-out infinite', pointerEvents:'none' }}/>
-          <div style={{ maxWidth:900, margin:'0 auto', position:'relative', zIndex:1 }}>
+          <div style={{ maxWidth:1280, margin:'0 auto', position:'relative', zIndex:1 }}>
             <FadeIn>
               <p style={{ fontSize:'.7rem', letterSpacing:'.4em', textTransform:'uppercase', color:'rgba(0,0,0,.4)', marginBottom:'4rem', textAlign:'center' }}>Why Enhanccee</p>
             </FadeIn>
@@ -396,7 +396,7 @@ export default function BrandingPage() {
             <p style={{ fontSize:'.7rem', letterSpacing:'.45em', textTransform:'uppercase', color:'rgba(255,255,255,.35)', marginBottom:'4rem', position:'relative', zIndex:1 }}>The Enhanccee Identity Statement</p>
           </FadeIn>
           <FadeIn delay={100}>
-            <h2 style={{ fontFamily:'var(--font-cormorant)', fontWeight:300, fontSize:'clamp(2.5rem,6.5vw,7.5rem)', lineHeight:1.1, color:'#ffffff', maxWidth:1000, margin:'0 auto 3rem', position:'relative', zIndex:1 }}>
+            <h2 style={{ fontFamily:'var(--font-cormorant)', fontWeight:300, fontSize:'clamp(2.5rem,6.5vw,7.5rem)', lineHeight:1.1, color:'#ffffff', maxWidth:1280, margin:'0 auto 3rem', position:'relative', zIndex:1 }}>
               When <em style={{ fontStyle:'italic', color:'rgba(255,255,255,.7)' }}>emotion</em><br />and function align,<br /><em style={{ fontStyle:'italic', color:'rgba(255,255,255,.7)' }}>identity is born.</em>
             </h2>
           </FadeIn>

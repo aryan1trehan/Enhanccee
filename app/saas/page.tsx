@@ -171,7 +171,7 @@ export default function SaaSPage() {
         {/* ══════════════ 1 — HERO ══════════════ */}
         <section style={{ height:'100vh', minHeight:700, display:'grid', gridTemplateColumns:'1fr 1fr', overflow:'hidden', position:'relative' }}>
           {/* Left */}
-          <div style={{ display:'flex', flexDirection:'column', justifyContent:'flex-end', padding:'0 60px 90px', position:'relative', zIndex:3, background:'linear-gradient(110deg, #000 40%, rgba(0,0,0,.7) 100%)' }}>
+          <div style={{ display:'flex', flexDirection:'column', justifyContent:'flex-end', padding:'0 3.75rem 90px', position:'relative', zIndex:3, background:'linear-gradient(110deg, #000 40%, rgba(0,0,0,.7) 100%)' }}>
             <p style={{ fontFamily:'var(--font-montserrat)', fontSize:'.58rem', letterSpacing:'.35em', textTransform:'uppercase', color:'rgba(255,255,255,0.6)', marginBottom:28, animation:'saas-up .8s .3s ease forwards', opacity:0 }}>
               SaaS Growth Systems
             </p>
@@ -204,7 +204,7 @@ export default function SaaSPage() {
           </div>
 
           {/* Scroll hint */}
-          <div style={{ position:'absolute', bottom:40, left:60, display:'flex', alignItems:'center', gap:16, animation:'saas-up .8s 1.3s ease forwards', opacity:0, zIndex:3 }}>
+          <div style={{ position:'absolute', bottom:40, left:'3.75rem', display:'flex', alignItems:'center', gap:16, animation:'saas-up .8s 1.3s ease forwards', opacity:0, zIndex:3 }}>
             <div style={{ width:48, height:1, background:'linear-gradient(to right, #fff, transparent)' }}/>
             <span style={{ fontSize:'.55rem', letterSpacing:'.3em', textTransform:'uppercase', color:'rgba(255,255,255,.35)' }}>Scroll to explore</span>
           </div>
@@ -213,8 +213,8 @@ export default function SaaSPage() {
         <Rule />
 
         {/* ══════════════ 2 — MANIFESTO ══════════════ */}
-        <RevealSection style={{ padding:'160px 60px', position:'relative', overflow:'hidden', background:'#0a0a0a' }}>
-          <div style={{ maxWidth:1160, margin:'0 auto', display:'grid', gridTemplateColumns:'1fr 1.1fr', gap:100, alignItems:'center' }}>
+        <RevealSection style={{ padding:'6rem 3.75rem', position:'relative', overflow:'hidden', background:'#0a0a0a' }}>
+          <div style={{ maxWidth:1280, margin:'0 auto', display:'grid', gridTemplateColumns:'1fr 1.1fr', gap:100, alignItems:'center' }}>
             <div>
               <div style={{ fontFamily:'var(--font-cormorant)', fontSize:'8rem', lineHeight:.6, color:'rgba(255,255,255,.06)', marginBottom:-16, display:'block' }}>&ldquo;</div>
               <blockquote style={{ fontFamily:'var(--font-cormorant)', fontSize:'clamp(2.4rem,3.8vw,4rem)', fontWeight:400, lineHeight:1.18, color:'#ffffff' }}>
@@ -240,8 +240,8 @@ export default function SaaSPage() {
         <Rule />
 
         {/* ══════════════ 3 — ECOSYSTEM ══════════════ */}
-        <RevealSection style={{ padding:'140px 60px', background:'#000000' }}>
-          <div style={{ maxWidth:1160, margin:'0 auto 80px', display:'flex', justifyContent:'space-between', alignItems:'flex-end' }}>
+        <RevealSection style={{ padding:'6rem 3.75rem', background:'#000000' }}>
+          <div style={{ maxWidth:1280, margin:'0 auto 80px', display:'flex', justifyContent:'space-between', alignItems:'flex-end' }}>
             <div>
               <span style={{ fontFamily:'var(--font-montserrat)', fontSize:'.58rem', letterSpacing:'.35em', textTransform:'uppercase', color:'rgba(255,255,255,.5)', marginBottom:16, display:'block' }}>What We Deliver</span>
               <h2 style={{ fontFamily:'var(--font-cormorant)', fontSize:'clamp(2rem,3.2vw,3rem)', fontWeight:400, lineHeight:1.2, color:'#ffffff' }}>
@@ -251,7 +251,7 @@ export default function SaaSPage() {
             <p style={{ fontSize:'.78rem', lineHeight:2, color:'rgba(255,255,255,.5)', maxWidth:360, textAlign:'right' }}>Six compounding growth disciplines. One unified system. Engineered to drive acquisition, activation, retention, and expansion simultaneously.</p>
           </div>
 
-          <div style={{ maxWidth:1160, margin:'0 auto', display:'grid', gridTemplateColumns:'1fr 1fr 1fr', gap:3 }}>
+          <div style={{ maxWidth:1280, margin:'0 auto', display:'grid', gridTemplateColumns:'1fr 1fr 1fr', gap:3 }}>
             {/* Image card */}
             <div className="saas-eco-card" style={{ gridColumn:'span 1', gridRow:'span 2', minHeight:420, padding:0, overflow:'hidden', position:'relative' }}>
               <img src="https://images.unsplash.com/photo-1639322537228-f710d846310a?w=800&q=85&fit=crop" alt="SaaS growth infrastructure" style={{ width:'100%', height:'100%', objectFit:'cover', filter:'brightness(.4) saturate(.7)', transition:'transform .8s cubic-bezier(.16,1,.3,1)' }}/>
@@ -292,8 +292,8 @@ export default function SaaSPage() {
         <Rule />
 
         {/* ══════════════ 4 — CAPABILITIES CAROUSEL ══════════════ */}
-        <RevealSection style={{ padding:'140px 0 140px 60px', background:'#0a0a0a', overflow:'hidden' }}>
-          <div style={{ maxWidth:1160, margin:'0 0 64px', display:'flex', alignItems:'flex-end', justifyContent:'space-between', paddingRight:60 }}>
+        <RevealSection style={{ padding:'6rem 0 6rem 3.75rem', background:'#0a0a0a', overflow:'hidden' }}>
+          <div style={{ maxWidth:1280, margin:'0 0 64px', display:'flex', alignItems:'flex-end', justifyContent:'space-between', paddingRight:'3.75rem' }}>
             <div>
               <span style={{ fontFamily:'var(--font-montserrat)', fontSize:'.58rem', letterSpacing:'.35em', textTransform:'uppercase', color:'rgba(255,255,255,.5)', marginBottom:16, display:'block' }}>Technical Mastery</span>
               <h2 style={{ fontFamily:'var(--font-cormorant)', fontSize:'clamp(2rem,3.2vw,3rem)', fontWeight:400, color:'#ffffff' }}>
@@ -341,9 +341,9 @@ export default function SaaSPage() {
         <Rule />
 
         {/* ══════════════ 5 — PROCESS ══════════════ */}
-        <RevealSection style={{ padding:'160px 60px', background:'#000000', position:'relative', overflow:'hidden' }}>
+        <RevealSection style={{ padding:'6rem 3.75rem', background:'#000000', position:'relative', overflow:'hidden' }}>
           <div style={{ position:'absolute', inset:0, background:'radial-gradient(ellipse 50% 60% at 20% 50%, rgba(30,30,30,.5) 0%, transparent 65%)' }}/>
-          <div style={{ position:'relative', zIndex:2, maxWidth:1160, margin:'0 auto' }}>
+          <div style={{ position:'relative', zIndex:2, maxWidth:1280, margin:'0 auto' }}>
             <span style={{ fontFamily:'var(--font-montserrat)', fontSize:'.58rem', letterSpacing:'.35em', textTransform:'uppercase', color:'rgba(255,255,255,.5)', marginBottom:16, display:'block' }}>How We Grow You</span>
             <h2 style={{ fontFamily:'var(--font-cormorant)', fontSize:'clamp(2rem,3.2vw,3rem)', fontWeight:400, color:'#ffffff', marginBottom:80 }}>
               The Enhanccee <em style={{ fontStyle:'italic', color:'rgba(255,255,255,.7)' }}>Growth System</em>
@@ -381,8 +381,8 @@ export default function SaaSPage() {
         <Rule />
 
         {/* ══════════════ 6 — WHY US ══════════════ */}
-        <RevealSection style={{ padding:'160px 60px', background:'#0a0a0a' }}>
-          <div style={{ maxWidth:1160, margin:'0 auto', display:'grid', gridTemplateColumns:'1fr 1fr', gap:3 }}>
+        <RevealSection style={{ padding:'6rem 3.75rem', background:'#0a0a0a' }}>
+          <div style={{ maxWidth:1280, margin:'0 auto', display:'grid', gridTemplateColumns:'1fr 1fr', gap:3 }}>
             {/* Image */}
             <div style={{ position:'relative', overflow:'hidden', minHeight:700 }}>
               <img src="https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=900&q=85&fit=crop" alt="SaaS team strategy" style={{ width:'100%', height:'100%', objectFit:'cover', filter:'brightness(.4) saturate(.7)' }}/>
@@ -427,7 +427,7 @@ export default function SaaSPage() {
           <div style={{ position:'absolute', inset:0, background:'linear-gradient(to right, #000 0%, rgba(0,0,0,.6) 50%, #000 100%), linear-gradient(to bottom, #000 0%, transparent 20%, transparent 80%, #000 100%)' }}/>
           <div style={{ position:'relative', zIndex:2, width:'100%', textAlign:'center', padding:'0 60px' }}>
             <p style={{ fontFamily:'var(--font-montserrat)', fontSize:'.58rem', letterSpacing:'.4em', textTransform:'uppercase', color:'rgba(255,255,255,.5)', marginBottom:36 }}>Enhanccee® — A Statement of Intent</p>
-            <h2 style={{ fontFamily:'var(--font-cormorant)', fontSize:'clamp(2.6rem,5.5vw,5.5rem)', fontWeight:400, lineHeight:1.1, color:'#ffffff', maxWidth:900, margin:'0 auto 32px' }}>
+            <h2 style={{ fontFamily:'var(--font-cormorant)', fontSize:'clamp(2.6rem,5.5vw,5.5rem)', fontWeight:400, lineHeight:1.1, color:'#ffffff', maxWidth:1280, margin:'0 auto 32px' }}>
               Elite SaaS companies don&apos;t hope for growth.<br />
               <em style={{ fontStyle:'italic', color:'rgba(255,255,255,.7)' }}>They architect it.</em>
             </h2>

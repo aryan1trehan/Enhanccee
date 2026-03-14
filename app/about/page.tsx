@@ -8,7 +8,7 @@ export default function AboutPage() {
 
       {/* ── SECTION 1: HERO — BLACK ── */}
       <section className="py-24 md:py-36 px-6 md:px-12 lg:px-16 bg-black flex items-center justify-center min-h-[70vh]">
-        <div className="max-w-6xl mx-auto text-center">
+        <div className="max-w-7xl mx-auto text-center">
           <span className="text-white/40 text-xs font-semibold uppercase tracking-[0.35em] mb-6 block">
             About Enhanccee
           </span>
@@ -25,7 +25,7 @@ export default function AboutPage() {
 
       {/* ── SECTION 2: OUR STORY — WHITE ── */}
       <section className="py-24 px-6 md:px-12 lg:px-16 bg-white">
-        <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16">
           <div>
             <span className="text-black/40 text-xs uppercase tracking-[0.3em] mb-4 block">What We Stand For</span>
             <h2 className="text-3xl md:text-4xl font-serif font-light text-black mb-6">What We Stand For</h2>
@@ -49,7 +49,7 @@ export default function AboutPage() {
 
       {/* ── SECTION 3: THE STANDARD — BLACK ── */}
       <section className="py-24 px-6 md:px-12 lg:px-16 bg-black">
-        <div className="max-w-6xl mx-auto">
+        <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <span className="text-white/40 text-xs uppercase tracking-[0.3em] mb-4 block">Our Principles</span>
             <h3 className="text-3xl md:text-4xl font-semibold text-white">The Enhanccee Standard</h3>

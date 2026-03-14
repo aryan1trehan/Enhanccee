@@ -23,7 +23,7 @@ export default function ClientelePage() {
       <Header />
 
       <section className="py-20 bg-black">
-        <div className="max-w-6xl mx-auto px-6 md:px-10 lg:px-12">
+        <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-16">
           <div className="text-center mb-14">
             <span className="text-white/40 text-xs font-semibold uppercase tracking-[0.3em] mb-4 block">
               Our Clientele
