@@ -92,7 +92,7 @@ export default function WebDevPage() {
   useEffect(() => {
     const io = new IntersectionObserver((entries) => {
       entries.forEach(e => {
-        if (e.isIntersecting) setVisible(prev => new Set([...prev, e.target]))
+        if (e.isIntersecting) setVisible(prev => new Set([...Array.from(prev), e.target]))
       })
     }, { threshold: 0.08, rootMargin: '0px 0px -50px 0px' })
     document.querySelectorAll('[data-rv]').forEach(el => io.observe(el))
