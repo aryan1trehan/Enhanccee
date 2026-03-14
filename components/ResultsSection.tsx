@@ -4,10 +4,15 @@ import { useEffect, useRef, useState } from 'react'
 
 export default function ResultsSection() {
   const [visible, setVisible] = useState(false)
+  const [mounted, setMounted] = useState(false)
   const sectionRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
-    if (!sectionRef.current) return
+    setMounted(true)
+  }, [])
+
+  useEffect(() => {
+    if (!sectionRef.current || !mounted) return
     const io = new IntersectionObserver(([entry]) => {
       if (entry.isIntersecting) {
         setVisible(true)
@@ -16,7 +21,7 @@ export default function ResultsSection() {
     }, { threshold: 0.1 })
     io.observe(sectionRef.current)
     return () => io.disconnect()
-  }, [])
+  }, [mounted])
 
   const results = [
     {
@@ -105,6 +110,30 @@ export default function ResultsSection() {
           opacity: 0.15;
           transform: scale(1.2) rotate(10deg);
         }
+        .result-header-hidden {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        .result-header-visible {
+          opacity: 1;
+          transform: translateY(0);
+          transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+        .result-card-hidden {
+          opacity: 0;
+          transform: translateY(40px);
+        }
+        .result-card-visible {
+          opacity: 1;
+          transform: translateY(0);
+        }
+        .result-footer-hidden {
+          opacity: 0;
+        }
+        .result-footer-visible {
+          opacity: 1;
+          transition: opacity 1s ease;
+        }
       `}</style>
       <section ref={sectionRef} className="py-32 bg-white relative overflow-hidden">
         {/* Subtle background pattern */}
@@ -113,11 +142,7 @@ export default function ResultsSection() {
         }} />
 
         <div className="container mx-auto px-6 md:px-12 lg:px-16 relative z-10">
-          <div className="text-center mb-20" style={{
-            opacity: visible ? 1 : 0,
-            transform: visible ? 'translateY(0)' : 'translateY(30px)',
-            transition: 'opacity 0.8s ease, transform 0.8s ease'
-          }}>
+          <div className={`text-center mb-20 ${visible ? 'result-header-visible' : 'result-header-hidden'}`}>
             <span className="text-black/40 text-xs font-semibold uppercase tracking-[0.3em] mb-6 block">
               Results
             </span>
@@ -131,10 +156,9 @@ export default function ResultsSection() {
             {results.map((result, index) => (
               <div
                 key={index}
-                className="result-card bg-white border border-black/10 p-12 text-center transition-all duration-500 hover:border-black/30 hover:shadow-2xl group relative"
+                className={`result-card bg-white border border-black/10 p-12 text-center transition-all duration-500 hover:border-black/30 hover:shadow-2xl group relative ${visible ? 'result-card-visible' : 'result-card-hidden'}`}
                 style={{
-                  opacity: visible ? 1 : 0,
-                  transform: visible ? 'translateY(0)' : 'translateY(40px)',
+                  transitionDelay: visible ? `${index * 150}ms` : '0ms',
                   transition: `opacity 0.8s ease ${index * 150}ms, transform 0.8s ease ${index * 150}ms, border-color 0.4s, box-shadow 0.4s`
                 }}
               >
@@ -168,9 +192,8 @@ export default function ResultsSection() {
 
           {/* Bottom decorative element */}
           <div className="mt-20 text-center">
-            <div className="inline-flex items-center gap-4 opacity-0" style={{
-              opacity: visible ? 1 : 0,
-              transition: `opacity 1s ease ${results.length * 150 + 300}ms`
+            <div className={`inline-flex items-center gap-4 ${visible ? 'result-footer-visible' : 'result-footer-hidden'}`} style={{
+              transitionDelay: visible ? `${results.length * 150 + 300}ms` : '0ms'
             }}>
               <div className="h-px w-16 bg-gradient-to-r from-transparent to-black/20" />
               <span className="text-black/30 text-xs uppercase tracking-widest">Trusted by Industry Leaders</span>
