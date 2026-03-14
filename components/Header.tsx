@@ -28,7 +28,7 @@ export default function Header() {
               { label: 'CLIENTELE', href: '/clientele' },
               { label: 'OUR SERVICES', href: '/services' },
               { label: 'WHY CHOOSE US?', href: '/#why-choose-us' },
-              { label: 'BLOG', href: '/#blog' },
+              { label: 'BLOG', href: '/blog' },
             ].map((item) => (
               <Link
                 key={item.label}
@@ -74,7 +74,7 @@ export default function Header() {
               { label: 'CLIENTELE', href: '/clientele' },
               { label: 'OUR SERVICES', href: '/services' },
               { label: 'WHY CHOOSE US?', href: '/#why-choose-us' },
-              { label: 'BLOG', href: '/#blog' },
+              { label: 'BLOG', href: '/blog' },
             ].map((item) => (
               <Link
                 key={item.label}

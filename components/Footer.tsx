@@ -102,7 +102,7 @@ export default function Footer() {
                   { label: 'Clientele', href: '/clientele' },
                   { label: 'Our Services', href: '/services' },
                   { label: 'Why Choose Us?', href: '/#why-choose-us' },
-                  { label: 'Blog', href: '/#blog' },
+                  { label: 'Blog', href: '/blog' },
                   { label: 'Contact Us', href: '/contact' },
                 ].map((link) => (
                   <li key={link.label}>
