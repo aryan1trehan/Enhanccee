@@ -85,6 +85,35 @@ a[class*="hover:bg-white"]:hover span {
   -webkit-text-fill-color: #000000 !important;
 }
 
+/* Force black text on white background hover for services section */
+a.hover\:bg-white:hover,
+a[class*="hover:bg-white"]:hover {
+  background-color: #ffffff !important;
+}
+a.hover\:bg-white:hover h3,
+a[class*="hover:bg-white"]:hover h3,
+a.hover\:bg-white:hover p,
+a[class*="hover:bg-white"]:hover p,
+a.hover\:bg-white:hover span,
+a[class*="hover:bg-white"]:hover span,
+a.hover\:bg-white:hover div,
+a[class*="hover:bg-white"]:hover div,
+a.hover\:bg-white:hover svg,
+a[class*="hover:bg-white"]:hover svg,
+a.hover\:bg-white:hover .group-hover\:text-black,
+a[class*="hover:bg-white"]:hover .group-hover\:text-black {
+  color: #000000 !important;
+  -webkit-text-fill-color: #000000 !important;
+}
+a.hover\:bg-white:hover svg,
+a[class*="hover:bg-white"]:hover svg {
+  stroke: #000000 !important;
+}
+a.hover\:bg-white:hover [class*="bg-white"],
+a[class*="hover:bg-white"]:hover [class*="bg-white"] {
+  background-color: #000000 !important;
+}
+
 /* Force white text on all black background buttons/links */
 a.bg-black,
 button.bg-black,

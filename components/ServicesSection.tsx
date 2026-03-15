@@ -81,17 +81,17 @@ export default function ServicesSection() {
             <Link
               key={index}
               href={service.link}
-              className="bg-black p-10 transition-all duration-300 hover:bg-white/5 group flex flex-col"
+              className="bg-black p-10 transition-all duration-300 hover:bg-white group flex flex-col"
             >
-              <div className="text-white/60 mb-6 group-hover:text-white group-hover:scale-110 transition-all duration-300">
+              <div className="text-white/60 mb-6 group-hover:text-black group-hover:scale-110 transition-all duration-300">
                 {service.icon}
               </div>
-              <h3 className="text-lg font-semibold text-white uppercase tracking-widest mb-3">
+              <h3 className="text-lg font-semibold text-white uppercase tracking-widest mb-3 group-hover:text-black transition-colors duration-300">
                 {service.title}
               </h3>
-              <div className="h-px w-8 bg-white/20 mb-4 group-hover:w-16 transition-all duration-300" />
-              <p className="text-white/60 leading-relaxed text-sm flex-1">{service.description}</p>
-              <span className="mt-6 text-white/40 text-xs uppercase tracking-[0.2em] group-hover:text-white transition-colors duration-300">
+              <div className="h-px w-8 bg-white/20 mb-4 group-hover:w-16 group-hover:bg-black transition-all duration-300" />
+              <p className="text-white/60 leading-relaxed text-sm flex-1 group-hover:text-black transition-colors duration-300">{service.description}</p>
+              <span className="mt-6 text-white/40 text-xs uppercase tracking-[0.2em] group-hover:text-black transition-colors duration-300">
                 Learn More →
               </span>
             </Link>
