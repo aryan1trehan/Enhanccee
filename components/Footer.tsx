@@ -48,6 +48,24 @@ export default function Footer() {
               key={item.label}
               href={item.href}
               className="flex items-center justify-center gap-3 rounded-full bg-black border border-white/15 px-6 py-3 text-white transition-all duration-300 hover:bg-white hover:text-black hover:border-white group"
+              onMouseEnter={(e) => {
+                e.currentTarget.style.color = '#000000'
+                ;(e.currentTarget.style as any).webkitTextFillColor = '#000000'
+                const spans = e.currentTarget.querySelectorAll('span')
+                spans.forEach(span => {
+                  span.style.color = '#000000'
+                  ;(span.style as any).webkitTextFillColor = '#000000'
+                })
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.color = '#ffffff'
+                ;(e.currentTarget.style as any).webkitTextFillColor = '#ffffff'
+                const spans = e.currentTarget.querySelectorAll('span')
+                spans.forEach(span => {
+                  span.style.color = '#ffffff'
+                  ;(span.style as any).webkitTextFillColor = '#ffffff'
+                })
+              }}
             >
               <span className="inline-flex h-5 w-5 items-center justify-center rounded-full bg-white/10 text-white text-xs group-hover:bg-black/20 group-hover:text-black transition-colors">
                 ●
@@ -101,7 +119,7 @@ export default function Footer() {
                   { label: 'Home', href: '/' },
                   { label: 'Clientele', href: '/clientele' },
                   { label: 'Our Services', href: '/services' },
-                  { label: 'Why Choose Us?', href: '/#why-choose-us' },
+                  { label: 'Why Choose Us?', href: '/why-choose-us' },
                   { label: 'Blog', href: '/blog' },
                   { label: 'Contact Us', href: '/contact' },
                 ].map((link) => (

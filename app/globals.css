@@ -66,9 +66,23 @@ button.bg-black[class*="border"],
 a[class*="bg-black"].border,
 button[class*="bg-black"].border,
 a.bg-black.border-2,
-a[class*="bg-black"][class*="border-white"] {
+a[class*="bg-black"][class*="border-white"],
+a.border-white,
+a[class*="border-white"] {
   color: #ffffff !important;
   -webkit-text-fill-color: #ffffff !important;
+}
+
+/* Force black text on white background hover for social media buttons */
+a.hover\:bg-white:hover,
+a[class*="hover:bg-white"]:hover {
+  color: #000000 !important;
+  -webkit-text-fill-color: #000000 !important;
+}
+a.hover\:bg-white:hover span,
+a[class*="hover:bg-white"]:hover span {
+  color: #000000 !important;
+  -webkit-text-fill-color: #000000 !important;
 }
 
 /* Force white text on all black background buttons/links */
