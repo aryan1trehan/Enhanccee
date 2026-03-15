@@ -163,11 +163,11 @@ export default function WhyChooseUsPage() {
                   }}
                   onMouseEnter={(e) => {
                     e.currentTarget.style.color = '#000000'
-                    e.currentTarget.style.WebkitTextFillColor = '#000000'
+                    ;(e.currentTarget.style as any).webkitTextFillColor = '#000000'
                   }}
                   onMouseLeave={(e) => {
                     e.currentTarget.style.color = '#ffffff'
-                    e.currentTarget.style.WebkitTextFillColor = '#ffffff'
+                    ;(e.currentTarget.style as any).webkitTextFillColor = '#ffffff'
                   }}
                 >
                   Explore Services
@@ -463,6 +463,14 @@ export default function WhyChooseUsPage() {
                   href="/clientele"
                   className="bg-transparent border-2 border-white text-white px-12 py-5 font-semibold text-sm uppercase tracking-[0.2em] transition-all duration-300 hover:bg-white hover:text-black hover:scale-105 hover:-translate-y-0.5 active:scale-95"
                   style={{ borderColor: '#ffffff', color: '#ffffff', WebkitTextFillColor: '#ffffff' }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.color = '#000000'
+                    ;(e.currentTarget.style as any).webkitTextFillColor = '#000000'
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.color = '#ffffff'
+                    ;(e.currentTarget.style as any).webkitTextFillColor = '#ffffff'
+                  }}
                 >
                   View Our Work
                 </Link>
