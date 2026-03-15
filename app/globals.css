@@ -64,14 +64,19 @@ button.bg-black.border,
 a.bg-black[class*="border"],
 button.bg-black[class*="border"],
 a[class*="bg-black"].border,
-button[class*="bg-black"].border {
+button[class*="bg-black"].border,
+a.bg-black.border-2,
+a[class*="bg-black"][class*="border-white"] {
   color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
 }
 
 /* Force white text on all black background buttons/links */
 a.bg-black,
-button.bg-black {
+button.bg-black,
+a[class*="bg-black"] {
   color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
 }
 
 /* ═══════════════════════════════════════════════

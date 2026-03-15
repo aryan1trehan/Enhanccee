@@ -42,8 +42,13 @@ export default function Hero() {
           </Link>
           <Link
             href="/services"
-            className="bg-black border border-white text-white px-10 py-4 font-semibold text-sm uppercase tracking-[0.2em] transition-all duration-300 hover:bg-black hover:text-white hover:scale-105 hover:-translate-y-0.5 active:scale-95"
-            style={{ backgroundColor: '#000000', color: '#ffffff', borderColor: '#ffffff' }}
+            className="bg-black border-2 border-white text-white px-10 py-4 font-semibold text-sm uppercase tracking-[0.2em] transition-all duration-300 hover:bg-white hover:text-black hover:scale-105 hover:-translate-y-0.5 active:scale-95"
+            style={{ 
+              backgroundColor: '#000000', 
+              color: '#ffffff', 
+              borderColor: '#ffffff',
+              WebkitTextFillColor: '#ffffff'
+            }}
           >
             Our Services
           </Link>

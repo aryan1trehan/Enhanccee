@@ -150,8 +150,9 @@ export default function SaaSPage() {
         .saas-why-row:last-child { border-bottom:none; }
         .saas-why-row:hover .saas-why-num { color:#ffffff !important; }
         .saas-ed-cell:hover img { transform:scale(1.06); }
-        .saas-btn-primary { background:#ffffff; color:#000000; font-size:.6rem; font-weight:700; letter-spacing:.2em; text-transform:uppercase; padding:16px 40px; display:inline-block; position:relative; overflow:hidden; transition:all .35s ease; }
-        .saas-btn-primary:hover { background:#e5e5e5; transform:translateY(-2px); box-shadow:0 16px 40px rgba(255,255,255,.15); }
+        .saas-btn-primary { background:#ffffff; color:#000000 !important; font-size:.6rem; font-weight:700; letter-spacing:.2em; text-transform:uppercase; padding:16px 40px; display:inline-block; position:relative; overflow:hidden; transition:all .35s ease; }
+        .saas-btn-primary:hover { background:#e5e5e5; color:#000000 !important; transform:translateY(-2px); box-shadow:0 16px 40px rgba(255,255,255,.15); }
+        .saas-btn-primary * { color:#000000 !important; }
         .saas-btn-outline { border:1px solid rgba(255,255,255,.3); color:#ffffff; font-size:.6rem; font-weight:500; letter-spacing:.2em; text-transform:uppercase; padding:16px 40px; display:inline-block; transition:all .35s; }
         .saas-btn-outline:hover { border-color:#ffffff; background:rgba(255,255,255,.08); }
       `}</style>

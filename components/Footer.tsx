@@ -47,12 +47,12 @@ export default function Footer() {
             <a
               key={item.label}
               href={item.href}
-              className="flex items-center justify-center gap-3 rounded-full bg-black border border-white/15 px-6 py-3 text-white transition-all duration-300 hover:bg-white hover:border-white group"
+              className="flex items-center justify-center gap-3 rounded-full bg-black border border-white/15 px-6 py-3 text-white transition-all duration-300 hover:bg-white hover:text-black hover:border-white group"
             >
               <span className="inline-flex h-5 w-5 items-center justify-center rounded-full bg-white/10 text-white text-xs group-hover:bg-black/20 group-hover:text-black transition-colors">
                 ●
               </span>
-              <span className="uppercase tracking-[0.15em] text-[11px] font-semibold text-white" style={{ color: '#ffffff' }}>{item.label}</span>
+              <span className="uppercase tracking-[0.15em] text-[11px] font-semibold group-hover:text-black transition-colors">{item.label}</span>
             </a>
           ))}
         </div>

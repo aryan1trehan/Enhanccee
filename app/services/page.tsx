@@ -235,7 +235,7 @@ export default function ServicesPage() {
             </FadeIn>
             <FadeIn delay={400}>
               <div style={{ display:'flex', gap:'1.5rem', justifyContent:'center', flexWrap:'wrap', alignItems:'center' }}>
-                <Link href="/contact" style={{ display:'inline-block', padding:'1rem 3rem', background:'#ffffff', color:'#000000', fontFamily:'var(--font-montserrat)', fontSize:'.75rem', fontWeight:600, letterSpacing:'.2em', textTransform:'uppercase', textDecoration:'none', transition:'all .35s', lineHeight:1.5 }}>
+                <Link href="/contact" style={{ display:'inline-block', padding:'1rem 3rem', background:'#ffffff', color:'#000000', fontFamily:'var(--font-montserrat)', fontSize:'.75rem', fontWeight:600, letterSpacing:'.2em', textTransform:'uppercase', textDecoration:'none', transition:'all .35s', lineHeight:1.5 }} className="bg-white text-black">
                   Commission Your Architecture
                 </Link>
                 <Link href="/clientele" style={{ display:'inline-block', padding:'1rem 3rem', border:'1px solid rgba(255,255,255,.25)', color:'rgba(255,255,255,.7)', fontFamily:'var(--font-montserrat)', fontSize:'.75rem', letterSpacing:'.2em', textTransform:'uppercase', textDecoration:'none', transition:'all .35s', lineHeight:1.5 }}>
